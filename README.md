@@ -1,2 +1,2 @@
 # doc
-doc de contatabilidad
+doc de contabilidad
