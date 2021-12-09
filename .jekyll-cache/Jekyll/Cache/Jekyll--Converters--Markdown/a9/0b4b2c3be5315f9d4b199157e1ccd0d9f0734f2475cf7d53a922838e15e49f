@@ -1,0 +1,23 @@
+I"�<h1 id="acerca-de-abductor">Acerca de Abductor®</h1>
+
+<p>Abductor es un software online gratuito (por ahora) que es capaz de interpretar un archivo escrito en código de CLIPS.</p>
+
+<p>Para interactuar con el abductor Ud. debe hacer lo siguiente:</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Crear un archivo de texto en su computador. Póngale cualquier nombre pero la extensión debe ser <em>clp</em>.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Escriba las respuestas de Contabilidad para Necios® con la forma de un código CLIPS pero agreguéle el signo ; inmediatamente después de que termine cada bloque de código. Los bloques terminan siempre con un signo }.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Vaya a  <a href="http://abductor.necios.cl/">Abductor</a> para subir los códigos que Ud. digitó. Eso se hace subiendo el archivo correspondiente. Abductor procesará todo eso y en cuanto termine, le bajará la respuesta a su computador, búsquela en su carpeta de descargas.</p>
+  </li>
+</ul>
+
+<p><a href="http://abductor.necios.cl/">Abductor</a></p>
+
+<p><img src="../../../../abductor.png" alt="" /></p>
+
+:ET

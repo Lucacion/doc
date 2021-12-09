@@ -1,0 +1,72 @@
+I"r<h1 id="respuesta-a-cuenta-revisitada">Respuesta a Cuenta Revisitada</h1>
+
+<p>Hola de nuevo, he estado haciendo un sitio  <a href="http://abductor.necios.cl/">Abductor</a> que puede tomar los archivos con las respuestas y decirle lo que ocurrirá con ellos. ¿Por qué no lo intenta?</p>
+
+<p>Clique aqui para bajar el archivo <a href="/micro-cuentas-1.clp">micro-cuentas-1,clp</a>
+Clique aqui para bajar el archivo <a href="/micro-cuentas-2.clp">micro-cuentas-2.clp</a>
+Clique aqui para bajar el archivo <a href="/micro-cuentas-3.clp">micro.cuentas-3.clp</a></p>
+
+<p>La respuesta está en tres archivos para que le sea más fácil entender.</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />En el primero se han agregado campos a los <em>templates</em> de <strong>cuenta</strong>, <strong>cargo</strong> y <strong>abono</strong>, para que ahora funcionen en un escenario para el que habrá más de una cuenta y donde cada cuenta tendrá un nombre. Ese nombre debiese ser diferente en cada cuenta pues sería muy confuso anotar montos de todas las cuentas en una sola.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />En el segundo archivo se han modificado las reglas para que sean sensibles a los nuevos <em>templates</em>. Preste atención al lado izquierdo donde es clave en entender que la variable <strong>?nombre</strong> es la que hace todo el trabajo de juntar a <strong>cuenta</strong> con la orden de <strong>cargo</strong> y/o <strong>abono</strong>.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />En el tercero se hacen los llamados para el cargo y el abono que se pidió como ejercicio.</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-clps" data-lang="clps">(deftemplate cargo
+   (slot cuenta)
+   (slot monto (default 0))
+   (slot realizado (default false)));
+
+(deftemplate abono
+   (slot cuenta)
+   (slot monto (default 0))
+   (slot realizado (default false)));
+
+(deftemplate cuenta
+   (slot nombre)
+   (slot debe (default 0))
+   (slot haber (default 0)));
+
+(defrule cargar-cuenta-existente
+   ?cargo  &lt;-  ( cargo (cuenta ?nombre) (monto ?monto) (realizado false) )
+   ?cuenta &lt;-  ( cuenta (nombre ?nombre) (debe ?debe)  )
+  =&gt;
+   ( modify ?cuenta (debe ( round (+ ?debe ?monto)) ))
+   ( modify ?cargo  (realizado true))
+   ( printout t "c--&gt;" tab ?monto tab "|" tab 0 tab crlf));
+
+(defrule abonar-cuenta-existente
+   ?abono  &lt;-  ( abono  (cuenta ?nombre) (monto ?monto) (realizado false) )
+   ?cuenta &lt;-  ( cuenta (nombre ?nombre) (haber ?haber)  )
+  =&gt;
+   ( modify ?cuenta (haber ( round (+ ?haber ?monto)) ))
+   ( modify ?abono (realizado true))
+   ( printout t "a--&gt;" tab 0 tab "|" tab ?monto tab crlf));
+
+(defrule inicio
+  (declare (salience 10000))
+  =&gt;
+  ( watch facts)
+
+  ( assert (cuenta (nombre caja) (debe 0)))
+  ( assert (abono (cuenta caja) (monto 100)))
+
+  ( assert (cuenta (nombre banco) (debe 0)))
+  ( assert (cargo (cuenta banco) (monto 100)))
+
+
+);</code></pre></figure>
+
+<p>NOTA: Para que el trabajo en abductor sea más eficiente coloque el signo ; al final de cada regla, fact o template y en todo lo que sea un bloque de código.</p>
+
+<p>Nos vemos!</p>
+
+:ET

@@ -1,0 +1,110 @@
+I"�<h1 id="regla-de-traspaso-segunda-parte">Regla de Traspaso Segunda Parte</h1>
+
+<p>En el post anterior comenzamos a diseñar una regla de traspaso que nos sirva para todos los traspasos que tengamos que hacer en el libro diario. Inicialmente conseguirmos que la regla se disparara y que imprimiera la palabra Partida.</p>
+
+<p>Ahora explicaremos como diseñar la regla para que haga todo lo que necesitamos.</p>
+
+<p>Si observa la regla de traspaso que traemos acá con el comienzo de la solución verá que estamos usando en el lado derecho de la regla algunas palabras que comienzan con un signo de interrogación y que fueron colocadas en el lado izquierdo de la regla. Esas palabras son variables y funcionan como naipes del tipo comodines, capturando el valor que traiga el fact en el lado izquierdo de la reglas. Por esa razón:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />?desde almacenará el nombre de la cuenta desde donde desea realizar el traspaso.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />?hacia almacenará el nombre de la cuenta hacia donde se desea realizar el traspaso</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />?monto almacenará el monto que se quiere trasnferir desde la cuenta ?desde hacia la cuenta ?hacia</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />?dia, ?mes y ?ano almacenan la fecha de la transacción</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />?partida almacena el número de la partida en la que se realizará la transacción.</li>
+</ul>
+
+<p>En el lado derecho ya no usamos <strong>printout t</strong> pues ya disponemos de una regla para poner en la pantalla las partidas. Esa regla la activaremos assertando en el lado derecho de la regla de traspasos el fact partida. Ese fact es lo único que se necesita para que se muestre el encabezado y el pie de las partidas…, pero no el cuerpo.</p>
+
+<p>En el fact partida usamos las variables vistas arriba con los valores que estás lograron capturar en el lado izquierdo de la regla.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule traspaso
+  (declare (salience 10000))
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&gt;
+  ( assert (partida  (glosa (str-cat "Traspaso desde cuenta " ?desde " hacia cuenta " ?hacia " por un monto de " ?monto"."))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))</code></pre></figure>
+
+<p>La regla está incompleta pues faltará el cuerpo de la partida, pero ya sabemos que eso lo pueden generar los facts de cargo y abono los cuales, a su vez, necesitan que las cuentas sean creadas.</p>
+
+<p>Note que estamos usando una nueva función que junta variables con texto. Esa función se usa:</p>
+
+<p>(str-cat “text” ?variable1 “ texto “ ?variable”)</p>
+
+<p>Observe que los paréntesis rodean al nombre de la función: str-cat y a sus contenidos. Los contenidos de una función se llaman argumentos.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule traspaso
+  (declare (salience 10000))
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&gt;
+  ( assert (partida  (glosa (str-cat "Traspaso desde cuenta " ?desde " hacia cuenta " ?hacia " por un monto de " ?monto"."))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cuenta (nombre ?desde) (debe 0)))
+  ( assert (cuenta (nombre ?hacia) (debe 0)))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?monto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+
+);
+
+
+(defrule libro-diario
+  =&gt;
+  (assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+)</code></pre></figure>
+
+<p>Con todo estos facts tendremos la partida con todas sus secciones completas: encabezado, cuerpo y pie.</p>
+
+<p>Hay un detalle adicional y es que en el libro diario debe colocarse partida 2 para que no se mezcle con la partida 1 que corresponde al asiento inicial.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule libro-diario
+  =&gt; 
+  (assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+)</code></pre></figure>
+
+<p>Clique aqui para bajar el archivo <a href="/traspaso-2.clp">traspaso-2.clp</a>
+Use abductor para generar contabilidad online <a href="http://abductor.necios.cl/">Abductor</a></p>
+
+<p>Cuando suba traspaso-2.clp al abductor® verá que sigue apareciendo el asiento inicial “Por inicio de Operaciones” y que ahora aparece la partida 2.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips"> Partida 1
+
+---------------------------------------------------------------
+
+2000000......................caja
+
+................. 2000000....capital-social
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones.
+
+Partida 2
+
+---------------------------------------------------------------
+
+................. 100....caja
+
+100......................banco-estado
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta banco-estado por un monto de 100. </code></pre></figure>
+
+<p>Espero que le haya gustado mi solución!</p>
+
+<p>Pero antes de irse a descansar, llévese una reflexión teórica de contabilidad:</p>
+
+<ol>
+  <li>Qué significa un traspaso entre cuentas?</li>
+  <li>Qué cuenta se carga en un traspaso, la de origen o la de destino?</li>
+  <li>Qué pasa si las dos cuentas son del mismo grupo (por ejemplo, dos cuentas de activo)</li>
+  <li>A qué grupo pertenecen las cuentas de caja y banco-estado?</li>
+  <li>Las cuentas de caja y banco estado tienen el mismo tipo de saldo, cuál es?</li>
+  <li>Si el el saldo de las cuentas de caja y banco-estado fuese deudor, dónde se anotaría; en el lado izquiedo DEBE o en lado derecho HABER.</li>
+  <li>Qué significa que la cuenta de caja tenga saldo positivo</li>
+  <li>Qué significa que la cuenta de caja tenga saldo negativo (cree que eso es cierto, que la caja tenga saldo negativo es raro, no?)</li>
+</ol>
+
+<p>Nos vemos en el próximo Post para intentar explicar algo de todo este embrollo, Ud. puede buscar las respuestas en la Internet. Una pregunta típica es “Qué tipo de cuenta es Caja”.</p>
+:ET

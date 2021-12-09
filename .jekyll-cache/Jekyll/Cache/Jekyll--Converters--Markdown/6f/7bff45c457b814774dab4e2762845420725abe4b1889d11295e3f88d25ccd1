@@ -1,0 +1,109 @@
+I"�<h1 id="las-cuentas">Las cuentas</h1>
+
+<p>Hola de nuevo, necesitará leer los posts previamente publicados si quiere entender bien este post.</p>
+
+<p>En este punto Ud. debiera tener una idea de que se necesita una regla para cargar una cuenta y que eso funciona más o menos en forma automática e inteligentemente, pues esto lo hace un expert system.</p>
+
+<p>Ahora recordamos que la regla que se usa para cargar una cuenta tiene dos antecedentes, así se les llama a los hechos que están en el lado izquierdo del signo <strong>=&gt;</strong>.</p>
+
+<p>{defrule cargar
+  (cargo)
+  (cuenta)
+ =&gt;
+  (modify (cuenta))
+}</p>
+
+<p>Los antecedentes de esa regla son:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />(cargo)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />(cuenta)</li>
+</ul>
+
+<p>Sabemos que una cuenta debe tener una estructura tal que incopore un campo llamado <strong>debe</strong>, al cual se le sumarán los cargos.</p>
+
+<p>Entonces una cuenta se debe declarar así:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate cuenta
+   (slot debe (default 0))
+)</code></pre></figure>
+
+<p>En este expert system se prefiere llamar slot a los campos, pero hoy en día se acepta mejor llamarlos campos. No es un tema que nos interese mucho aquí, pues solo queremos ir rápido.</p>
+
+<p>El antecedente <strong>cargo</strong> también es un hecho con estructura y considera dos campos al menos:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />monto</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />realizado</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate cargo
+   (slot monto (default 0))
+   (slot realizado (default false))
+)</code></pre></figure>
+
+<p>Esta estructuras no tendrán contenido a menos que Ud. se los asigne con una función assert, lo que se escribe así:</p>
+
+<p>(assert (cargo (monto 100)))</p>
+
+<p>Observe que los nombres de los procedimientos y de sus argumentos se colocan al interior de dos paréntesis, lo mismo ya sabe que pasa con los campos de un hecho.</p>
+
+<p>No olvide usar una función <strong>printout t</strong> en el campo derecho de la regla para que nos diga lo que sucedió al momento de ejecutarse la regla.</p>
+
+<p>Bueno ya hemos definido los hechos y la regla que será disparada por ellos, entonces que más hay que aprender?</p>
+
+<p>Entonces:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate cargo
+   (slot monto (default 0))
+   (slot realizado (default false))
+)
+
+(deftemplate cuenta
+   (slot debe (default 0))
+)
+
+(defrule cargar-cuenta-existente
+   ?cargo &lt;- (cargo (monto ?monto) )
+   ?cuenta &lt;- (cuenta (nombre ?nombre) (debe ?debe) (haber ?haber)  )
+  =&gt;
+   ( modify ?cuenta (debe ( round (+ ?debe ?monto)) ))
+   ( modify ?cargo  (realizado true))
+   ( printout t "c--&gt;" tab ?monto tab "|" tab 0 tab ?nombre crlf)
+)  
+
+(assert (cargo (monto 100)))</code></pre></figure>
+
+<p>Este es un borrador de lo que podría ser un expert system para cargar una regla.</p>
+
+<p>El expert system toma el documento, lo carga en memoria y espera a que se digite reset y luego run. Los dos comandos son necesarios.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Reset: Renicia los estados de los hechos</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Run: Carga los hechos en memoria y procede a ofrecerlos a las reglas, la regla que primero haga match con un conjunto de hechos activos, se disparará.</li>
+</ul>
+
+<p>Si Ud. corrige ese bosquejo obtendrá algo parecido a lo siguiente:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">Defining deftemplate: cargo
+Defining deftemplate: cuenta
+Defining defrule: cargar-cuenta-existente +j+j+j
+Defining defrule: inicio +j+j
+==&gt; f-1     (cuenta (debe 0))
+==&gt; f-2     (cargo (monto 100) (realizado false))
+&lt;== f-1     (cuenta (debe 0))
+==&gt; f-3     (cuenta (debe 100))
+&lt;== f-2     (cargo (monto 100) (realizado false))
+==&gt; f-4     (cargo (monto 100) (realizado true))
+c--&gt;	100	|	0	</code></pre></figure>
+
+<p>En el próximo post comentaré este resultado y publicaré la solución que yo encontré. Anímese si llegó a otro resultado, eso es parte de este método, Ud. construye su propio conocimiento!</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/contabilidad/2021/09/05/bienvenido.html">bienvenido</a></td>
+      <td><a href="/contabilidad/2021/09/07/cargo.html">cargo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

@@ -1,0 +1,143 @@
+I" <h1 id="la-partida">La Partida</h1>
+
+<p>Hola! Ahora que ya sabe mucho sobre cuentas, le explicaré como juntar dos cuentas para hacer un traspaso de fondos desde una a la otra; y a eso considerarlo una partida.</p>
+
+<h2 id="lo-primero-">Lo primero …</h2>
+<p>Lo primero que hemos de notar es que los contadores valoran que las anotaciones sobre las transacciones financieras sean realizads considerando el momento en que se hicieron, tampoco hay que exagerar, no importa la hora y los minutos sino el día.</p>
+
+<p>Entonces una partida podría ser un template con algunos datos temporales y un número único (de preferencia secuencial).</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate partida
+  (slot dia)
+  (slot mes)
+  (slot ano)
+  (slot numero))</code></pre></figure>
+
+<p>Esto es lo que se usa a nivel interno, a nivel visual debemos imprimir algo que se parezca a lo que usan los contadores:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule encabezado
+  (partida (partida ?numero) (dia ?dia) (mes ?mes) (ano ?ano))
+ =&gt;
+  (printout t Partida tab ?numero crlf)
+  (printout t "-----------------------")
+)</code></pre></figure>
+
+<p>La regla encabezado se disparará antes cada <strong><em>facts</em></strong> de <strong>partida</strong> y mostrará el número de <strong>partida</strong> y una línea.</p>
+
+<h2 id="lo-segundo">Lo segundo</h2>
+<p>Ahora debemos pensar como juntar una <strong>cuenta</strong> con una <strong>partida</strong>.</p>
+
+<p>Eso no es tan difícil en este momento, si piensa en cómo funcionan las reglas. Las reglas tienen un lado sensible y ese lado necesitamos que sea sentible a un fact de partida y un par de facts de cuentas. Eso es más o menos así:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate cuenta-de-una-partida
+  (cuenta (nombre ?nombre ))
+  (partida (numero ?numero))
+ =&gt;
+  (printout ?nombre)
+)</code></pre></figure>
+
+<p>Entonces, para hacer funcionar nuestro invento de partidas, tal vez si assertamos dos cuentas y una partida funcionaría. Pero no es concretamente lo que quisiera un contador: un contador está interesado en mostrar las transacciones financieras y eso incluye a los movimientos entre cuentas. Así que tiene más sentido anotar con la fecha a las transacciones más que a las cuentas.
+Así que debemos modificar el template de las dos transacciones que hemos ido explicando en Necios:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Cargo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Abono</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate partida
+   (slot numero)
+   (slot dia)
+   (slot mes)
+   (slot ano));
+
+(deftemplate cargo
+   (slot partida)
+   (slot cuenta)
+   (slot monto (default 0))
+   (slot realizado (default false)));
+
+(deftemplate abono
+   (slot partida)
+   (slot cuenta)
+   (slot monto (default 0))
+   (slot realizado (default false)));</code></pre></figure>
+
+<p>Con estos nuevos templates que incluyen fechas y partidas, es probable que leguemos a tener lo que los contadores querrían ver en su contabilidad. Por qué no baja mejor el archivo y lo sube al abductor?</p>
+
+<p>Clique aqui para bajar el archivo <a href="/partida.clp">partida,clp</a>
+Use abductor para generar contabilidad online <a href="http://abductor.necios.cl/">Abductor</a></p>
+
+<p>Al abducir el código de partida.clp obtenemos lo siguiente:</p>
+
+<figure class="highlight"><pre><code class="language-clip" data-lang="clip"> Inicio de Generación de Contabilidad------
+
+==&gt; f-1 (partida (numero 1) (dia 1) (mes enero) (ano 2021))
+==&gt; f-2 (cuenta (nombre caja) (debe 0) (haber 0))
+==&gt; f-3 (abono (partida 1) (cuenta caja) (monto 100) (realizado false))
+==&gt; f-4 (cuenta (nombre banco) (debe 0) (haber 0))
+==&gt; f-5 (cargo (partida 1) (cuenta banco) (monto 100) (realizado false))
+
+banco
+
+Partida 1
+
+------------------
+
+Fin de Generación de Contabilidad---------</code></pre></figure>
+
+<p>Observe que las líneas ==&gt; indican los facts que son metidos a la memoria y eso seguramente es lo que esperaba, pero la salida por pantalla “banco Partida 1 —” no parece ser algo muy coherente pues aparece el nombre de la cuenta antes que el comienzo de la partida.</p>
+
+<p>Aquí solo podemos usar un truco de CLIPS del que no hay que abusar, pues un expert system no debe ser forzado a evaluar en un orden dado las reglas. En este caso le daremos prioridad a la regla del encabezado de la partida para que aparezca antes de la regla que controla la cuenta. Eso se hace con (declare (salience 10000)).</p>
+
+<p>Clique aqui para bajar el archivo <a href="/partida-2.clp">partida-2.clp</a>
+Use abductor para generar contabilidad online <a href="http://abductor.necios.cl/">Abductor</a></p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">==&gt; f-1 (partida (numero 1) (dia 1) (mes enero) (ano 2021))
+==&gt; f-2 (cuenta (nombre caja) (debe 0) (haber 0))
+==&gt; f-3 (abono (partida 1) (cuenta caja) (monto 100) (realizado false))
+==&gt; f-4 (cuenta (nombre banco) (debe 0) (haber 0))
+==&gt; f-5 (cargo (partida 1) (cuenta banco) (monto 100) (realizado false))
+Partida 1
+
+------------------
+
+banco </code></pre></figure>
+
+<p>Con la nueva modificación podemos controlar qué regla se ejecuta antes que las otras y eso nos permite organizar la puesta en escena de la contabilidad. Esos tipos de consideraciones se pueden llamar control y las reglas que se elaboran para ello se suelen llamar reglas de control. Las reglas que expresan el conocimiento contable se llaman reglas de conocimiento o de producción.</p>
+
+<h3 id="y-qué-pasaría-si-agregamos-">Y qué pasaría si agregamos …</h3>
+
+<p>Si agregamos una regla para el abono…..</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule abono-de-partida
+   (abono  (cuenta ?cuenta))
+   (partida (numero ?numero ))
+ =&gt;
+  (printout t ?cuenta crlf)
+); </code></pre></figure>
+
+<p>Lo que se vería así:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips"> Partida 1
+
+------------------
+
+banco
+
+caja </code></pre></figure>
+
+<p>Clique aqui para bajar el archivo <a href="/partida-3.clp">partida-3.clp</a>
+Use abductor para generar contabilidad online <a href="http://abductor.necios.cl/">Abductor</a></p>
+
+<h3 id="tarea-para-la-casa">Tarea para La CASA</h3>
+<p>Para la próxima clase puede intentar agregar más información a la vista de la partida. Veamos:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Cantidad que se abona al lado de la cuenta de abono</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Cantidad que se carga al lado de la cuenta de cargo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Una línea verticial (no es necesario que sea una línea contínua, no exagere, basta usar el caracter | en cada renglón).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />La línea vertical debe separar el lado izquiero del lado derecho de una cuenta. Así en contabilidad ellos saben que lo que se pone del lado izquierdo es el cargo y lo que se pone del lado derecho es el abono.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Un renglón más abajo de todo lo anterior que tenga el cargo el símbolo | y el abono</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Otro renglón debajo de lo explicado que tenga un comentario breve: Traspaso desde cuenta x a cuenta y por un valor de tanto.</li>
+</ul>
+:ET

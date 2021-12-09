@@ -1,0 +1,86 @@
+I"J <h1 id="ccm">CCM</h1>
+
+<p>Hola!. En este post presentaremos la forma en el <strong>cmm</strong> hace las partidas, de esta forma Ud. podrá hacerse una idea más robusta de la parte más interna de la contabilidad: <em>las partidas</em>.</p>
+
+<p><strong>CCM</strong> es un acrónimo del <strong>Sistema de Contabilidad Completa del Servicio de Impuestos Internos de Chile</strong>. Este sistema se presenta al usuario en la forma esperada por los contadores: con el <strong>libro diario</strong> y el <strong>libro mayor</strong>. Está conectado a un repositorio donde se guardan las facturas que las empresas reciben y también las que emiten.</p>
+
+<p>No haremos una introducción completa al sistema <strong>CCM</strong>, pues nos interesa solo una parte en particular, se llama <strong>ajustes y otros movimientos</strong> porque eso nos permitará hacer contabilidad en forma más directa, sin registrar nada en el <strong>libro diario</strong>. Lo que hagamos en esa sección se perderá un poco en el sistema de contabilidad <strong>CCM</strong> pues no aparecerá visualmente junto con las facturas y otros documentos. Solo aparecerá como un voucher contable para cuando revisemos esa sección en la web.</p>
+
+<p>En el <strong>CCM</strong> las cuentas ya existen desde el comienzo de su ingreso al sistema, y el <strong>SII (Servicio de Impuestos Internos de Chile)</strong> pide que haya una correspondencia entre las cuentas contables de su <strong>CCM</strong> y las que UD. use para su contabilidad en su empresa.</p>
+
+<p>Es importante entender que un organismo como <strong>SII</strong> no debiera estar mandando en la forma en que Ud. hace la contabilidad, pues su función única es recolectar impuestos. Entonces la contabilidad que Ud. incorpore en forma web, que es llamado CCM no debiese ser exactamente el que Ud. use para su empresa. Dicho esto, la conveniencia de usar <strong>CCM</strong> es la de transparentar lo que Ud. haga en su empresa, suponiendo que Ud. no use la contabilidad (de mala fe) para evitar o disminuir lo que paga en términos de impuestos. A nosotros en <em>Necios</em> nos sirve para ejemplifcar un sistema al que los chilenos podrían tener acceso.</p>
+
+<p>Clique aqui para bajar el archivo <a href="/CCM Movimientos by Necios®.pdf">CCM Movimientos by Necios.pdf</a></p>
+
+<p>Cuando baje el archivo verá que hay una serie de ilustraciones, unas siete, que ilustran el proceso de generar una partida simple con solo dos cuentas. Eso es lo que queremos que Ud. vea, para que se tenga una visión complementaria a lo que hemos introducido en Necios.</p>
+
+<p>Le sugiero que imprima el pdf para que lo pueda ver mientras lee nuestras explicaciones, también sirve si tiene dos dispositivos.</p>
+
+<p>Empecemos!</p>
+
+<ol>
+  <li>
+    <p>Lo primero en lo que ha de fijarse es que los movimientos existen en un período de un mes, y si cometer el error de registrar un movimiento con una fecha que no esté dentro del período, prácticamente desaparecerá de ese periodo, no podrá verlo más. Corregir ese error será muy complicado. La corrección consiste en reversar ese movimiento, qué es el equivalente a borrar algo en contabilidad. Así que elija correctamente el período en que quiere hacer el movimiento. Eso se hace hacia el centro, pero no pierda de vista donde dice <strong>Período</strong>. El objetivo es que donde diga <strong>Período</strong> esté el mes para el que hará el movimiento</p>
+  </li>
+  <li>
+    <p>Lo siguiente que debe observar es el significado de los diferentes recuadros. Veamos: <strong>Tipo de Movimiento</strong> es una serie de opciones que usa este <strong>SII</strong> para sus fines de fiscalización, eso no es muy útil para su contabilidad, así que puede escoger para este ejemplo la opción: <em>otros</em></p>
+  </li>
+  <li>
+    <p>El <strong>Tipo de comprobante</strong> es un dato accesorio que tal vez le sirva a Ud. pero que en realidad no lo podrá usar mucho, pues no aparecerá en los informes que puede hacer más adelante o en otra parte del <strong>CCM</strong>. Entonces escoja <em>Traspaso</em>, pues haremos un traspaso entre cuentas.</p>
+  </li>
+  <li>
+    <p>El campo <strong>Glosa</strong> es un campo <strong>crítico</strong> en el <strong>CCM</strong>, si se olvida y no pone nada ahí, eso generará un bloqueo en los libros diarios de ese período lo que significará que tendrá que olvidarse de tener los libros diarios de ese mes.</p>
+  </li>
+  <li>
+    <p>Si se equivoca en el <strong>CCM</strong> no hay un soporte informático muy rápido para sacarlo de problemas pues la función de este servicio no es la de capacitar ni soportar el uso de este programa.</p>
+  </li>
+  <li>
+    <p>Entonces evite errores llenando rápidamente el campo <strong>Glosa</strong>. La glosa es la glosa de una partida, eso ya le hemos visto en otros postos de <em>Necios</em>.</p>
+  </li>
+  <li>
+    <p>En este paso ya hemos escrito la <strong>Glosa: “Partida 1”</strong> que corresponde a la segunda ilustración.</p>
+  </li>
+  <li>
+    <p>En la tercera ilustración mostramos las selecciones de <strong>Tipo de Movimiento</strong>, <strong>Tipo de Comprobante</strong> y <strong>Fecha Voucher</strong> según lo que explicamos inicialmente. Recuerde la <strong>Fecha de Voucher</strong> debe estar dentro del período que aparece a la derecha.</p>
+  </li>
+  <li>
+    <p>En el paso 9 comenzamos a trabajar con las cuentas. Esas cuentas ya existen, como ya les había comentado, y forman parte de un plan de cuentas, ese plan de cuentas agrupa a las cuentas según un sistema de contabilidad en: 
+a) <strong>Cuentas de Activo</strong>
+b) <strong>Pasivo</strong>
+c) <strong>Patrimonio</strong>
+d) <strong>Resultados</strong></p>
+  </li>
+</ol>
+
+<p>Antes de hacer el traspaso Ud. debe podría tener una idea de donde debiese estar la cuenta que quiere traspasar. En nuestro ejemplo traspasaremos un monto entre dos cuentas del <strong>Activo</strong>. Asi que seleccionamos <em>Activo</em> en el <strong>Tipo de Cuenta</strong>.</p>
+
+<ol>
+  <li>
+    <p>En la ilustración siguente vemos que al seleccionar <em>Activo</em>, el botón para sleccionar la cuenta se muestra con una etiqueta <em>Seleccione</em>. Entonces debe clicar en ese botón para seleccionar una de las cuentas existentes, que ya sabemos será del grupo de las cuentas activas.</p>
+  </li>
+  <li>
+    <p>Eso se ve en la ilustración siguiente, en la que podemos seleccionar <em>Caja</em>. La cuenta de <em>Caja</em>, habrá descubierto ahora es una cuenta de <strong>activo</strong>. También notará que hay una numeración <em>1.10.1</em>, esa numeración en Chile también sirve para agrupar a la cuentas. Donde el primer uno significa cuentas de activo.</p>
+  </li>
+  <li>
+    <p>Al seleccionar <em>Caja</em> en <strong>Cuenta</strong>, finalmente podremos escribir lo que queremos traspasar, en este caso son 100 pesos. Esos pesos se sacarán de la caja así que son un cargo para la caja y deben anotarse en su lado izquierdo. El lado izqierdo de cada cuenta se denomina <strong>Debe</strong>.</p>
+  </li>
+  <li>
+    <p>Para ser breves, la ilustración ya muestra la selección de la otra cuenta de activo que se denomina <strong>Banco Estado</strong> y luego anotamos en el <strong>Haber</strong> de esa cuenta el monto que queremos traspasar.</p>
+  </li>
+  <li>
+    <p>Finalmente presionamos <em>Gardar</em> para tener la partida de traspaso de 100 pesos desde la cuenta <strong>Caja</strong> a la cuenta <strong>BancoEstado</strong>.</p>
+  </li>
+  <li>
+    <p>Eso lo vemos en el mensaje que sigue, donde nos indica <strong>“Se ha generado satisfactoriamente el registro en el período enero 2021”</strong>.</p>
+  </li>
+  <li>
+    <p>Esta explicación suscinta seguramente no lo habrá dejado ver que cometimos un error en las ilustraciones, casi al final. Tal vez podría detectarlo.</p>
+  </li>
+</ol>
+
+<p>En el próximo post le revelaremos el error de ilustración. Ese error no podría ser cometido en el <strong>CCM</strong>, pues el <strong>CCM</strong> verifica la IGUALDAD CONTABLE. Sin embargo en nuestro curso de <em>Necios</em> queremos que Ud. pase el trabajo de revisar esto en forma manual.</p>
+
+<p><a href="http://abductor.necios.cl/">Abductor</a></p>
+
+<p>Nos vemos!</p>
+:ET

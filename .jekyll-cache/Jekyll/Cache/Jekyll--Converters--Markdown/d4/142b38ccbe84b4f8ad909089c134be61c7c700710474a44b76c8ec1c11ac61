@@ -1,0 +1,89 @@
+I"œ<table>
+<thead><th colspan="6"> correccion-monetaria</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> correccion-monetaria</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<table>
+<thead><th colspan="6"> honorarios</th><th colspan="3">honorarios</th></thead>
+<thead><th colspan="9"> honorarios</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">25000</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">25000</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> ppv</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> Pago Provisional Voluntario</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">47</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">47</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> Dartel Temuco Ltda.</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">27662</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">27662</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> Diario-Oficial</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">662</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">662</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> Transbank S.A.</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> gastos-a-este-departamento</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">1189</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">1189</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> KHIPU SPA.</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> gastos-a-este-departamento</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">2991</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">2991</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> KHIPU SPA.</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<table>
+<thead><th colspan="6"> notas-de-credito</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> materiales-sin-valor-comercial</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">25210</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">25210</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> IE TECNOLOGIA SPA</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align="right">27782</td> <td>|</td> <td align="right">0</td></tr>
+<tr> <td></td> <td>$</td> <td align="right">27782</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan="6"> IE TECNOLOGIA SPA</th><th colspan="3"></th></thead>
+<thead><th colspan="9"> gastos-a-este-departamento</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+</tbody></table></tbody></table></tbody></table>
+:ET

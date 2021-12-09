@@ -1,0 +1,42 @@
+I"<h1 id="partida-2-de-alectrico-2020">Partida 2 de alectrico 2020</h1>
+
+<p>Qué bien que llegó hasta aquí! Ud. es my persistente. Felicitaciones Morales!</p>
+
+<p>Supongo que ya habrá hecho resúmenes, síntesis, extractos de ideas principales y todo un esfuerzo por juntar los cabos sueltos. Bien, no lo logrará, hay cabos sueltos por ahora y no estoy interesado en atarlos, para qué, si Ud. ni siquiera debiese haber llegado hasta aquí.</p>
+
+<p>En fin, ya que está aquí…..</p>
+
+<p>De momento Ud. ya debe saber hacer:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Partidas de asiento inicial</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Partidas de traspaso</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Abonos y Cargos</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Assertar cuentas (es casi lo mismo que crearlas) pero en un expert system se llama así. No big deal!</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Crear reglas en CLIPS</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Identificar el lado izquierdo de las Reglas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Identificar el lado derecho de las reglas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Apreciar, cuando se lo muestren, cómo las variables del lado izquierdo se usan en el lado derecho</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Usar una regla que llama a otra regla (no lo llama en realidad sino que genera los hechos que son sensibles al lado izquierdo de otra regla)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Identificar los cuatros grupos de cuentas Activo, Pasivo,…</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Identificar los dos lados de las cuentas (DEBE, HABER)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Estar al tanto de la existencia de libros diarios y mayores</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Entender el CCM en la sección de Ajustes y Otros Movimientos</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Entender que en el CCM se hacen comprobanciones de IGUALDAD CONTABLE</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Estar al tanto que la contabilidad está goberanda por una regla de oro.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Entender qué significa cargar una cuenta de activo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Entender qué significa observar la regla de IGUALDAD CONTABLE</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Saber que hay un ejemplo real de contabilidad en alectrico-2020 que puede consutlar en http://blog.necios.cl.</li>
+</ul>
+
+<p>Ahora avanzaremos más rápido con ejemplos de partidas en alectrico-2020 hasta llegar casi al fin del ejercicio contable. Es el momento de aprender contabilidad, pero usando el kernel Necios®.</p>
+
+<p>Le sugiero que clique en alectrico-2020 y se deslice hasta donde diga Partida 2. Observe qué es lo que se intenta expresar con esa partida. Es un traspaso, no es cierto? desde donde hacia donde? Cree que la pueda hacer? Qué bueno! Claro que sí! Ya lo ha hecho antes!</p>
+
+<p>Ahora lo animo a hacerlo pero que preste atención al código. El código está creciendo un poco y conviente organizarlo un poco. Creo que le haría bien hacer una regla solo para traspasos que pueda atender todo lo que Ud. necesite traspasar en su empresa.</p>
+
+<p>Nos vemos en el próximo post.</p>
+
+<p>Use abductor para generar contabilidad online <a href="http://abductor.necios.cl/">Abductor</a></p>
+
+:ET
