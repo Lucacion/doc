@@ -1,0 +1,40 @@
+I"�	<h1 id="cuenta-revisitada">Cuenta Revisitada</h1>
+
+<p>Ok, volvemos ahora a hablar de cuentas, y eso es porque la contabilidad es muy amiga de las cuentas y lo hace todo a través de cuentas … muchas cuentas.</p>
+
+<p>En este punto, Ud. ya debe saber lo que significa cargar y abonar cuentas y es muy probable que haya intentando hacerlo a través de CLIPS que seguramente se volverá su mejor amigo, pero que hasta ahora se ha vuelto un desafío inalcanzable. Pero no se amilane, siga insistiendo, recuerde que Ud. es testarudo y muy necio y tiene una fuerza imparable que le permite insistir en aprender contabilidad a pesar de todo. Y no, no le ayudaré, pues eso le quitará mérito a sus esfuerzos.</p>
+
+<p>Y bien, seguimos aquí, ayudándole a seguir siendo necio.</p>
+
+<p>. Uhum ….</p>
+
+<p>Las cuentas para ser cuentas tienen que tener nombres y además algunos atributos extraños que los contadores necesitan en las cuentas. De momento entonces agregue el campo nombre a la cuenta. Lo tiene? se hace <strong>(slot nombre))</strong> en el <strong>deftemplate</strong>.</p>
+
+<p>Entonces las órdenes para cargar cuentas ahora podrían tener el nombre de la cuenta que se quiere cargar o abonar. No le parece lógico.</p>
+
+<p>Y finalmente hagamos un par de ejercicios con varias cuentas.</p>
+
+<p>A ver….
+Las cuentas <strong>caja</strong> y <strong>banco</strong>.</p>
+
+<p>Qué tal si para el próximo post Ud. me tiene el archivo .clp que abone <em>100</em> a la <em>caja</em> y que cargue <em>100</em> al <em>banco</em>.</p>
+
+<p>A ver, más claro:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />cargar 100 cuenta <em>banco</em></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />abonar 100 cuenta <em>caja</em></li>
+</ul>
+
+<p>Vamos, qué no lo ve, está transfiriendo dinero desde el <em>banco</em> a la <em>caja</em>.</p>
+
+<p>Tambíén podría hacerlo al contrario:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />cargar 100 a la cuenta <em>caja</em></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />abonar 100 a la cuenta <em>banco</em></li>
+</ul>
+
+<p>Nos vemos!</p>
+
+:ET

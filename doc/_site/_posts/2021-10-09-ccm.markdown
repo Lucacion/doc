@@ -1,0 +1,82 @@
+---
+title: CCM
+layout: post
+date: 2021-10-09
+categories: contabilidad
+---
+
+# CCM
+
+Hola!. En este post presentaremos la forma en el **cmm** hace las partidas, de esta forma Ud. podrá hacerse una idea más robusta de la parte más interna de la contabilidad: _las partidas_.
+
+**CCM** es un acrónimo del **Sistema de Contabilidad Completa del Servicio de Impuestos Internos de Chile**. Este sistema se presenta al usuario en la forma esperada por los contadores: con el **libro diario** y el **libro mayor**. Está conectado a un repositorio donde se guardan las facturas que las empresas reciben y también las que emiten.
+
+No haremos una introducción completa al sistema **CCM**, pues nos interesa solo una parte en particular, se llama **ajustes y otros movimientos** porque eso nos permitará hacer contabilidad en forma más directa, sin registrar nada en el **libro diario**. Lo que hagamos en esa sección se perderá un poco en el sistema de contabilidad **CCM** pues no aparecerá visualmente junto con las facturas y otros documentos. Solo aparecerá como un voucher contable para cuando revisemos esa sección en la web.
+
+En el **CCM** las cuentas ya existen desde el comienzo de su ingreso al sistema, y el **SII (Servicio de Impuestos Internos de Chile)** pide que haya una correspondencia entre las cuentas contables de su **CCM** y las que UD. use para su contabilidad en su empresa. 
+
+Es importante entender que un organismo como **SII** no debiera estar mandando en la forma en que Ud. hace la contabilidad, pues su función única es recolectar impuestos. Entonces la contabilidad que Ud. incorpore en forma web, que es llamado CCM no debiese ser exactamente el que Ud. use para su empresa. Dicho esto, la conveniencia de usar **CCM** es la de transparentar lo que Ud. haga en su empresa, suponiendo que Ud. no use la contabilidad (de mala fe) para evitar o disminuir lo que paga en términos de impuestos. A nosotros en _Necios_ nos sirve para ejemplifcar un sistema al que los chilenos podrían tener acceso.
+
+
+
+Clique aqui para bajar el archivo [CCM Movimientos by Necios.pdf](/CCM Movimientos by Necios®.pdf)
+
+
+Cuando baje el archivo verá que hay una serie de ilustraciones, unas siete, que ilustran el proceso de generar una partida simple con solo dos cuentas. Eso es lo que queremos que Ud. vea, para que se tenga una visión complementaria a lo que hemos introducido en Necios.
+
+Le sugiero que imprima el pdf para que lo pueda ver mientras lee nuestras explicaciones, también sirve si tiene dos dispositivos.
+
+Empecemos!
+
+1. Lo primero en lo que ha de fijarse es que los movimientos existen en un período de un mes, y si cometer el error de registrar un movimiento con una fecha que no esté dentro del período, prácticamente desaparecerá de ese periodo, no podrá verlo más. Corregir ese error será muy complicado. La corrección consiste en reversar ese movimiento, qué es el equivalente a borrar algo en contabilidad. Así que elija correctamente el período en que quiere hacer el movimiento. Eso se hace hacia el centro, pero no pierda de vista donde dice **Período**. El objetivo es que donde diga **Período** esté el mes para el que hará el movimiento
+
+
+2. Lo siguiente que debe observar es el significado de los diferentes recuadros. Veamos: __Tipo de Movimiento__ es una serie de opciones que usa este **SII** para sus fines de fiscalización, eso no es muy útil para su contabilidad, así que puede escoger para este ejemplo la opción: _otros_
+
+3. El __Tipo de comprobante__ es un dato accesorio que tal vez le sirva a Ud. pero que en realidad no lo podrá usar mucho, pues no aparecerá en los informes que puede hacer más adelante o en otra parte del **CCM**. Entonces escoja _Traspaso_, pues haremos un traspaso entre cuentas.
+
+4. El campo __Glosa__ es un campo **crítico** en el **CCM**, si se olvida y no pone nada ahí, eso generará un bloqueo en los libros diarios de ese período lo que significará que tendrá que olvidarse de tener los libros diarios de ese mes.
+
+
+5. Si se equivoca en el **CCM** no hay un soporte informático muy rápido para sacarlo de problemas pues la función de este servicio no es la de capacitar ni soportar el uso de este programa.
+
+
+6. Entonces evite errores llenando rápidamente el campo **Glosa**. La glosa es la glosa de una partida, eso ya le hemos visto en otros postos de _Necios_.
+
+7. En este paso ya hemos escrito la **Glosa: "Partida 1"** que corresponde a la segunda ilustración.
+
+8. En la tercera ilustración mostramos las selecciones de __Tipo de Movimiento__, __Tipo de Comprobante__ y __Fecha Voucher__ según lo que explicamos inicialmente. Recuerde la __Fecha de Voucher__ debe estar dentro del período que aparece a la derecha.
+
+
+9. En el paso 9 comenzamos a trabajar con las cuentas. Esas cuentas ya existen, como ya les había comentado, y forman parte de un plan de cuentas, ese plan de cuentas agrupa a las cuentas según un sistema de contabilidad en: 
+a) **Cuentas de Activo**
+b) **Pasivo**
+c) **Patrimonio**
+d) **Resultados**
+
+Antes de hacer el traspaso Ud. debe podría tener una idea de donde debiese estar la cuenta que quiere traspasar. En nuestro ejemplo traspasaremos un monto entre dos cuentas del **Activo**. Asi que seleccionamos _Activo_ en el __Tipo de Cuenta__.
+
+10. En la ilustración siguente vemos que al seleccionar _Activo_, el botón para sleccionar la cuenta se muestra con una etiqueta _Seleccione_. Entonces debe clicar en ese botón para seleccionar una de las cuentas existentes, que ya sabemos será del grupo de las cuentas activas.
+
+11. Eso se ve en la ilustración siguiente, en la que podemos seleccionar _Caja_. La cuenta de _Caja_, habrá descubierto ahora es una cuenta de **activo**. También notará que hay una numeración _1.10.1_, esa numeración en Chile también sirve para agrupar a la cuentas. Donde el primer uno significa cuentas de activo.
+
+12. Al seleccionar _Caja_ en __Cuenta__, finalmente podremos escribir lo que queremos traspasar, en este caso son 100 pesos. Esos pesos se sacarán de la caja así que son un cargo para la caja y deben anotarse en su lado izquierdo. El lado izqierdo de cada cuenta se denomina **Debe**. 
+
+13. Para ser breves, la ilustración ya muestra la selección de la otra cuenta de activo que se denomina **Banco Estado** y luego anotamos en el **Haber** de esa cuenta el monto que queremos traspasar.
+
+
+14. Finalmente presionamos _Gardar_ para tener la partida de traspaso de 100 pesos desde la cuenta __Caja__ a la cuenta __BancoEstado__.
+
+
+15. Eso lo vemos en el mensaje que sigue, donde nos indica **"Se ha generado satisfactoriamente el registro en el período enero 2021"**.
+
+16. Esta explicación suscinta seguramente no lo habrá dejado ver que cometimos un error en las ilustraciones, casi al final. Tal vez podría detectarlo.
+
+
+En el próximo post le revelaremos el error de ilustración. Ese error no podría ser cometido en el **CCM**, pues el **CCM** verifica la IGUALDAD CONTABLE. Sin embargo en nuestro curso de _Necios_ queremos que Ud. pase el trabajo de revisar esto en forma manual.
+
+
+[Abductor](http://abductor.necios.cl/)
+
+
+Nos vemos!

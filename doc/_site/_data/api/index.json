@@ -1,0 +1,26 @@
+{
+  "resources": [
+    {
+      "name": "Circuitos",
+      "explanation": "Preguntas de diseño sobre circuitos",
+      "examples": [
+        {
+          "description": "Agrega una carga a un circuito",
+          "link": "circuitos/agrega_una_carga_a_un_circuito.json",
+          "groups": [
+            "public"
+          ],
+          "route": "/api/v1/electrico/circuitos/addToCircuito.json",
+          "method": "post"
+        },
+        {
+          "description": "Devuelve una lista de cargas ",
+          "link": "circuitos/devuelve_una_lista_de_cargas_.json",
+          "groups": "public",
+          "route": "/api/v1/electrico/circuitos/get.json",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

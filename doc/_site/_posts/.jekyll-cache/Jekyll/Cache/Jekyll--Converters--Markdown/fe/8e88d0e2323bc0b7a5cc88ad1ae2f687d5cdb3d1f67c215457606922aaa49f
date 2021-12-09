@@ -1,0 +1,293 @@
+I"$1<h1 id="cargo">Cargo</h1>
+
+<p>En el post anterior esbozamos la regla para cargar una cuenta. Ahora le muestro el código que a mí me funcionó bien.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate cargo
+   (slot monto (default 0))
+   (slot realizado (default false))
+)
+
+(deftemplate cuenta
+   (slot debe (default 0))
+)
+
+(defrule cargar-cuenta-existente
+   ?cargo  &lt;-  ( cargo (monto ?monto) )
+   ?cuenta &lt;-  ( cuenta (debe ?debe)  )
+  =&gt;
+   ( halt )
+   ( modify ?cuenta (debe ( round (+ ?debe ?monto)) ))
+   ( modify ?cargo  (realizado true))
+   ( printout t "c--&gt;" tab ?monto tab "|" tab 0 tab crlf)
+)
+
+(defrule inicio
+  (declare (salience 10000))
+  =&gt;
+  ( watch facts)
+  ( assert (cuenta (debe 0)))
+  ( assert (cargo (monto 100)))
+)</code></pre></figure>
+
+<p>Y la salida en pantalla correspondiente es:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">Defining deftemplate: cargo
+Defining deftemplate: cuenta
+Defining defrule: cargar-cuenta-existente +j+j+j
+Defining defrule: inicio +j+j
+==&gt; f-1     (cuenta (debe 0))
+==&gt; f-2     (cargo (monto 100) (realizado false))
+&lt;== f-1     (cuenta (debe 0))
+==&gt; f-3     (cuenta (debe 100))
+&lt;== f-2     (cargo (monto 100) (realizado false))
+==&gt; f-4     (cargo (monto 100) (realizado true))
+c--&gt;	100	|	0	</code></pre></figure>
+
+<p>Ud. puede hacer lo mismo si instala <strong>CLIPS</strong>, consulte en <a href="http://www.clipsrules.net/">Clips</a>.</p>
+
+<p>Clique aqui para bajar el archivo <a href="/micro.clp">micro.clp</a></p>
+
+<h3 id="análisis">Análisis</h3>
+<hr />
+<p>Ojalá que pueda imprimir el documento <em>micro.clp</em> para que hacer anotaciones sobre él código en la medida que lo analizamos en conjunto. También sirve si tuviera dos dispositivos. Siempre conviene tener dos pantallas cuando uno hace programas.</p>
+
+<p>En <em>micro.clp</em> entonces:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Hay <em>templates</em> que definen las estructuras de los hechos que necesitamos para disparar la regla de cargo.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hecho</th>
+      <th>Campo</th>
+      <th>Valor Inicial</th>
+      <th>Campo</th>
+      <th>Valor Inicial</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cargo</td>
+      <td>monto</td>
+      <td>0</td>
+      <td>realizado</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>Cuenta</td>
+      <td>debe</td>
+      <td>false</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>La función de los campos es:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Campo</th>
+      <th>Función</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monto</td>
+      <td>Valor de dinero que se quiere cargar</td>
+    </tr>
+    <tr>
+      <td>Realizado</td>
+      <td>Valor que indica si el cargo fue realizado o no</td>
+    </tr>
+    <tr>
+      <td>Debe</td>
+      <td>Valor que la contabilidad asigna a una cuenta para su lado izquierdo</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(deftemplate cargo
+   (slot monto (default 0))
+   (slot realizado (default false))
+)
+
+(deftemplate cuenta
+   (slot debe (default 0))
+)</code></pre></figure>
+
+<p>En micro.clp se definen dos reglas</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />cargar-cuenta-existente</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />inicio</li>
+</ul>
+
+<h4 id="reglas">Reglas</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>LHS</th>
+      <th>RHS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cargar-cuenta-existente</td>
+      <td>cargo</td>
+      <td>(modify cuenta)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>cuenta</td>
+      <td>(modify cargo)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>(printout t ?monto)</td>
+    </tr>
+    <tr>
+      <td>inicio</td>
+      <td> </td>
+      <td>(assert cuenta)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>(assert cargo)</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule cargar-cuenta-existente
+   ?cargo  &lt;-  ( cargo (monto ?monto) )
+   ?cuenta &lt;-  ( cuenta (debe ?debe)  )
+  =&gt;
+   ( halt )
+   ( modify ?cuenta (debe ( round (+ ?debe ?monto)) ))
+   ( modify ?cargo  (realizado true))
+   ( printout t "c--&gt;" tab ?monto tab "|" tab 0 tab crlf)
+)
+
+(defrule inicio
+  (declare (salience 10000))
+  =&gt;
+  ( watch facts)
+  ( assert (cuenta (debe 0)))
+  ( assert (cargo (monto 100)))
+)</code></pre></figure>
+
+<p>La regla inicio  no tiene hechos en su lado izquierdo pero aún así se dispara porque es una regla especial que se activa con el comando <strong>(reset)</strong>.</p>
+
+<p>En <em>inicio</em> hacemos lo que queremos que pase antes, nos interesa disparar la regla <em>cargar-cuenta-existente</em> que depende de dos hechos, entonces esos hechos los activamos en la regla <em>inicio</em> y para ver que eso realmente sea lo que pase, colocamos un vigilante <strong>watch facts</strong> que escribirá indicando si los hechos son subidos a la memoria (==&gt;) o eliminados de esta (&lt;==).</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />(watch facts) muestra lo que le pasa a los hechos (en inglés –facts–)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />( assert (cuenta (debe 0))): sube a la memoria el hecho cuenta</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />( assert (cargo (monto 100))): sube a la memoria el hecho cargo con un monto de 100</li>
+</ul>
+
+<p>En la regla <em>cargar-cuenta-existente</em> hemos colocado un comando <strong>(halt)</strong> para detener el sistema una vez que la regla se dispare.</p>
+
+<p>Eso es todo lo que podemos analizar en <em>micro.clp</em>. Este código se usa en <strong>CLIPS</strong> de esta forma:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />(load micro.clp)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />(reset )</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />(run)</li>
+</ul>
+
+<p>Después de que usted termine de digitar <strong>(run)</strong>. Sucederá la impresión en pantalla siguiente:</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">Defining deftemplate: cargo
+Defining deftemplate: cuenta
+Defining defrule: cargar-cuenta-existente +j+j+j
+Defining defrule: inicio +j+j
+==&gt; f-1     (cuenta (debe 0))
+==&gt; f-2     (cargo (monto 100) (realizado false))
+&lt;== f-1     (cuenta (debe 0))
+==&gt; f-3     (cuenta (debe 100))
+&lt;== f-2     (cargo (monto 100) (realizado false))
+==&gt; f-4     (cargo (monto 100) (realizado true))
+c--&gt;    100     |       0</code></pre></figure>
+
+<h1 id="análisis-1">Análisis</h1>
+<hr />
+<p>La salida en pantalla es muy concisa y cuesta entenderla cuando se ve por primera vez, pero con un poco de ayuda seguramente Ud. comenzará finalmente a entender cómo funciona su primer expert system contable.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Defining deftemplate: …..: Nos informa que las estructuras de los hechos han sido entendidas por <strong>CLIPS</strong> y procesadas para aceptar hechos con esa estructura</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />==&gt; f-1 (cuenta (debe 0)): Nos informa que el hecho (cuenta (debe 0)) ha sido ingresado a la memoria</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />==&gt; f-2 (cargo (monto 100) (realizado false)): Nos informa que el hecho cargo con monto 100 ha sido cargado a la memoria.</li>
+</ul>
+
+<p>Ambas subidas han sido provocadas por el uso de los comandos <em>assert</em> que hemos visto antes, recuerda en qué regla ?</p>
+
+<h2 id="análisis-2">Análisis</h2>
+<p>Ahora concentrémonos en las salidas en pantalla del comando <strong>(watch facts)</strong>, recuerda donde lo pusimos ?</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">==&gt; f-1     (cuenta (debe 0))
+==&gt; f-2     (cargo (monto 100) (realizado false))
+&lt;== f-1     (cuenta (debe 0))
+==&gt; f-3     (cuenta (debe 100))
+&lt;== f-2     (cargo (monto 100) (realizado false))
+==&gt; f-4     (cargo (monto 100) (realizado true))</code></pre></figure>
+
+<p><strong>(watch facts)</strong> solo imprime cosas con unas flechas que indican si un hecho está siendo considerado por <strong>CLIPS</strong> o si ya no está en la memoria.</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Ya sabemos lo que significan f-1 y f-2: son el resultado de dos <em>(assert)</em> que colocamos en algún lugar. <em>(assert)</em> siempre sube a la memoria</p>
+  </li>
+  <li class="task-list-item">Ya, pero quién baja los hechos  <strong>(&lt;==)</strong> ?</li>
+  <li class="task-list-item">Los hechos son sacados de memoria y vueltos a colocar modificados pero con otro identificador de hecho (son los f-algo que se ven en cada línea de la lista). El que hace eso es el comando <em>(modify)</em>.</li>
+</ul>
+
+<h2 id="análisis-3">Análisis</h2>
+<hr />
+<p>Concéntremonos en uno de los comandos <em>( modify)</em>. Para ello, haremos como si la regla <em>cargar-cuenta-existente</em> solo tuviese un <em>(modify)</em>.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule cargar-cuenta-existente
+   ?cargo  &lt;-  ( cargo (monto ?monto) )
+   ?cuenta &lt;-  ( cuenta (debe ?debe)  )
+  =&gt;
+   ( modify ?cuenta (debe ( round (+ ?debe ?monto)) ))
+)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">&lt;== f-1     (cuenta (debe 0))
+==&gt; f-3     (cuenta (debe 100))</code></pre></figure>
+
+<p>El efecto en aislamiento del comando <em>(modify (?cuenta) …)</em> es sumarle al campo <strong>debe</strong> de la cuenta un monto que ha traído a la regla el hecho <strong>cargo</strong>.</p>
+
+<p>La salida en pantalla muestra que <em>(modify)</em> primero descarga el hecho pero solo para volverlo a cargar con el campo <strong>debe</strong> actualizado a <strong>100</strong>.</p>
+
+<h1 id="análisis-4">Análisis</h1>
+<hr />
+<p>Finalmente analizaremos lo que imprime la regla <em>(cargar-cuenta-existente)</em>. Para ello haremos como si la regla solo tuviera el comando <em>(printout t)</em>.</p>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">(defrule cargar-cuenta-existente
+   ?cargo  &lt;-  ( cargo (monto ?monto) )
+   ?cuenta &lt;-  ( cuenta (debe ?debe)  )
+  =&gt;
+   ( printout t "c--&gt;" tab ?monto tab "|" tab 0 tab crlf)
+)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-clips" data-lang="clips">c--&gt;    100     |       0</code></pre></figure>
+
+<p>Bien! La salida de la regla es un aviso de que ha <em>(cargado)</em> al <strong>debe</strong> la cuenta.</p>
+
+<p>Si lo piensa bien, lo único que necesitamos de todo esto es lo que nos quiera comunicar la regla, el resto es una forma de entender el funcionamiento del sistema. En general no es necesario seguir tan de cerca lo que sucede. Es un mal hábito de los antiguos sistemas necios de programar. Ahora el sistema es inteligente  y Ud. solo le resta confiar en esa inteligencia, así que Ud. siempre será un gran necio si se compara con un Expert System.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/contabilidad/2021/09/05/bienvenido.html">bienvenido</a></td>
+      <td><a href="/contabilidad/2021/09/06/cuentas.html">cuentas</a></td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

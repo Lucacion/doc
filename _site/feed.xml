@@ -1,1 +1,1706 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.necios.cl//feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.necios.cl//" rel="alternate" type="text/html" /><updated>2021-12-08T22:55:00-06:00</updated><id>https://www.necios.cl//feed.xml</id><title type="html">Necios ®</title></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.necios.cl//feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.necios.cl//" rel="alternate" type="text/html" /><updated>2021-12-09T00:18:27-06:00</updated><id>https://www.necios.cl//feed.xml</id><title type="html">Necios ®</title><entry><title type="html">Libro Mayor</title><link href="https://www.necios.cl//contabilidad/2021/10/16/libro-mayor.html" rel="alternate" type="text/html" title="Libro Mayor" /><published>2021-10-16T00:00:00-05:00</published><updated>2021-10-16T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/16/libro-mayor</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/16/libro-mayor.html">&lt;h1 id=&quot;libro-mayor&quot;&gt;Libro Mayor&lt;/h1&gt;
+
+&lt;p&gt;El libro Mayor es un resumen rápido de todos los cargos y abonos en todas las cuentas de la empresa. El resumen es una zona donde habrá muchas cuentas expresadas solo en dos columnas que se expanden a los lados de una T dibujada en el papel.&lt;/p&gt;
+
+&lt;p&gt;Para obtener ese resumen primero debemos modificar el código para separarla en secciones más fácilmente trabajables.&lt;/p&gt;
+
+&lt;p&gt;Es posible que ya haya percibido que los cargos y abonos mostrados en las partidas no han sido realizados aún. Es por eso que cuando se usa (watch facts) aparence líneas como estas:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;==&amp;gt; f-11 (cargo (partida 2) (cuenta banco-estado) (monto 100) (realizado false))
+
+==&amp;gt; f-12 (abono (partida 2) (cuenta caja) (monto 100) (realizado false))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Esas líneas nos informan que ya hay facts de cargos y abonos pero que no han sido realizados, pues su campo realizado no ha sido puesto a true.&lt;/p&gt;
+
+&lt;p&gt;Una de las primeras tareas para obtener el libro mayor es justamente realizar las operaciones de caargos y abonos. Luego habrá que mostarlos en pantalla en forma de T.&lt;/p&gt;
+
+&lt;h3 id=&quot;modulos-en-clips&quot;&gt;Modulos en CLIPS&lt;/h3&gt;
+
+&lt;p&gt;CLIPS nos permite agrupar el código en diferentes módulos. Creo que nos iría bien con unos cuatro o cinco módulos.&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Main&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Cuentas&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Diario&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Mayor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Intentaremos eso en este post:&lt;/p&gt;
+
+&lt;p&gt;El módulo &lt;strong&gt;Main&lt;/strong&gt; hará cambiar el foco en forma sucesiva partiendo desde el módulo &lt;strong&gt;Cuentas&lt;/strong&gt; hasta el módulo &lt;strong&gt;Mayor&lt;/strong&gt;. Ese cambio de foco en un expert system equivale a cambiar de pensamiento en el cerebro de una persona.&lt;/p&gt;
+
+&lt;p&gt;El cambio de foco se interpreta más o menos así, las reglas y hechos en un módulo no necesariamente son conocidas por los módulos restantes. Entre módulos se decide qué reglas, hechos y templates serán importados o exportados. En principio nuestros módulos no se imponen restrición alguna en ese sentido. El cambio de foco hará que los hechos sean agrupados en forma secuencial y eso puede ser bueno para nuestro interés en la contabilidad si imaginamos que cuando escribimos en cuadernos las partidas, todavía habrá un largo trecho antes de que sepamos los totales de todas las cuentas. Normalmente solo se hace algún intento de resumen a fin de mes.&lt;/p&gt;
+
+&lt;p&gt;Entonces hay dos focos evidentes &lt;strong&gt;Diario&lt;/strong&gt; y &lt;strong&gt;Mayor&lt;/strong&gt; que corresponden a dos momentos de la contabilidad, la confección día por día del libro diario y la agregación mensual en el libro mayor de todo lo realizado en el libro diario.&lt;/p&gt;
+
+&lt;p&gt;Estos son los módulos que hemos planificado, el uso del valor simbólico ?ALL indica que no he impuesto límites para que se intercambien todo entre módulos.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defmodule MAIN     ( export ?ALL ) ) ;
+
+(defmodule CUENTAS  ( import MAIN deftemplate ?ALL ) ( export ?ALL ) );
+
+(defmodule DIARIO   ( import MAIN deftemplate ?ALL ) ( export ?ALL ) ) ;
+
+(defmodule MAYOR    ( import MAIN deftemplate ?ALL ) ( export ?ALL ) ) ;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Para inscribir los diferentes constructores de CLIPS (defrules, deftemplate, deffacts) simplemente se agrega un sufijo conteniendo el nombre del módulo donde se alojará.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/modulos-1.clp&quot;&gt;Véalo Ud. mismo en abductor con este código&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En este minuto ya preparados para comenzar el libro mayor. Para ambientarnos podemos diseñar una regla que se dispare solita al comienzo y que nos muestre los facts que llegan a este módulo. Debiésemos ver una lista de cargos y abonos, cuentas y partidas. También debemos preocuparnos de agregar un foco para MAYOR en el módulo MAIN. No olvide colocarle antefijos a la regla.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule MAIN::inicio
+  =&amp;gt;
+   (focus CUENTAS DIARIO MAYOR )
+);
+
+(defrule MAYOR::inicio
+  ( declare (salience 10000))
+ =&amp;gt;
+  ( printout t &quot;------------------ LIBRO MAYOR -----------------&quot; crlf )
+  ( facts )
+
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; ------------------ LIBRO MAYOR -----------------
+
+f-1 (cuenta (nombre caja) (grupo activo) (subgrupo circulante) (descripcion &quot;Fondos en caja tanto en moneda nacional y extranjera de disponibilidad
+
+inmediata.&quot;) (cargos &quot;Aporte de los dueños, por recaudación de las ventas, devoluciones de impuesto en
+
+efectivo&quot;) (abonos &quot;Por pago de deudas (obligaciones con terceros), pago de proveedores, pago de arriendos,
+
+pago de sueldos, por pago de impuestos, etc.&quot;) (saldo-deudor true) (saldo-acreedor false) (debe 0) (haber 0))
+
+f-2 (cuenta (nombre capital-pagado) (grupo patrimonio) (subgrupo nil) (descripcion &quot;Capital aportado y efectivamente pagado por empresarios o socios, ya revalorizado cuando se trate de estados financieros anuales.&quot;) (cargos &quot;Se carga por retiros, pérdidas, depreciaciones, etc.&quot;) (abonos &quot;Se abona por ganancias, aportes, revalorizaciones, capitalizaciones, etc..&quot;) (saldo-deudor false) (saldo-acreedor &quot;Representa el valor patrimonial de la empresa por aportes iniciales y resultados del ejercicio.&quot;) (debe 0) (haber 0))
+
+f-3 (cuenta (nombre banco) (grupo activo) (subgrupo circulante) (descripcion &quot;Representa los valores disponibles en la cuenta corriente que la empresa mantiene en el banco.&quot;) (cargos &quot;Cuando se efectúan depósitos, traslados de fondos, nota de créditos del Banco, recaudación de cobranza y cualquier otro documento que incremente los ingresos.&quot;) (abonos &quot;Emisión de giros, cheques, notas de débitos del Banco, cargos bancarios efectuados por el banco como comisiones, impuestos y cualquier otra forma de pago que signifique un egreso de dicha cuenta.&quot;) (saldo-deudor true) (saldo-acreedor false) (debe 0) (haber 0))
+
+f-4 (cuenta (nombre gastos-generales) (grupo resultado) (subgrupo perdidas) (descripcion &quot;Gastos menores relacionados con la administración de la empresa y no atribuibles a
+
+un área especifica dentro de ella.&quot;) (cargos &quot;Por los gastos devengados.&quot;) (abonos false) (saldo-deudor &quot;Pérdida por concepto de gastos.&quot;) (saldo-acreedor false) (debe 0) (haber 0))
+
+f-5 (cuenta (nombre iva-credito) (grupo activo) (subgrupo circulante) (descripcion &quot;Corresponde incluir en este rubro el crédito fiscal neto, por concepto al Valor Agregado (IVA).&quot;) (cargos &quot;Se carga por las compras afectas al IVA, registradas en el libro de compras.&quot;) (abonos &quot;Con los impuestos compensados en el débito fiscal, ajuste o devolución por compras.&quot;) (saldo-deudor &quot;Impuesto pendientes de recuperar&quot;) (saldo-acreedor false) (debe 0) (haber 0))
+
+f-6 (orden-partida (numero 4))
+
+f-8 (traspaso (iva-credito false) (desde caja) (hacia banco) (monto 1000000) (dia 1) (mes enero) (ano 2021) (partida 2))
+
+f-9 (traspaso (iva-credito 2261) (desde caja) (hacia gastos-generales) (monto 14161) (dia 1) (mes enero) (ano 2021) (partida 3))
+
+f-10 (partida (glosa &quot;Inicio de Operaciones.&quot;) (numero 1) (dia 1) (mes enero) (ano 2020))
+
+f-11 (abono (partida 1) (cuenta capital-pagado) (monto 2000000) (realizado false))
+
+f-12 (cargo (partida 1) (cuenta caja) (monto 2000000) (realizado false))
+
+f-13 (partida (glosa &quot;Traspaso desde cuenta caja hacia cuenta banco por un monto de 1000000.&quot;) (numero 2) (dia 1) (mes enero) (ano 2021))
+
+f-14 (cargo (partida 2) (cuenta banco) (monto 1000000) (realizado false))
+
+f-15 (abono (partida 2) (cuenta caja) (monto 1000000) (realizado false))
+
+f-16 (partida (glosa &quot;Traspaso desde cuenta caja hacia cuenta gastos-generales por un monto de 11900, además de acumular un crédito iva de: 2261.&quot;) (numero 3) (dia 1) (mes enero) (ano 2021))
+
+f-17 (cargo (partida 3) (cuenta gastos-generales) (monto 11900) (realizado false))
+
+f-18 (abono (partida 3) (cuenta caja) (monto 14161) (realizado false))
+
+f-19 (cargo (partida 3) (cuenta iva-credito) (monto 2261) (realizado false))
+
+For a total of 18 facts. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;/modulos-2.clp&quot;&gt;Véalo Ud. mismo en abductor con este código&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Los facts que usaremos en el libro mayoro son los indicados abajo:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;partida&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;orden-partida&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;traspaso&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;cargo&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;abono&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;cuenta&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Diseñaremos una regla para cargar lo que se pida en los facts cargo y otra regla para abonar lo que se pida en los facts abono. Para ello necesitaremos que las cuentas a las que se quiera cargar y/o abonar ya existan.&lt;/p&gt;
+
+&lt;p&gt;Entonces las reglas de abono y cargo deberán ser sensibles, al menos, al fact cargo/abono y a la cuenta que se quiera cargar/abonar.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule MAYOR::inicio
+  ( declare (salience 10000))
+ =&amp;gt; 
+  ( printout t &quot;------------------ LIBRO MAYOR -----------------&quot; crlf )
+  ( watch facts cargo abono cuenta)
+);
+
+(defrule MAYOR::cargar-cuenta
+  ?cta &amp;lt;- ( cuenta (nombre ?cuenta) (debe ?debe) )
+  ?c &amp;lt;- ( cargo (cuenta ?cuenta) (monto ?monto) (realizado false))
+ =&amp;gt;
+  ( modify ?c (realizado true))
+  ( modify ?cta (debe (+ ?debe ?monto )))
+  ( printout t &quot;Cargando &quot; ?cuenta &quot; en  &quot; ?monto crlf)
+);
+
+
+(defrule MAYOR::abonar-cuenta
+  ?cta &amp;lt;- ( cuenta (nombre ?cuenta) (haber ?haber))
+  ?a &amp;lt;-  ( abono (cuenta ?cuenta) (monto ?monto) (realizado false))
+ =&amp;gt;
+  ( modify ?a (realizado true))
+  ( modify ?cta (haber (+ ?haber ?monto)))
+  ( printout t &quot;Abonando &quot; ?cuenta &quot; en &quot; ?monto crlf)
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;La solución para el &lt;strong&gt;libro mayor&lt;/strong&gt; fue bastante directa, creo que se explica por sí sola:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La regla &lt;strong&gt;cargar-cuenta&lt;/strong&gt; se ocupa de tomar una cuenta y de sumarle un monto a su columna &lt;strong&gt;debe&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La regla &lt;strong&gt;abonar-cuenta&lt;/strong&gt; hace lo mismo pero con la columna &lt;strong&gt;haber&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Claro que eso no nos da todavía el saldo de las cuentas. Eso lo veremos en un próximo post. Quizás Ud. pueda encontrar una solución.&lt;/p&gt;
+
+&lt;p&gt;En el código Ud. habrá observado que se modifica el campo realizado en los cargos/abonos para controlar que no se repitan esas operaciones. No se elimina nada pues uno nunca sabe si va necesitar evaluaciones inteligentes en una etapa posterior. Recuerde que esto es un expert system.&lt;/p&gt;
+
+&lt;p&gt;También habrá notado que los hechos sensibles se pueden modificar en el lado derecho de las reglas. Eso podría traer un efecto inesperado de activar nuevamente la misma regla en la que haya hecho la modificación. Por eso es importante dejar campos como realizado, los que se pueden verificar en el lado izquierdo para ver si tienen un valor que se modifique en el lado derecho.&lt;/p&gt;
+
+&lt;p&gt;Habrá visto cómo se usa la orden modify, la que requiere una variable que apunte a un fact compuesto por campos. Modify puede cambiar un facts pero al hacerlo el fact revive aunque con valores cambiados.&lt;/p&gt;
+
+&lt;p&gt;Habrá notado como se suma en CLIPS:&lt;strong&gt;(+ a b)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; ------------------ LIBRO MAYOR -----------------
+
+&amp;lt;== f-19 (cargo ... (realizado false))
+
+==&amp;gt; f-19 (cargo ... (realizado true))
+
+&amp;lt;== f-5 (cuenta ... (debe 0) ...)
+
+==&amp;gt; f-5 (cuenta ... (debe 2261) ...)
+
+Cargando iva-credito en 2261
+
+&amp;lt;== f-18 (abono ... (realizado false))
+
+==&amp;gt; f-18 (abono ... (realizado true))
+
+&amp;lt;== f-1 (cuenta ... (haber 0))
+
+==&amp;gt; f-1 (cuenta ... (haber 14161))
+
+Abonando caja en 14161
+
+&amp;lt;== f-12 (cargo ... (realizado false))
+
+==&amp;gt; f-12 (cargo ... (realizado true))
+
+&amp;lt;== f-1 (cuenta ... (debe 0) ...)
+
+==&amp;gt; f-1 (cuenta ... (debe 2000000) ...)
+
+Cargando caja en 2000000
+
+&amp;lt;== f-15 (abono ... (realizado false))
+
+==&amp;gt; f-15 (abono ... (realizado true))
+
+&amp;lt;== f-1 (cuenta ... (haber 14161))
+
+==&amp;gt; f-1 (cuenta ... (haber 1014161))
+
+Abonando caja en 1000000
+
+&amp;lt;== f-17 (cargo ... (realizado false))
+
+==&amp;gt; f-17 (cargo ... (realizado true))
+
+&amp;lt;== f-4 (cuenta ... (debe 0) ...)
+
+==&amp;gt; f-4 (cuenta ... (debe 11900) ...)
+
+Cargando gastos-generales en 11900
+
+&amp;lt;== f-14 (cargo ... (realizado false))
+
+==&amp;gt; f-14 (cargo ... (realizado true))
+
+&amp;lt;== f-3 (cuenta ... (debe 0) ...)
+
+==&amp;gt; f-3 (cuenta ... (debe 1000000) ...)
+
+Cargando banco en 1000000
+
+&amp;lt;== f-11 (abono ... (realizado false))
+
+==&amp;gt; f-11 (abono ... (realizado true))
+
+&amp;lt;== f-2 (cuenta ... (haber 0))
+
+==&amp;gt; f-2 (cuenta ... (haber 2000000))
+
+Abonando capital-pagado en 2000000 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;/modulos-3.clp&quot;&gt;Véalo Ud. mismo en abductor con este código&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Nos vemos!&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Libro Mayor</summary></entry><entry><title type="html">Partida 3</title><link href="https://www.necios.cl//contabilidad/2021/10/15/partida-3.html" rel="alternate" type="text/html" title="Partida 3" /><published>2021-10-15T00:00:00-05:00</published><updated>2021-10-15T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/15/partida-3</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/15/partida-3.html">&lt;h1 id=&quot;partida-3&quot;&gt;Partida 3&lt;/h1&gt;
+
+&lt;p&gt;Hola, en este post organizaremos las cuentas, el libro diario y haremos una partida más del acervo de alectrico-2020. Estamos muy ambiciosos hoy!&lt;/p&gt;
+
+&lt;p&gt;En el post anterior Ud. explicamos que las cuentas se organizan en un plan y que ya existe un consenso sobre cómo usarlas. Las cuentas que les interesan a los inversionistas son las que debiesen aparecer en los estados financieros. Tal vez a su empresa le convenga tener cuentas adicionales a partir de las que ya existan para precisar algún aspecto de la operación de su empresa o por la razón que sea. Esas cuentas secundarias no debiesen aparecer en los estados financieros, con lo que tendremos un problema potencial de no respetar la IGUALDAD CONTABLE. Más adelante nos referiremos a ello.&lt;/p&gt;
+
+&lt;p&gt;Ud. podría empezar a preocuparse mucho sobre lo que significa anotar en una u otra cuenta, pero no se deje impresionar por la novedad, la información sobre las cuentas ya está informada en el plan de cuentas, así que Ud. solo debe seguir las reglas contables que operan de acuerdo a las características de cada cuenta. De todas formas, como las cuentas no se crean a su antojo, nos parece que podría elegir las que le convenga desde un plan contable de otra empresa, o pedir ayudar a un asesor para que le proponga un plan de cuentas apropiado a las características de su empresa. De momento usaremos como guía el plan de cuentas del CCM.&lt;/p&gt;
+
+&lt;p&gt;En Necios® estamos más preocupados de que Ud. sea capaz de llevar la contabilidad, la teoría la tendrá que obtener progresivamente de diferentes fuentes autorizadas en lo que se llama Prácticas Generales Contables.&lt;/p&gt;
+
+&lt;p&gt;Clique aquí para bajar el archivo &lt;a href=&quot;/plan-de-cuentas-ccm.png&quot;&gt;plan-de-cuentas-ccm.png&lt;/a&gt;
+Clique aquí para bajar el archivo &lt;a href=&quot;/ManualDeCuentasMipyme.pdf&quot;&gt;ManualDeCuentasMipyme.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;organización-del-libro-diario&quot;&gt;Organización del libro diario&lt;/h3&gt;
+
+&lt;p&gt;La idea del libro diario en Necios® es tener unas líneas resumidas que ahorren tiempo al generar los asientos contables. Ya habrá visto que se requieren unos siete pasos en el CCM para generar un movimiento entre cuentas. En Necios® Ud. define cómo funcionan los resúmenes de asientos contables, a los que llamaremos kernel contables.&lt;/p&gt;
+
+&lt;p&gt;El kernel contable para una traspaso será entonces:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Este &lt;strong&gt;kernel&lt;/strong&gt; será suyo pero le podría servir a cualquiera, incluso a un vendedor de su empresa.&lt;/p&gt;
+
+&lt;p&gt;Entonces UD. podría colocar a una persona a digitar esos &lt;strong&gt;kernels&lt;/strong&gt; para luego subirlos a abductor con lo que &lt;strong&gt;Abuctor®&lt;/strong&gt; generaría una versión aceptable de la contabilidad según los principios contables vigentes.&lt;/p&gt;
+
+&lt;p&gt;En ese sentido conviene que se invoque al asiento inicial desde la regla &lt;strong&gt;libro-diario&lt;/strong&gt;. Eso hemos hecho.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule asiento-inicial
+  (asiento-inicial)
+  =&amp;gt;
+  ( assert (partida  (glosa &quot;Inicio de Operaciones.&quot;)  (numero 1) (dia 1) (mes enero) (ano 2020) ))
+
+  ( assert (cuenta (nombre caja)           (debe 0)))
+  ( assert (cuenta (nombre capital-social) (debe 0)))
+
+  ( assert (abono (partida 1) (cuenta capital-social)  (monto 2000000)))
+  ( assert (cargo (partida 1) (cuenta caja)            (monto 2000000)))
+
+);
+
+
+(defrule traspaso
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cuenta (nombre ?desde) (debe 0)))
+  ( assert (cuenta (nombre ?hacia) (debe 0)))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?monto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+
+);
+
+
+(defrule libro-diario
+  =&amp;gt;
+  (assert (asiento-inicial))
+  (assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Observe que el kernel del asiento inicial es solamente:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(asiento inicial)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;orden-de-partidas&quot;&gt;Orden de partidas&lt;/h2&gt;
+
+&lt;p&gt;La segunda reforma del código es la implementación de un mecanismo para que las partidas se presenten en el libro diario ordenadas por el Número de Partida. Eso es algo que se le exige a la contabilidad: que las partidas se presenten secuencialmente y que no las borre si se equivoca. Tampoco es necesario hacer reversas en Necios® (el proceso de hacer una partida para anular otra), pues la contabilidad se genera completamente con cada modifición en los kernels. Pero sí debe escribir los kernles bien secuenciales, sin saltos de números de partida.&lt;/p&gt;
+
+&lt;p&gt;No es necesario estudir esto en detalle, pero igual le explicaremos lo que hemos hecho.&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Agregamos un nuevo template llamado &lt;strong&gt;orden-partida&lt;/strong&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Sensibilizamos las reglas de asiento inicial y de traspaso para que capturen los facts de ese template.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La regla de asiento-inicial simplemente queda sensible a la partida 1, pues el asiento incial es la primera partida que se acostumbra a poner en el libro diario, y en el lado derecho asserta otro facts para que apunte a la partida 2.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La regla traspasos es más general pues toma cualquier facts de orden de partida y luego le agrega el número de orden.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;De ahora en adelante las reglas que declare deben considerar el fact (&lt;strong&gt;orden-partida&lt;/strong&gt;) para modificarle el numero&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(deftemplate orden-partida
+   (slot numero)
+);
+
+
+(defrule asiento-inicial
+  (asiento-inicial)
+  ?p &amp;lt;- (orden-partida (numero 1))
+  =&amp;gt;
+  ( assert (partida  (glosa &quot;Inicio de Operaciones.&quot;)  (numero 1) (dia 1) (mes enero) (ano 2020) ))
+
+  ( assert (cuenta (nombre caja)           (debe 0)))
+  ( assert (cuenta (nombre capital-social) (debe 0)))
+
+  ( assert (abono (partida 1) (cuenta capital-social)  (monto 2000000)))
+  ( assert (cargo (partida 1) (cuenta caja)            (monto 2000000)))
+  ( modify ?p (numero 2))
+
+);
+
+
+(defrule traspaso
+  ?p &amp;lt;- (orden-partida (numero ?partida) )
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cuenta (nombre ?desde) (debe 0)))
+  ( assert (cuenta (nombre ?hacia) (debe 0)))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?monto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+  ( modify ?p (numero (+ ?partida 1)))
+
+);
+
+
+(defrule libro-diario
+  =&amp;gt;
+  ( watch rules )
+  ( watch facts )
+  ( assert (orden-partida (numero 1)))
+  ( assert (asiento-inicial))
+  ( assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; ==&amp;gt; f-1 (orden-partida (numero 1))
+
+==&amp;gt; f-2 (asiento-inicial)
+
+==&amp;gt; f-3 (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2))
+
+FIRE 2 asiento-inicial: f-2,f-1
+
+==&amp;gt; f-4 (partida (glosa &quot;Inicio de Operaciones.&quot;) (numero 1) (dia 1) (mes enero) (ano 2020))
+
+==&amp;gt; f-5 (cuenta (nombre caja) (debe 0) (haber 0))
+
+==&amp;gt; f-6 (cuenta (nombre capital-social) (debe 0) (haber 0))
+
+==&amp;gt; f-7 (abono (partida 1) (cuenta capital-social) (monto 2000000) (realizado false))
+
+==&amp;gt; f-8 (cargo (partida 1) (cuenta caja) (monto 2000000) (realizado false))
+
+&amp;lt;== f-1 (orden-partida (numero 1))
+
+==&amp;gt; f-1 (orden-partida (numero 2))
+
+FIRE 3 encabezado: f-4
+
+Partida 1
+
+---------------------------------------------------------------
+
+FIRE 4 cuerpo-de-cargo: f-4,f-8
+
+2000000......................caja
+
+FIRE 5 cuerpo-de-abono: f-4,f-7
+
+................. 2000000....capital-social
+
+FIRE 6 pie: f-4
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones.
+
+FIRE 7 traspaso: f-1,f-3
+
+==&amp;gt; f-9 (partida (glosa &quot;Traspaso desde cuenta caja hacia cuenta banco-estado por un monto de 100.&quot;) (numero 2) (dia 1) (mes enero) (ano 2021))
+
+==&amp;gt; f-10 (cuenta (nombre banco-estado) (debe 0) (haber 0))
+
+==&amp;gt; f-11 (cargo (partida 2) (cuenta banco-estado) (monto 100) (realizado false))
+
+==&amp;gt; f-12 (abono (partida 2) (cuenta caja) (monto 100) (realizado false))
+
+&amp;lt;== f-1 (orden-partida (numero 2))
+
+==&amp;gt; f-1 (orden-partida (numero 3))
+
+FIRE 8 encabezado: f-9
+
+Partida 2
+
+---------------------------------------------------------------
+
+FIRE 9 cuerpo-de-abono: f-9,f-12
+
+................. 100....caja
+
+FIRE 10 cuerpo-de-cargo: f-9,f-11
+
+100......................banco-estado
+
+FIRE 11 pie: f-9
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta banco-estado por un monto de 100. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;En la contabilidad generada aparece todo ordenado pero hay unas líneas del tipo FIRE 9. Esas líneas indican que hay un regla que se ha disparado y responde a la orden (watch rules) que hemos insertado en el libro diaro. Más adelante la quitaremos, pero aquí nos permite ver cómo los facts van disparando reglas.&lt;/p&gt;
+
+&lt;p&gt;Vea como el fact &lt;strong&gt;orden-partida&lt;/strong&gt; cambia su numero, estas son las líneas donde se muestra eso.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;&amp;lt;== f-1 (orden-partida (numero 1))
+
+==&amp;gt; f-1 (orden-partida (numero 2))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A continuación verá que se dispara una regla de encabezado de partida, lo que se ve como:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;FIRE 8 encabezado: f-9
+
+Partida 2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Posteriormente y debido a que la regla de traspaso ha hecho un &lt;strong&gt;(assert (abono …)&lt;/strong&gt; la regla cuerpo-de-abono se dispara y  lo hace debido a los hechos f-9 y f12.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;FIRE 9 cuerpo-de-abono: f-9,f-12&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Si busca el fact f-9:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;==&amp;gt; f-9 (partida (glosa &quot;Traspaso desde cuenta caja hacia cuenta banco-estado por un monto de 100.&quot;) (numero 2) (dia 1) (mes enero) (ano 2021))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Verá que es lo que Ud. ha assertado en el libro diario para generar la partida de traspaso.&lt;/p&gt;
+
+&lt;p&gt;El hecho f-12 se lo dejo de tarea, pero la anticipo que tiene que ver con abonos, no con cargos.&lt;/p&gt;
+
+&lt;p&gt;Con todo esto hemos verificado que la regla de traspaso se ha disparado luego de que el fact &lt;strong&gt;orden-partida&lt;/strong&gt; fuese modificado.&lt;/p&gt;
+
+&lt;p&gt;Clique aquí para bajar &lt;a href=&quot;/plan-cuentas-con-watch.clp&quot;&gt;plan-cuentas-con-watch.clp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Esta es la versión sin los comandos watch:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 1
+
+---------------------------------------------------------------
+
+2000000......................caja
+
+................. 2000000....capital-social
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones.
+
+Partida 2
+
+---------------------------------------------------------------
+
+................. 100....caja
+
+100......................banco-estado
+
+---------------------------------------------------------------
+
+( 1 enero 2021 ) &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Clique aquí para bajar &lt;a href=&quot;/plan-cuentas-sin-watch.clp&quot;&gt;plan-cuentas-sin-watch.clp&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;implementación-del-plan-de-cuentas&quot;&gt;Implementación del plan de cuentas&lt;/h3&gt;
+
+&lt;p&gt;La idea de implementar un plan de cuenta es tener en Necios® el conocimiento que se invirtió al crearlo. El plan de cuentas es una estructura jerárquica con cuatro pilares.&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Activo&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Pasivo&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Patrimonio&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Resultado&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cada uno de esos pilares permite agrupar las cuentas de acuerdo a lo que representan y cómo se debiesen manejar según las Prácticas Contables Generales.&lt;/p&gt;
+
+&lt;p&gt;Cada cuenta en un grupo comparte características comunes con otras, pero también tiene sus diferencias, es por eso que las cuentas deben ser caracterizadas cada una por separado, principalmente en lo que respecta a lo que representan.&lt;/p&gt;
+
+&lt;p&gt;En el código de &lt;strong&gt;Necios®&lt;/strong&gt; definiremos las cuentas como hechos y para ello usaremos un atajo que nos ahorrar hacer un assert para cada una:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(deffacts plan-de-cuentas
+  (cuenta (nombre caja))
+  (cuenta (nombre capital-social))
+  (cuenta (nombre banco))
+)
+
+(defrule traspaso
+  ?p &amp;lt;- (orden-partida (numero ?partida) )
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?monto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+  ( modify ?p (numero (+ ?partida 1)))
+);
+
+
+(defrule libro-diario
+  =&amp;gt;
+  ( assert (orden-partida (numero 1)))
+  ( assert (asiento-inicial))
+  ( assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;La solución alcanzada consistió en reemplazar los asserts de cuentas en las reglas de operaciones (libro-diario y trapaso) y agregar una estructura deffacts que haga los mismo, pero una sola vez, justo al comienzo de la generación de la contabilidad.&lt;/p&gt;
+
+&lt;p&gt;Los deffacts ahora nos permitirán inscribir los datos de cada cuenta del plan contable CCM, solo iremos anotando las que vayamos a usar. Un dato importante e considerar es el grupo a que pertenece cada cuenta. Eso nos permitirá verificar la igualdad contable más adelante. Eso haremos en el siguiente código:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(deftemplate cuenta
+   (slot nombre)
+   (slot grupo)
+   (slot subgrupo)
+   (slot descripcion )
+   (slot cargos )
+   (slot abonos )
+   (slot saldo-deudor (default 0))
+   (slot saldo-acreedor (default 0))
+   (slot debe (default 0))
+   (slot haber (default 0)));
+
+(deffacts plan-de-cuentas
+  (cuenta
+    (nombre caja)
+    (grupo activo)
+    (subgrupo circulante)
+    (descripcion &quot;Fondos en caja tanto en moneda nacional y extranjera de disponibilidad
+inmediata.&quot; )
+    (cargos &quot;Aporte de los dueños, por recaudación de las ventas, devoluciones de impuesto en
+efectivo&quot;)
+    (abonos  &quot;Por pago de deudas (obligaciones con terceros), pago de proveedores, pago de arriendos,
+pago de sueldos, por pago de impuestos, etc.&quot;)
+    (saldo-deudor true)
+    (saldo-acreedor false) )
+  (cuenta
+    (nombre capital-social)
+    (grupo patrimonio)
+    (descripcion     ))
+  (cuenta
+    (nombre banco)
+    (grupo activo)
+    (descripcion     ))
+)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;La solución para tener el plan de cuentas en el código de Necios® es modificar el template de cuenta para que albergue más información, que es la siguiente:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;grupo&lt;/strong&gt; Clasificación de la cuenta para facilitar la verificación de la &lt;strong&gt;IGUALDAD CONTABLE&lt;/strong&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;subgrupo&lt;/strong&gt; Clasificación más detallada de la cuenta para permitir análisis más preciso de la liquidez de la empresa. (Liquidez es un concepto financiero que caracteriza la facilidad con que su empresa puede ser convertida en efectivo y sus equivalente).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;cargos&lt;/strong&gt; La fundamentación de lo que significa hacer un cargo en la cuenta&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;abonos&lt;/strong&gt; La fundamentación de lo que significa hacer un abono en la cuenta&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;saldo-deudor&lt;/strong&gt; Indica si la cuenta permite un saldo deudor (en el lado izquierdo)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;saldo-acreedor&lt;/strong&gt; Indica si la cuenta admite un saldo acreedor (en el lado derecho)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le dejo de Tarea que Ud. llene los datos de las cuentas capital-social y banco los puede obtener si clica aquí para bajar el archivo &lt;a href=&quot;/ManualDeCuentasMipyme.pdf&quot;&gt;ManualDeCuentasMipyme.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Haremos correcciones para igualar nuesto plan contable al del CCM&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La cuenta capital-social ahora es capital pagado&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La cuenta banco-estado es la cuenta banco&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Y modificaremos el monto del traspaso en la partida 2 para que sea la misma que está en la partida 2 de alectrico-2020: 1000000.&lt;/p&gt;
+
+&lt;p&gt;Asi es como resulta:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Inicio de Generación de Contabilidad------
+
+2000000......................caja
+
+................. 2000000....capital-pagado
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones.
+
+................. 1000000....caja
+
+1000000......................banco
+
+---------------------------------------------------------------
+
+( 1 enero 2021 ) &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;/plan-cuentas-partida-3.clp&quot;&gt;Clique aqui para bajar el código con la solución&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Para elaborar la partida 3, Ud. debe &lt;a href=&quot;/alectrico-2020/&quot;&gt;visitar&lt;/a&gt; y buscar la partida 3 de alectrico-2020.&lt;/p&gt;
+
+&lt;p&gt;Procedemos como lo hemos hecho antes:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Diseñar el kernel para esta operación&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Diseñar la regla que responda a ese kernel&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Escribir el kernel con los valores de la partida en el libro-diario&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esta partida es más que un traspaso pero ahora involucra el pago de impuestos, así que tendremos que crear una regla para traspasos con pago de impuestos.&lt;/p&gt;
+
+&lt;p&gt;Esa regla sería más o menos como sigue:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(traspaso-con-impuestos (desde caja) (hacia gastos) (monto 1000) (impuesto 1000) (dia 1) (mes enero) (ano 2021))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Si revisamos el plan de cuentas &lt;strong&gt;CCM&lt;/strong&gt; vemos que ya existe una cuenta para ipuestos de &lt;strong&gt;IVA&lt;/strong&gt;, así que mejor diseñaremos un kernel que mencione el &lt;strong&gt;IVA&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(traspaso-con-impuestos (desde caja) (hacia gastos) (monto 1000) (iva 1000) (dia 1) (mes enero) (ano 2021))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Si revisamos mejor, veremos que hay dos cuentas de IVA en el plan-ccm, así que mejoremos aún el kerenl precisando:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(traspaso-con-impuestos (desde caja) (hacia gastos) (monto 1000) (iva-credito 1000) (dia 1) (mes enero) (ano 2021))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;El nombre del kernel puede quedarse como &lt;strong&gt;traspaso-con-impuestos&lt;/strong&gt; por el momento, pues las reglas se podrían acomodar a diferentes campos de un kernel, así que con cambios en los campos de un kernel se dispararían diferentes reglas. De momento solo tenemos una regla, no hay que complicarse tanto ahora.&lt;/p&gt;
+
+&lt;p&gt;El resto del kernel es el mismo que el de traspaso que hemos visto anteriormente, así que podríamos dejar un solo tipo de kernel para ambos traspasos.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(traspaso (desde caja) (hacia gastos) (monto 1000) (iva-credito 1000) (dia 1) (mes enero) (ano 2021))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;De esta forma no tedremos que agregar un template para otro kernel sino que solamente agregarle un ampo iva-credito al template existente de traspaso.&lt;/p&gt;
+
+&lt;p&gt;Eso no evita que tengamos que diseñar otra regla, esa regla debiera tener un nombre diferente a las existentes. En este caso sería como &lt;strong&gt;traspasar-afecto&lt;/strong&gt;. La palabra &lt;strong&gt;afecto&lt;/strong&gt; es la palabra que se usa en medios tributarios para referirse a operaciones afectas a impuestos. Eso nos da una pista de que los impuestos no afectan a las personas y empresas sino a solo ciertas operaciones que realizan tanto personas como empresas. En las leyes tributarias en Chile se va más allá con estas definiciones y se habla del hecho gravado. Con ese vocabulario, el pago de un gasto es para alectrico-2020 un hecho-gravado que obliga a la empresa con un monto correspondiento al hecho gravado IVA.&lt;/p&gt;
+
+&lt;p&gt;Entonces la regla y el template traspaso serían más o menos así:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(deftemplate traspaso
+   (slot iva-credito)
+   (slot desde)
+   (slot hacia)
+   (slot monto)
+   (slot dia)
+   (slot mes)
+   (slot ano)
+   (slot partida)
+);
+
+
+(defrule traspasar-con-impuestos
+  
+  (traspaso
+   (desde ?desde)
+   (hacia ?hacia)
+   (monto ?monto)
+   (iva-credito ?iva)
+   (dia ?dia)
+   (mes ?mes)
+   (ano ?ano))
+
+   =&amp;gt;
+
+)  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule traspasar-con-iva-credito
+  ?p &amp;lt;- (orden-partida (numero ?partida) )
+  (traspaso (iva-credito ?iva-credito) (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?monto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+  ( assert (cargo (partida ?partida) (cuenta iva-credito) (monto ?iva-credito)))
+  ( modify ?p (numero (+ ?partida 1)))
+);
+(defrule libro-diario
+  =&amp;gt;
+  ( assert (orden-partida (numero 1)))
+  ( assert (asiento-inicial))
+  ( assert (traspaso (desde caja) (hacia banco) (monto 1000000) (dia 1) (mes enero) (ano 2021) (partida 2)))
+  ( assert (traspaso (desde caja) (hacia gastos) (monto 14161) (iva-credito 2261 ) (dia 1) (mes enero) (ano 2021) (partida 3)))
+
+
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;/partida-3-impuesto.clp&quot;&gt;Clique aqui para bajar el código con la nueva regla de traspasos con impuestos&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; ................. 14161....caja
+
+14161......................gastos
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta gastos por un monto de 14161. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Bah, algo no salió muy bien! El nuevo campo &lt;strong&gt;iva-credito&lt;/strong&gt; igual no sirvió para disparar la nueva regla y solo se disparó la regla original. Si eso es así habrá que modificar la regla de traspaso original y aprovecharemos de llamarla &lt;strong&gt;traspasar-no-afecto&lt;/strong&gt; para eliminar malos entendidos en lo adelante. Eso hicimos y el resultado fue el esperado. La solución fue modificar la condición del lado izquierdo en la regla de traspasar-no-afecto para que verifique &lt;strong&gt;(iva-credito false)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Por Traspaso desde cuenta caja hacia cuenta banco por un monto de 1000000.
+
+2261......................iva-credito
+
+................. 14161....caja
+
+14161......................gastos
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta gastos por un monto de 14161. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Vemos que ahora &lt;strong&gt;sí&lt;/strong&gt; aparece la cuenta &lt;strong&gt;iva-credito&lt;/strong&gt;, la cual es cargada. Con lo que podemos ver que la nueva regla fue puesta en acción. Si quiere saber qué fue lo que sucedió puede insertar &lt;strong&gt;(watch facts)&lt;/strong&gt; y &lt;strong&gt;(watch rules)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pero vemos algo confuso! Efectivamente hicimos un traspaso desde la caja a una cuenta gastos (que aún no ha sido incluida en el plan-de-cuentas) pero en la partida 3 de alectrico-2020 no es así. Por qué será?&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, si la cuenta gastos aún no ha sido definida en el plan de cuentas, le parece que debiera igual aceptarse los cargos y abonos a esa cuenta?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/partida-3-c.clp&quot;&gt;Clique aqui para bajar el código con la nueva regla de traspasos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Con este código, evitamos que se muestren los abonos y los cargos para cuentas inexistentes. Observe que solo se ha agregado una condición sensible a cuentas en el lado izquiero de las reglas que muestran los cuerpos de abono y de cargo.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;Intentemos encontrar una solución para evitar hacer operaciones sobre cuentas inexistentes.
+
+(defrule cuerpo-de-cargo
+  (declare (salience 1000))
+  (partida (numero ?numero))
+  (cargo (cuenta ?cuenta) (partida ?numero) (monto ?monto))
+  (cuenta (nombre ?cuenta))
+  =&amp;gt;
+  (printout t tab ?monto &quot;......................&quot; ?cuenta crlf)
+);
+
+
+(defrule cuerpo-de-abono
+  (declare (salience 1000))
+  (partida (numero ?numero))
+  (abono (cuenta ?cuenta) (partida ?numero) (monto ?monto))
+  (cuenta (nombre ?cuenta ))
+  =&amp;gt;
+  (printout t &quot;................. &quot; ?monto &quot;....&quot; ?cuenta crlf)
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;/partida-3-d.clp&quot;&gt;Véalo Ud. mismo en abductor con este código&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En este punto habría que agregar las cuentas que le faltan a la partida 3.&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Cuenta iva-credito&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Cuenta gastos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para el caso de la cuenta iva-credito es fácil ver en el pdf del manual de cuentas CCM, los datos que debiesen usarse.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Iva-credito&lt;/strong&gt; es una cuenta del grupo &lt;strong&gt;activo&lt;/strong&gt; porque representa algo ventajoso para la empresa, es un derecho que se otorga cuando se ha pagado el impuesto &lt;strong&gt;iva&lt;/strong&gt; en un mes determinado. Es decir, en Chile al menos, las empresas podrían recuperar lo pagado en impuestos en algunas ocasiones, pero casi siempre cuando compran y venden, pues el &lt;strong&gt;iva&lt;/strong&gt; es el impuesto al valor que se agrega desde que la empresa compra una mercancía a un precio y luego la vende a un precio mayor. El &lt;strong&gt;iva&lt;/strong&gt; es un impuesto que grava una diferencia que involucra el comportamiento mensual de las compras y ventas de una empresa.&lt;/p&gt;
+
+&lt;p&gt;La cuenta &lt;strong&gt;iva-credito&lt;/strong&gt; guarda alguna relación con otra cuenta llamada &lt;strong&gt;iva-debito&lt;/strong&gt;, de forma que se pueda calcular mensualmente el pago del impuesto.&lt;/p&gt;
+
+&lt;p&gt;IVA-credito entonces se cargará durante las compras (en este caso es un gasto), con ello aumentará su lado izquierdo. El valor a cargar depende de un cálculo percentual, pero en Necios no lo calcularemos sino que Ud. deberá introducirlo.&lt;/p&gt;
+
+&lt;p&gt;Esta es la descripción oficial para la cuenta IVA-CREDITO:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Nombre&lt;/td&gt;
+      &lt;td&gt;IVA Créditos&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Descripción&lt;/td&gt;
+      &lt;td&gt;Corresponde incluir en este rubro el crédito fiscal neto, por concepto al Valor Agregado (IVA).&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Clasificación&lt;/td&gt;
+      &lt;td&gt;Activo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Subclasificación&lt;/td&gt;
+      &lt;td&gt;Circulante&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cargos&lt;/td&gt;
+      &lt;td&gt;Se carga por las compras afectas al IVA, registradas en el libro de compras.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Abonos&lt;/td&gt;
+      &lt;td&gt;Con los impuestos compensados en el débito fiscal, ajuste o devolución por compras.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Saldo Deudor&lt;/td&gt;
+      &lt;td&gt;Impuesto pendientes de recuperar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Saldo Acreedor&lt;/td&gt;
+      &lt;td&gt;No tiene.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Para la cuenta gastos encontramos la cuenta gastos generales&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Nombre&lt;/td&gt;
+      &lt;td&gt;Gastos Generales&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Descripción&lt;/td&gt;
+      &lt;td&gt;Gastos menores relacionados con la administración de la empresa y no atribuibles a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;un área especifica dentro de ella.&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Clasificación&lt;/td&gt;
+      &lt;td&gt;Resultado&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Subclasificación&lt;/td&gt;
+      &lt;td&gt;Pérdida&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cargos&lt;/td&gt;
+      &lt;td&gt;Por los gastos devengados.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Abonos&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Saldo Deudor&lt;/td&gt;
+      &lt;td&gt;Pérdida por concepto de gastos&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Saldo Acreedor&lt;/td&gt;
+      &lt;td&gt;No tiene&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Este cuenta no es del grupo de los activos y eso merece una breve explicación:&lt;/p&gt;
+
+&lt;p&gt;Los gastos ocurren cuando la empresa entrega dinero a cambio de servicios o mercancías que no pueden ser atribuidas a un área específica dentro de la empresa. Si Ud. es un emprendedor probablemente no tenga tanta sofisticación en la operación de su empresa como para designarle áreas. Los áreas que me vienen a la mente más cercanas a los emprendedores son la de administración y la de ventas.&lt;/p&gt;
+
+&lt;p&gt;La partida 3 en alectrico-2020 fue por la compra de un certificado digital. Estos certificados solo se ocupan al intentar operar la plataforma de impuestos en Chile. Por lo que tal vez, debiésemos considerarlo gasto administrativo. Es por eso que alectrico aclara que lo que se hizo fue &lt;strong&gt;gastar-en-depto-administracion-afecto&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Así que seguiremos buscando otra cuenta de gastos que tenga relación con la administración.&lt;/p&gt;
+
+&lt;p&gt;Encontramos que no existe una cuenta de administración sino una cuenta de la que la cuenta gastos generales es una subcuenta. Lo que nos deja un tanto confusos, pues lo que anotemos en gastos generales se calificarán en los estados como Administración y Venta aunque justamente lo pusimos en Gastos Generales para indicar exactamente lo contrario: No son gastos que pueden ser ubicables en ninguna area.&lt;/p&gt;
+
+&lt;p&gt;Buscaremos solo en el grupo de Administración y Venta para ver si existe una cuenta más específica para indicar una relación son con el área administrativa.&lt;/p&gt;
+
+&lt;p&gt;La descripción para este grupo es:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;Gastos relacionados directamente con la administración de la empresa y con la comercialización de los productos y servicios principales, tales como comisiones, publicidad, arriendos, seguros. No incluye los gastos por conceptos de remuneraciones y honorarios. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Ahora vemos que nuestra confusión se debió a esta descripción del grupo, que vemos que no es justa con el contenido exitente de sus subcuentas. Pero no nos detendremos en un error que no es nuestro y que no podremos corregir.&lt;/p&gt;
+
+&lt;p&gt;Revisando encontramos que hay cuentas para:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Gastos Generales&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Contribuciones&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Deudores Incobrables&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Reparaciones Automóviles&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Gastos de Organización y Puesta en Marcha&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Gastos de Investigación y Desarrollo&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Sueldos (Remuneraciones)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Aporte Patronal&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Honorarios&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Sueldo Empresarial&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Depreciación&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Amortización&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Mermas (Castigo de Mercaderías)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Gasto Promoción&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Otros Gastos de Administración y Venta&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hemos seleccionado las cuentas que podrían incuir la compra de un certificado digital. Esta lista me parece que está centrada en las leyes tributarias más que en el funcionamiento de una empresa. Verá Ud. que los honorarios y los sueldos pueden generar impuesto, los gastos de investigación y desarrollo solo se pueden deducir de impuestos al final el año contable si se cumplen ciertas condiciones, las reparaciones de atuomóviles solo las pueden deducir como gasto las empresas de transporte de pasajero.&lt;/p&gt;
+
+&lt;p&gt;Inicialmente el certificado digital puede parecer un recurso del activo pues nos dará una ventaja al poder operar digitalmente en lugar de tener que incurrir en gastos presenciales. Sin embargo para declararlo activo solo podría serlo en forma de activo intangible, pues no tiene corporeidad y en Chile, los activos intangibles están más en la lógica de las marcas y el IFRS exige muchos requisitos para que se puedan reconocer como activos las marcas. No parece que vaya por ahí la clasificación. Así que la cuenta Amortización (que solo opera sobre activos) no nos servirá.&lt;/p&gt;
+
+&lt;p&gt;Entonces solo nos queda verlo asignarlo a la cuenta gasto general dado que la descripción de esa cuenta nos permite verla como un gasto administrativo no atribuible a ningun área en la empresa.&lt;/p&gt;
+
+&lt;p&gt;Eso haremos:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 3
+
+---------------------------------------------------------------
+
+2261......................iva-credito
+
+................. 14161....caja
+
+14161......................gastos-generales
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta gastos-generales por un monto de 14161. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;En el resultado que obtuvimos podemos ver que ya aparecen las nuevas cuentas que ingresamos al plan de cuentas en el deffacts que le corresponde.&lt;/p&gt;
+
+&lt;p&gt;Ahora vemos que el traspaso a gastos generales no debiese ser de 14161 pues de ese monto hay que destinar 2261 a impuestos por recuperar. Esto lo podemos resover rápidamente modificando algo en la regla &lt;strong&gt;traspasar-con-iva-credito&lt;/strong&gt; para que haga los cálculos correspondientes:&lt;/p&gt;
+
+&lt;p&gt;Con ello conseguimos ajustar la regla para que, del monto total sacado de la caja, se pueda pagar el gasto y además considerar un crédito iva. Lo que se anota como gasto es valor neto de la operación de compra.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 3
+
+---------------------------------------------------------------
+
+2261......................iva-credito
+
+................. 14161....caja
+
+11900......................gastos-generales
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta gastos-generales por un monto de 11900, además de acumular un crédito iva de: 2261. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule traspasar-con-iva-credito
+  ?p &amp;lt;- (orden-partida (numero ?partida) )
+  (traspaso (iva-credito ?iva-credito) (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( bind ?neto (- ?monto ?iva-credito))
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?neto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+  ( assert (cargo (partida ?partida) (cuenta iva-credito) (monto ?iva-credito)))
+  ( modify ?p (numero (+ ?partida 1)))
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;En la solución hemos insertado un comando &lt;strong&gt;bind&lt;/strong&gt; que nos permite crear una variable para almacenar el diferencia entre el monto pagado y el crédito que el servicio de impuestos internos de Chile entrega. La forma de escribirlo es uno poco extraña pues se usan paréntesis que engloban el nombre del comando y sus argumentos, pero es solo eso: una forma de escribir que le queda mejor a los computadores.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/partida-3-e.clp&quot;&gt;Véalo Ud. mismo en abductor con este código&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Chao!&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Partida 3</summary></entry><entry><title type="html">Plan de Cuentas CCM</title><link href="https://www.necios.cl//contabilidad/2021/10/14/plan-de-cuentas-ccm.html" rel="alternate" type="text/html" title="Plan de Cuentas CCM" /><published>2021-10-14T00:00:00-05:00</published><updated>2021-10-14T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/14/plan-de-cuentas-ccm</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/14/plan-de-cuentas-ccm.html">&lt;h1 id=&quot;plan-de-cuentas-ccm&quot;&gt;Plan de Cuentas CCM&lt;/h1&gt;
+
+&lt;p&gt;Este Post es un poco más teórico, al estilo de los posts llamados “CCM” e “IGUALDAD CONTABLE”. No conviente pasar por alto el significado de lo que hacemos cuando llevamos el libro díario. Yo le propongo que por el momento, vea a la contabilidasd como una matemática con sentido de mercado, pues cada vez que anote algo lo hará pensando en que un inversionista algún día llegará a verlo.&lt;/p&gt;
+
+&lt;p&gt;Entonces… ah ya, estábamos en que habíamos visto como hacer traspasos en el CCM (en el post CCM) así que traímos alguna documentación desde allá. En primer lugar eche un vistazo al plan de cuentas, luego a las cuentas y finalmente hojee el pdf.&lt;/p&gt;
+
+&lt;p&gt;Clique aquí para bajar el archivo &lt;a href=&quot;/plan-de-cuentas-ccm.png&quot;&gt;plan-de-cuentas-ccm.png&lt;/a&gt;
+Clique aquí para bajar el archivo &lt;a href=&quot;/cuenta-caja.png&quot;&gt;cuenta-caja.png&lt;/a&gt;
+Clique aquí para bajar el archivo &lt;a href=&quot;/cuenta-banco.png&quot;&gt;cuenta-banco.png&lt;/a&gt;
+Clique aquí para bajar el archivo &lt;a href=&quot;/ManualDeCuentasMipyme.pdf&quot;&gt;ManualDeCuentasMipyme.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;cómo-ver-las-cuentas&quot;&gt;Cómo ver las cuentas?&lt;/h3&gt;
+
+&lt;p&gt;Las cuentas en contabilidad nos permiten sumar peras con manzanas, pues ambos son recursos del activo y lo que se suma es valor al que se transan en operaciones de compra-venta. Esto es suponiendo que Ud. venda peras y manzanas en un puesto en un mercado. Si no es un vendedor de peras y manzanas, entonces no califican como activos, pues la condición es que los activos sean recursos que le permitan mantener su negocio aportándole algo.&lt;/p&gt;
+
+&lt;p&gt;En una cuenta cuyo destino sea hacer un seguimiento de las mercancías que Ud. compre y luego venda, lo que se anota es el valor de los lotes de mercancías que Ud. adquiera o venda.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, la cuenta caja sirve para anotar los movimientos de efectivos y de sus equivalentes (cheques y otros). La cuenta caja y la de mercancías suelen estar pareadas en las empresas cuyo único negocios consista en comprar mercancías para luego venderlas sin transformarlas.&lt;/p&gt;
+
+&lt;p&gt;Luca Paccioli se preocupó de darle un nivel de autocomprobación a las anotaciones de caja de forma que se debe hacer una doble anotación cada vez que Ud. quiera modificar la cuenta de caja. Esa anotación se denomina doble partida.&lt;/p&gt;
+
+&lt;p&gt;Según Luca, idealmente el vendedor debe trabajar el doble, pues deberá anotar cuánto dinero ha entrado a la caja y cuáles y cuantas mercancías se vendieron por ese cantidad. Y ambos valores deben ser iguales.&lt;/p&gt;
+
+&lt;h3 id=&quot;las-partidas-generalmente-son-diarias&quot;&gt;Las partidas generalmente son diarias&lt;/h3&gt;
+
+&lt;p&gt;En la cuenta caja se anotan el dinero que hay en la caja real, de forma tal que cada línea corresponda a una venta, o al menos que corresponda a las ventas totales de un día.&lt;/p&gt;
+
+&lt;h3 id=&quot;el-saldo&quot;&gt;El saldo&lt;/h3&gt;
+
+&lt;p&gt;Vaya al menú de Necios, seleccione &lt;a href=&quot;https://blog.necios.cl/alectrico-2020/subcuentas&quot;&gt;Subcuentas&lt;/a&gt; y ubique la cuenta caja. Oberve que esta cuenta termina con una anotación final que es el saldo que se ha calculado, el cual considera los valores existentes en dos columnas en específico &lt;strong&gt;debe&lt;/strong&gt; y &lt;strong&gt;haber&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Los montos puestos en una línea de cada columna representan movimientos financieros de efectivo. La columma &lt;strong&gt;debe&lt;/strong&gt; sirve para expresar un aumento en la cuenta caja y la columna &lt;strong&gt;haber&lt;/strong&gt; una disminución. Esto es lo que debe hacerse para una cuenta clasificada como de saldo deudor. Clique aquí para bajar el archivo &lt;a href=&quot;/ManualDeCuentasMipyme.pdf&quot;&gt;ManualDeCuentasMipyme.pdf&lt;/a&gt; y ubique la cuenta caja y la frase saldo deudor.&lt;/p&gt;
+
+&lt;p&gt;En una cuenta de saldo deudor, Ud. suma todo lo de la columna de la izquierda (debe), le resta todo lo que esté en la columna de la derecha (haber), y luego pone el resultado al final de la columna izquierda. Ese resultado debe ser siempre positivo.&lt;/p&gt;
+
+&lt;h3 id=&quot;qué-significa-el-asiento-inicial&quot;&gt;Qué significa el asiento inicial?&lt;/h3&gt;
+
+&lt;p&gt;En el asiento inicial que hicimos en los posts de Necios®, se ha expresado un estado financiero que podemos entender como que la caja ha recibido una aumento desde la cuenta capital-social. La cuenta de capital representa el dinero que los inversionistas o dueños de la empresa han entregado al Gerente para que más adelante se lo devuelva aumentado. El objetivo de una empresa es solo uno: aumentar el capital que alguién le prestó inicialmente. Generalmente ese capital se deja disponible para uso inmediato en la caja al comienzo de las operaciones de la empresa. Lo que se anota contablemente como un traspaso entre cuentas: capital-social y caja.&lt;/p&gt;
+
+&lt;h3 id=&quot;significado-de-la-partida-2&quot;&gt;Significado de la partida 2&lt;/h3&gt;
+
+&lt;p&gt;La partida 2, que Ud. hizo en el post anterior es un traspaso que refleja un movimiento finaciero desde la cuenta caja a la cuenta de un banco.&lt;/p&gt;
+
+&lt;h2 id=&quot;dónde-estamos&quot;&gt;Dónde estamos?&lt;/h2&gt;
+
+&lt;p&gt;Hasta ahora en sus ejercicios contables no ha vendido nada, así que los movimientos son un poco inútiles. El saldo de la cuenta banco es de tipo deudor al igual que el saldo de la cuenta caja, ambas cuentas representan efectivo y sus equivalentes, y la diferencia más notoria es que la caja es un fondo de disponibiidad inmediata y sin costos, en cambio la cuenta banco puede representar algún costo de operación e incluso un poco de indisponibilidad técnica por causa ajena a su empresa.&lt;/p&gt;
+
+&lt;p&gt;El traspaso entre caja y banco indica un movimiento de efectivo el que Ud. tendría que materializar con alguna transferencia electrónica o depositando en una sucursual de algún banco. En nuestro caso, el banco se llama Banco Estado, pero Ud. podría prescindir de ponerle algún nombre y dejarlo en forma genérica como banco.&lt;/p&gt;
+
+&lt;h3 id=&quot;resumiendo&quot;&gt;Resumiendo&lt;/h3&gt;
+
+&lt;p&gt;Los movimientos en torno a la caja que Ud. ha mostrado en dos partidas, representan:&lt;/p&gt;
+
+&lt;h1 id=&quot;partida-1-por-asiento-inicial&quot;&gt;Partida 1: Por asiento inicial&lt;/h1&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El dueño prestó 2.000.000.- en moneda a la caja&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El dinero en la caja está como un fondo de libre disposición y hay dinero real en una caja real&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;partida-2-por-traspaso-desde-caja-a-banco-estado-por-un-monto-de-100&quot;&gt;Partida 2: Por traspaso desde caja a banco-estado por un monto de 100&lt;/h1&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El gerente tomó 100 en monedas desde la caja real y lo depósito en una cuenta del Banco Estado&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El Fondo en la caja disminuyó, ahora debiese haber 2.000.000 - 100 en billetes y monedas.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La deuda de la caja con respeto a los dueños disminuyó, pues los dueños dispusieron de 100 en monedas&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La cuenta banco-estado ahora le debe 100 en monedas a los dueños, así que la columna &lt;strong&gt;debe&lt;/strong&gt; de banco-estado debe mostrar eso.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La forma para demostrar que la caja disminuyó es disminuirle su saldo, eso se hace aumentando el lado derecho con el monto, en este caso se debe hacer una anotacioń de 100 en la columna de la derecha, conocida como haber.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Ni se le ocurra colocar un saldo con un guión indicando que la cantidad es negativa! Eso es un pecado máximo en contabilidad. Debido al uso de la doble partida el saldo siempre debiese resultar positivo, a no ser que Ud. haya confundido el tipo de cuenta o que haya anotado mal desde un comienzo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si pudiéramos mostrar el subotal de ambas cuentas sería más claro. Esa es la función del libro mayor. El libro mayor muestra las cuentas en forma abreviada y coloca una T para separar las cuentas debe y haber. Eso fue lo que víó en subcuentas.&lt;/p&gt;
+
+&lt;p&gt;Los abonos y los cargos son las dos únicas operaciones críticas que se le pueden hacer a una cuenta. El cálculo de saldo también es importante pero no modifica el estado financiero de la empresa.&lt;/p&gt;
+
+&lt;p&gt;En algún momento Ud. deserará hacer un resumen de los saldos de cada cuenta usando el menor espacio posible, eso es lo que se llama balance y comprobación de saldos.&lt;/p&gt;
+
+&lt;p&gt;Vaya al menú de Necios y seleccione lo más parecido a &lt;a href=&quot;https://blog.necios.cl/alectrico-2020/comprobacion b&quot;&gt;Saldos B alectrico-2020&lt;/a&gt;. En la página que resulte verá el resumen de los saldos para cada cuenta. En ese formato, el saldo deudor se coloca en una columna llamada DEBER y el saldo acreedor en una columna llamada HABER.&lt;/p&gt;
+
+&lt;p&gt;Si la caja estuviera en esa página en qué columna debiese tener sus saldo?&lt;/p&gt;
+
+&lt;p&gt;La cuenta caja no aparece en el resumen mencionado arriba porque se ha preferido incluir la cuenta caja y la cuenta banco en una cuenta más general llamada efectivo y equivalentes siguiendo las buenas prácticas contables observadas.&lt;/p&gt;
+
+&lt;p&gt;La cuenta efectivo debiese tener las mismas características que la cuenta caja? Es así, la cuenta efectivo es del activo, su saldo es deudor y en ese resumen se debiese ver un número positivo en la columna deber que expresara el saldo de naturaleza deudor que es característico de este tipo de cuentas (del activo).&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-representa-el-saldo&quot;&gt;Qué representa el saldo?&lt;/h2&gt;
+
+&lt;p&gt;El saldo en la cuenta de caja representa el conjunto de los fondos existente en un cajón real con dinero real por lo que no es posible representar una cantidad negativa como saldo. Por eso la cuenta caja siempre debe comenzar con un cargo al que luego se le hagan abonos y siempre ese saldo no es negativo (solo puede ser nulo o mayor que cero). Por lo tanto, para calcular el saldo de la cuenta caja, se suman todos los cargos y se restan todos los abonos y eso no puede ser negativo.&lt;/p&gt;
+
+&lt;p&gt;Para complicar más las cosas, algunos textos indican que la cuentas de activo nacen por el lado izquierdo, eso es más o menos lo mismo que hemos dicho. Las cuentas de activo representan recursos existentes, por lo que tiene que existir antes de que Ud. los use. Eso no significa que en un día determinado Ud. anote primero una venta antes de anotar la compra, eso es adminisble porque la precisión de la contabilidad es diaria, cuando más. En la práctica la contabilidad se hace una vez al año con fines de cálculo de impuestos.&lt;/p&gt;
+
+&lt;p&gt;Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Chao!&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Plan de Cuentas CCM</summary></entry><entry><title type="html">Regla de Traspaso Segunda Parte</title><link href="https://www.necios.cl//contabilidad/2021/10/13/trapasos-2.html" rel="alternate" type="text/html" title="Regla de Traspaso Segunda Parte" /><published>2021-10-13T00:00:00-05:00</published><updated>2021-10-13T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/13/trapasos-2</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/13/trapasos-2.html">&lt;h1 id=&quot;regla-de-traspaso-segunda-parte&quot;&gt;Regla de Traspaso Segunda Parte&lt;/h1&gt;
+
+&lt;p&gt;En el post anterior comenzamos a diseñar una regla de traspaso que nos sirva para todos los traspasos que tengamos que hacer en el libro diario. Inicialmente conseguirmos que la regla se disparara y que imprimiera la palabra Partida.&lt;/p&gt;
+
+&lt;p&gt;Ahora explicaremos como diseñar la regla para que haga todo lo que necesitamos.&lt;/p&gt;
+
+&lt;p&gt;Si observa la regla de traspaso que traemos acá con el comienzo de la solución verá que estamos usando en el lado derecho de la regla algunas palabras que comienzan con un signo de interrogación y que fueron colocadas en el lado izquierdo de la regla. Esas palabras son variables y funcionan como naipes del tipo comodines, capturando el valor que traiga el fact en el lado izquierdo de la reglas. Por esa razón:&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;?desde almacenará el nombre de la cuenta desde donde desea realizar el traspaso.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;?hacia almacenará el nombre de la cuenta hacia donde se desea realizar el traspaso&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;?monto almacenará el monto que se quiere trasnferir desde la cuenta ?desde hacia la cuenta ?hacia&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;?dia, ?mes y ?ano almacenan la fecha de la transacción&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;?partida almacena el número de la partida en la que se realizará la transacción.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En el lado derecho ya no usamos &lt;strong&gt;printout t&lt;/strong&gt; pues ya disponemos de una regla para poner en la pantalla las partidas. Esa regla la activaremos assertando en el lado derecho de la regla de traspasos el fact partida. Ese fact es lo único que se necesita para que se muestre el encabezado y el pie de las partidas…, pero no el cuerpo.&lt;/p&gt;
+
+&lt;p&gt;En el fact partida usamos las variables vistas arriba con los valores que estás lograron capturar en el lado izquierdo de la regla.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule traspaso
+  (declare (salience 10000))
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;La regla está incompleta pues faltará el cuerpo de la partida, pero ya sabemos que eso lo pueden generar los facts de cargo y abono los cuales, a su vez, necesitan que las cuentas sean creadas.&lt;/p&gt;
+
+&lt;p&gt;Note que estamos usando una nueva función que junta variables con texto. Esa función se usa:&lt;/p&gt;
+
+&lt;p&gt;(str-cat “text” ?variable1 “ texto “ ?variable”)&lt;/p&gt;
+
+&lt;p&gt;Observe que los paréntesis rodean al nombre de la función: str-cat y a sus contenidos. Los contenidos de una función se llaman argumentos.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule traspaso
+  (declare (salience 10000))
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+  =&amp;gt;
+  ( assert (partida  (glosa (str-cat &quot;Traspaso desde cuenta &quot; ?desde &quot; hacia cuenta &quot; ?hacia &quot; por un monto de &quot; ?monto&quot;.&quot;))  (numero ?partida) (dia ?dia) (mes ?mes) (ano ?ano) ))
+  ( assert (cuenta (nombre ?desde) (debe 0)))
+  ( assert (cuenta (nombre ?hacia) (debe 0)))
+  ( assert (cargo (partida ?partida) (cuenta ?hacia)  (monto ?monto)))
+  ( assert (abono (partida ?partida) (cuenta ?desde)  (monto ?monto)))
+
+);
+
+
+(defrule libro-diario
+  =&amp;gt;
+  (assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Con todo estos facts tendremos la partida con todas sus secciones completas: encabezado, cuerpo y pie.&lt;/p&gt;
+
+&lt;p&gt;Hay un detalle adicional y es que en el libro diario debe colocarse partida 2 para que no se mezcle con la partida 1 que corresponde al asiento inicial.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule libro-diario
+  =&amp;gt; 
+  (assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 2)))
+)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/traspaso-2.clp&quot;&gt;traspaso-2.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Cuando suba traspaso-2.clp al abductor® verá que sigue apareciendo el asiento inicial “Por inicio de Operaciones” y que ahora aparece la partida 2.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 1
+
+---------------------------------------------------------------
+
+2000000......................caja
+
+................. 2000000....capital-social
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones.
+
+Partida 2
+
+---------------------------------------------------------------
+
+................. 100....caja
+
+100......................banco-estado
+
+---------------------------------------------------------------
+
+( 1 enero 2021 )
+
+Por Traspaso desde cuenta caja hacia cuenta banco-estado por un monto de 100. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Espero que le haya gustado mi solución!&lt;/p&gt;
+
+&lt;p&gt;Pero antes de irse a descansar, llévese una reflexión teórica de contabilidad:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Qué significa un traspaso entre cuentas?&lt;/li&gt;
+  &lt;li&gt;Qué cuenta se carga en un traspaso, la de origen o la de destino?&lt;/li&gt;
+  &lt;li&gt;Qué pasa si las dos cuentas son del mismo grupo (por ejemplo, dos cuentas de activo)&lt;/li&gt;
+  &lt;li&gt;A qué grupo pertenecen las cuentas de caja y banco-estado?&lt;/li&gt;
+  &lt;li&gt;Las cuentas de caja y banco estado tienen el mismo tipo de saldo, cuál es?&lt;/li&gt;
+  &lt;li&gt;Si el el saldo de las cuentas de caja y banco-estado fuese deudor, dónde se anotaría; en el lado izquiedo DEBE o en lado derecho HABER.&lt;/li&gt;
+  &lt;li&gt;Qué significa que la cuenta de caja tenga saldo positivo&lt;/li&gt;
+  &lt;li&gt;Qué significa que la cuenta de caja tenga saldo negativo (cree que eso es cierto, que la caja tenga saldo negativo es raro, no?)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Nos vemos en el próximo Post para intentar explicar algo de todo este embrollo, Ud. puede buscar las respuestas en la Internet. Una pregunta típica es “Qué tipo de cuenta es Caja”.&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Regla de Traspaso Segunda Parte</summary></entry><entry><title type="html">Regla de Traspaso</title><link href="https://www.necios.cl//contabilidad/2021/10/12/traspasos.html" rel="alternate" type="text/html" title="Regla de Traspaso" /><published>2021-10-12T00:00:00-05:00</published><updated>2021-10-12T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/12/traspasos</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/12/traspasos.html">&lt;h1 id=&quot;regla-de-traspaso&quot;&gt;Regla de Traspaso&lt;/h1&gt;
+
+&lt;p&gt;En el post anterior le sugerimos generar una nueva regla que responsa a una orden de traspaso. Eso no es díficil pero es conceptualmente diferente a todo lo que seguramente haya hecho antes.&lt;/p&gt;
+
+&lt;p&gt;En un expert system, Ud. sufrirá mucho al comienzo, pero luego empezará a sentirse más cómodo, cuando comprenda que solo deberá agregar reglas cuando lo necesite, pues el resto lo hará la máquina de inferencias del Expert System (no se vaya a buscar eso en Google, no es necesario perder el tiempo, estamos aquí para aprender a hacer la contabilidad, no a crear expert system y cosas de Inteligencia Artificial)&lt;/p&gt;
+
+&lt;p&gt;La idea de hacer una regla es un proceso de dos partes, Ud. debe imaginarse qué hechos (o hecho) la dispararán y que es lo que debe hacerse cuando la regla se dispare.&lt;/p&gt;
+
+&lt;p&gt;La regla puede tomar el nombre que quiera, pero debe ser distinto al que tenga otra regla. Si tiene dos reglas con el mismo nombre, nadie le advertirá de eso y es probable que Ud. se enfoque en una de las reglas para luego intentarla corregir aunque, en realidad, el problemas esté en la otra.&lt;/p&gt;
+
+&lt;p&gt;El nombre de nuestra regla de traspaso será “traspaso”. Escoja por su lado el nombre que quiera!&lt;/p&gt;
+
+&lt;p&gt;Luego debemos ver que hechos debiesen dispara la regla de traspaso. En este punto analizamos la parte conceptual de la contabilidad, de donde podemos inferir lo siguiente:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El traspaso es una operación financiera atómica (no se puede separar en partes menores, nos matará a todos). Es indivisible si lo quiere ver así.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El traspaso consta solo de dos operaciones, una de cargo y otra de abono.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El traspaso necesita de la información del monto que se quiera traspasar.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;El traspaso será mostrado en una partida por lo que se necesitan los facts que se necesitan en general para las partidas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La regla de traspaso intuitivamente será:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule traspaso
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto))  
+  =&amp;gt;
+
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Con esta redacción la regla será sensible a una orden de traspaso que Ud. digitará (le llamamos orden de kernel Necios®). Esa orden indica de qué cuenta se tomará un monto y en qué cuenta será depositado.&lt;/p&gt;
+
+&lt;p&gt;Como todo en contabilidad requiere la fecha del día, entonces la orden de traspaso deberá ser emitida para un día perteneciente al ejercicio contable.&lt;/p&gt;
+
+&lt;p&gt;Como todo en contabilidad requiere ser mostrado a los inversionistas (o al sistema de fiscalizaicón de impuestos, cuando este lo requiera) entonces el traspaso debiera mostrar en pantalla (o impreso en papel) lo que haya sucedido por motivo del traspaso. Por eso, debe hacerse un formato de partida para la visualización con comandos &lt;strong&gt;printout t&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Con esas ideas en la cabeza y yendo por pasos, tenemos:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule traspaso
+  (declare (salience 10000))
+  (traspaso (desde ?desde) (hacia ?hacia) (monto ?monto) (dia ?dia) (mes ?mes) (ano ?ano) (partida ?partida))
+
+  =&amp;gt;
+  (printout t Partida crlf)
+
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Observe que hemos agregado datos de fecha y de partida. También hemos colocado un printout t. Eso se ve bien. Pero aún no funcionará. Le diré por qué:&lt;/p&gt;
+
+&lt;p&gt;El hecho traspaso no ha sido definido aún. Así que debemos definir un template para cuando definamos una regla para un facts nuevo.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(deftemplate traspaso
+   (slot desde)
+   (slot hacia)
+   (slot monto)
+   (slot dia)
+   (slot mes)
+   (slot ano)
+   (slot partida)
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Cuando el template esté incorporado, entonces podremos hacer un assert para generar un fact que haga disparar a la regla “Traspaso”.&lt;/p&gt;
+
+&lt;p&gt;Entonces vemos que necesitamos una especie de libro diario para colocar esos asserts que generarán los comandos de kernel Necios®.&lt;/p&gt;
+
+&lt;p&gt;Eso nos lleva a una regla que no tendría lado sensible pues es la que iniciará desencadernará todo, por lo que no tendrá lado izquiero con facts sensibles y se disparará sin motivo especial. Cuando se dispare, generará la orden de traspaso a través del assert del facts traspaso.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule libro-diario
+  =&amp;gt; 
+  (assert (traspaso (desde caja) (hacia banco-estado) (monto 100) (dia 1) (mes enero) (ano 2021) (partida 1)))
+)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/traspaso.clp&quot;&gt;traspaso.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Cuando suba traspaso.clp al abductor® verá que sigue apareciendo el asiento inicial “Por inicio de Operaciones” pero no aparece la partida que esperamos para el traspaso. Eso es porque no hemos colocado nada en el lado derecho de la regla de traspaso, excepto una línea que dice Partida.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 1
+
+---------------------------------------------------------------
+
+2000000......................caja
+
+................. 2000000....capital-social
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones.
+
+Partida&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Creo que es mucho contenido para un solo día, así que tómese un descanso para que las nuevas ideas entren al sistema de símbolos físicos que mantienen Ud. en su cerebro sin que desfallezca el ritmo Alfa y Ud. con él.&lt;/p&gt;
+
+&lt;p&gt;Nos vemos en otros Post!&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Regla de Traspaso</summary></entry><entry><title type="html">Partida 2 de alectrico ®</title><link href="https://www.necios.cl//contabilidad/2021/10/11/partida-2-alectrico.html" rel="alternate" type="text/html" title="Partida 2 de alectrico ®" /><published>2021-10-11T00:00:00-05:00</published><updated>2021-10-11T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/11/partida-2-alectrico</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/11/partida-2-alectrico.html">&lt;h1 id=&quot;partida-2-de-alectrico-2020&quot;&gt;Partida 2 de alectrico 2020&lt;/h1&gt;
+
+&lt;p&gt;Qué bien que llegó hasta aquí! Ud. es my persistente. Felicitaciones Morales!&lt;/p&gt;
+
+&lt;p&gt;Supongo que ya habrá hecho resúmenes, síntesis, extractos de ideas principales y todo un esfuerzo por juntar los cabos sueltos. Bien, no lo logrará, hay cabos sueltos por ahora y no estoy interesado en atarlos, para qué, si Ud. ni siquiera debiese haber llegado hasta aquí.&lt;/p&gt;
+
+&lt;p&gt;En fin, ya que está aquí…..&lt;/p&gt;
+
+&lt;p&gt;De momento Ud. ya debe saber hacer:&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Partidas de asiento inicial&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Partidas de traspaso&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Abonos y Cargos&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Assertar cuentas (es casi lo mismo que crearlas) pero en un expert system se llama así. No big deal!&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Crear reglas en CLIPS&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Identificar el lado izquierdo de las Reglas&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Identificar el lado derecho de las reglas&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Apreciar, cuando se lo muestren, cómo las variables del lado izquierdo se usan en el lado derecho&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Usar una regla que llama a otra regla (no lo llama en realidad sino que genera los hechos que son sensibles al lado izquierdo de otra regla)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Identificar los cuatros grupos de cuentas Activo, Pasivo,…&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Identificar los dos lados de las cuentas (DEBE, HABER)&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Estar al tanto de la existencia de libros diarios y mayores&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Entender el CCM en la sección de Ajustes y Otros Movimientos&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Entender que en el CCM se hacen comprobanciones de IGUALDAD CONTABLE&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Estar al tanto que la contabilidad está goberanda por una regla de oro.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Entender qué significa cargar una cuenta de activo&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Entender qué significa observar la regla de IGUALDAD CONTABLE&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Saber que hay un ejemplo real de contabilidad en alectrico-2020 que puede consutlar en http://blog.necios.cl.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ahora avanzaremos más rápido con ejemplos de partidas en alectrico-2020 hasta llegar casi al fin del ejercicio contable. Es el momento de aprender contabilidad, pero usando el kernel Necios®.&lt;/p&gt;
+
+&lt;p&gt;Le sugiero que clique en alectrico-2020 y se deslice hasta donde diga Partida 2. Observe qué es lo que se intenta expresar con esa partida. Es un traspaso, no es cierto? desde donde hacia donde? Cree que la pueda hacer? Qué bueno! Claro que sí! Ya lo ha hecho antes!&lt;/p&gt;
+
+&lt;p&gt;Ahora lo animo a hacerlo pero que preste atención al código. El código está creciendo un poco y conviente organizarlo un poco. Creo que le haría bien hacer una regla solo para traspasos que pueda atender todo lo que Ud. necesite traspasar en su empresa.&lt;/p&gt;
+
+&lt;p&gt;Nos vemos en el próximo post.&lt;/p&gt;
+
+&lt;p&gt;Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Partida 2 de alectrico 2020</summary></entry><entry><title type="html">IGUALDAD CONTABLE</title><link href="https://www.necios.cl//contabilidad/2021/10/11/igualdad-contable.html" rel="alternate" type="text/html" title="IGUALDAD CONTABLE" /><published>2021-10-11T00:00:00-05:00</published><updated>2021-10-11T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/11/igualdad-contable</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/11/igualdad-contable.html">&lt;h1 id=&quot;igualad-contable&quot;&gt;IGUALAD CONTABLE&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;IGUALDAD CONTABLE&lt;/strong&gt; es la regla de oro de la contabilidad, inventada por Luca Paccioli, un matemático famoso. La igualdad contable satisface la necesidad de verificar en cada operación contable que los recursos de la empresa estén disponibles para satisfacer las obligaciones que esta haya contraído. Dicho de otra forma, si una empresa está atenta a esta comprobación podrá anticipar si se dirige a una quiebra o si tendrá utilidad.&lt;/p&gt;
+
+&lt;p&gt;La igualdad contable protege el aporte de los dueños pues este, solo puede mantenerse sin disminuir, si se logra que los ingresos totales sean mayores o igual que los egresos. Piense que los ingresos son el efectivo que recibe por ventas y que los egresos son gastos y costos en el que su empresa debe incurrir para mantenerse funcionando.&lt;/p&gt;
+
+&lt;p&gt;En concreto la &lt;strong&gt;IGUALDAD CONTABLE&lt;/strong&gt; establece que el total neto de las cuentas de activo deben balancearse con el capital y las obligaciones contraídas. Si A es el total de las cuentas del activo, P: el total de las cuentas del Pasivo y K: el total de las cuentas de patrimonio, entonces A=P+K expresará la verificación de que todo ha sido bien anotado en la contabilidad. Eso no evitará que la empresas se vaya a la quiebra, pero nos ayudará a entender qué le haya pasado. Tambíén nos servirá para detectar errores finacieros e incluso errores de digitación.&lt;/p&gt;
+
+&lt;p&gt;Si ha seguido los posts de &lt;strong&gt;Necios&lt;/strong&gt; verá que hemos empezado la actividad de una empresa escribiendo un asiento inicial, esa empresa podría ser alectrico® pues están los datos de su contabilidad de 2020. Nos servirá de guía si intentamos reproducir los pasos que se han seguido en ella.&lt;/p&gt;
+
+&lt;p&gt;En alectrico®, el asiento inicial no informa de cuentas del pasivo, por lo que P=0, solo queda verificar que A=?K. Será que las cuentas del Activo suman lo mismo que las cuentas del Patrimonio?&lt;/p&gt;
+
+&lt;p&gt;Es fácil ver que la única cuenta del activo tiene un saldo de 2.000.000 y que la cuenta de patrimonio también tiene un saldo de 2.000.000.- Entonces podemos decir que hasta el momento se cumple la igualdad contable en alectrico®. Porque A=K dado que 2.000.000 = 2.000.000.&lt;/p&gt;
+
+&lt;p&gt;Aquí es bueno entender que las cuentas del activo tienen un saldo deudor y las del pasivo tienen un saldo acreedor. Lo que significa que los totales de A y K quedan a ambos lados de un línea que separa las columnas del DEBE y el HABER.&lt;/p&gt;
+
+&lt;p&gt;Veamos que 2.000.000 es el saldo de los activos y queda en el lado izquierdo y 2.000.000 de los pasivos queda en el lado derecho.&lt;/p&gt;
+
+&lt;p&gt;Es más fácil si ve las transacciones como monedas que se van poniendo en los plantillos de una balanza que tiene un brazo hacia la izquiera y otro a la derecha. La balanza estará con sus dos brazos a la misma altura si los montos de su lado izquierdo pesaran lo mismo que los montos en su lado derecho. Si lo ve así, el asiento inicial expresa que la caja le debe su bienestar al malestar del patrimonio. O mejor: que el capital debe ser puesto a trabajar para conseguir utilidad. Algo de eso se entiende que sea el objetivo de crear una empresa: Hacer rendir el capital. Si Ud. no tiene capital no podría pensar de esa forma, pero si ha reunido mucho dinero que no necesita para satisfacer sus necesidades fundamentales, estará buscando una empresa a la que entregarle sus ahorros a cambio de una ganancia (que no siempre se obtiene).&lt;/p&gt;
+
+&lt;p&gt;De momento no haremos nada para garantizar la igualdad contable, será UD. quien deba verificar mentalmente si las operaciones que está organizando la cumplen. Es un buen ejercicio de concepto: Requiere saber a qué grupos pertenecen las cuentas.&lt;/p&gt;
+
+&lt;p&gt;En el próximo post agregaremos algo al respecto.&lt;/p&gt;
+
+&lt;p&gt;Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">IGUALAD CONTABLE</summary></entry><entry><title type="html">Asiento Inicial</title><link href="https://www.necios.cl//contabilidad/2021/10/10/asiento-inicial.html" rel="alternate" type="text/html" title="Asiento Inicial" /><published>2021-10-10T00:00:00-05:00</published><updated>2021-10-10T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/10/asiento-inicial</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/10/asiento-inicial.html">&lt;h1 id=&quot;asiento-inicial&quot;&gt;Asiento Inicial&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Asiento Inicial&lt;/strong&gt; es lo primero que se hace el &lt;strong&gt;El Libro Diario&lt;/strong&gt; cuando comienza la contabilidad de su empresa. Es un escrito con el formato de partida que Ud. habrá aprendido a generar en los posts anteriores, pero es un poco más complejo pues inicialmente la contabilidad está relacionada con los recursos de su empresa y eso sale un poco de la contabilidad, pues deberá conocer &lt;strong&gt;la escritura de constitución de su empresa&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;En &lt;em&gt;Necios&lt;/em&gt; hemos dispuesto la constitución de la empresa &lt;strong&gt;alectrico ®&lt;/strong&gt;, la que se hizo en marzo de 2020. &lt;strong&gt;Alectrico ®&lt;/strong&gt; es una empresa por acciones ahora, pero en 2020 era una empresa de &lt;strong&gt;responsabilidad individual limitada&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cuando constituyes una sociedad hay muchos detalles importantes que no veremos acá pero uno de ellos es cómo defines lo que iría en el asiento inicial.&lt;/p&gt;
+
+&lt;p&gt;Eso no es tan difícil cuando ya sabes contabilidad y algunos nombres de cuentas y si son de activos y por ahí.&lt;/p&gt;
+
+&lt;p&gt;Pero en este punto Ud. probablemente no ha hecho estudios formales de contabilidad pues es un &lt;strong&gt;necio&lt;/strong&gt; que quiere aprender por su propio esfuerzo. Eso tiene un gran mérito pues lo que aprenda lo habrá aprendido muy bien!&lt;/p&gt;
+
+&lt;p&gt;El hecho es que debe leer bien la constitución de su empresa y buscar palabras claves como &lt;strong&gt;Capital&lt;/strong&gt;, &lt;strong&gt;Caja&lt;/strong&gt;, &lt;strong&gt;Dinero en Caja&lt;/strong&gt;, &lt;strong&gt;Acciones&lt;/strong&gt;, &lt;strong&gt;Herramientas&lt;/strong&gt; y por ahí.&lt;/p&gt;
+
+&lt;p&gt;Si la escritura dice que la empresa está limitada a un capital de &lt;strong&gt;2.000.000.&lt;/strong&gt;- entonces es lo que puede colocar en la cuenta &lt;strong&gt;Capital Social&lt;/strong&gt; que pertenece al grupo &lt;strong&gt;Patrimonio&lt;/strong&gt;. Si la escritura dice que el capital se entrega en &lt;em&gt;2.000.000&lt;/em&gt;. en &lt;strong&gt;efectivo&lt;/strong&gt;, entonces Ud. será un emprendedor feliz, no tiene deudas y tiene billete líquido para enfrentar lo que venga. Pero además su asiento inicial tendrá solo dos cuentas. Adivine cuáles.&lt;/p&gt;
+
+&lt;p&gt;Haremos ahora el asiento inicial considerando entonces este primer ejemplo muy simple, su empresa parte con un capital puesto disponible en caja (en caja significa dinero sin restricción alguna para ser usado) de 2000.000.-&lt;/p&gt;
+
+&lt;p&gt;La escritura de la empresa para el año 2020 contiene lo siguiente:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/capital-social.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El asiento inicial se obtiene simplemente usando las cuentas de capital-social y caja.&lt;/p&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/asiento-inicial.clp&quot;&gt;asiento-inicial.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule inicio
+  (declare (salience 10000))
+  =&amp;gt;
+  ( assert (partida  (glosa &quot;Inicio de Operaciones.&quot;)  (numero 1) (dia 1) (mes enero) (ano 2020) ))
+
+  ( assert (cuenta (nombre caja)           (debe 0)))
+  ( assert (cuenta (nombre capital-social) (debe 0)))
+
+  ( assert (abono (partida 1) (cuenta capital-social)  (monto 2000000)))
+  ( assert (cargo (partida 1) (cuenta caja)            (monto 2000000)))
+
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Estos nos permite mostrar la partida de asiento inicial como sigue:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 1
+
+------------------
+
+2000000......|...............caja
+
+........... |.... 2000000....capital-social
+
+------------------
+
+Por Inicio de Operaciones. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.necios.cl/alectrico-2020/&quot;&gt;Véalo en la Contabilidad de alectrico® del año 2020&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En este punto conviene reflexionar qué significado tíene lo que hemos colocado en un escrito, en un libro serio como el &lt;strong&gt;libro diario&lt;/strong&gt;, considerando otro escrito más serio aún, la &lt;strong&gt;escritura de constitución de la empresa&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bueno, a primera vista parece ser un traspaso desde la cuenta patrimonio hacia la cuenta caja. Y es eso, efectivamente, pero lo que significa es que la empresa empieza sus actividades declarando que le debe todo a su dueño, o dueños, quienes están en la escritura pública de la empresa en cuestión.&lt;/p&gt;
+
+&lt;p&gt;Visto de otro modo, los dueños ponen un monto de dinero a disposición del Gerente de la Empresa para que este inicie operaciones. Los dueños esperarán, que pasado un tiempo de un año, el Gerente les pueda entregar ese monto y un poco más. Pero de momento no nos preocupemos aún con lo pueda pasar en un año. Lo que vemos también es que el dinero en caja se interpreta como que hay dinero para gastar sin tener que pedir autorización a los dueños, es un dinero de libre disposición, no hay reglas para gastarlo en uno u otro sentido.&lt;/p&gt;
+
+&lt;p&gt;Entonces, eso es: La empresa empieza con una misión: obtener más dinero que el capital que se le ha entregado y para ello el dinero se incorpora a la caja.  Entendamos también que la caja en sí puede existir en la forma de un cajón con billetes y monedas pero también puede estar en la billetera de un Gerente o en un Banco. Nada de esos detalles son tan importantes en esta transacción, lo que interesa es el hecho de que la empresa ahora puede responder con un dinero equivalente a lo declarado como capital. Es lo que se llama Responsabilidad y esa responsabilidad está limitada en el caso de las empresas de responsabilidad limitada, al monto de los aportes de los dueños (esto es el capital-social).&lt;/p&gt;
+
+&lt;p&gt;En cuanto al código que hemos usado, es exactamente el mismo que el que hemos usado para traspasar dinero entre dos cuentas. Pero ahora las dos cuentas son diferentes y una de ellas no se parece a una cuenta corriente de las que Ud. usa en un banco. En realida las cuentas de la contabilidad no tienen que ser exactamente del mismo tipo de las cuentas de los bancos, sino que son una forma de contar valores. Esos valores se ven desde la perspectividad de su valor de uso por una empresa. Lo que es basura para una empresa puede ser oro para otra.&lt;/p&gt;
+
+&lt;p&gt;Las cuentas que tienen que ver con efectivo y sus equivalentes son más fáciles de visualizar. Esas cuentas son de activo, porque cuanto aumenta su total quiere decir que Ud. tendrá más dinero sobre el que tendrá control. Eso se puede generalizar para entender que toda cuenta en la que el aumento del total representa un aumento del control sobre algún tipo de recursos se denominan cuentas de activo. Y aquellas cuentas que al aumentar su total signifique que se tiene un aumento en las obligaciones de la empresa con otras empresas se denominan cuentas de pasivo.&lt;/p&gt;
+
+&lt;p&gt;Al comienzo de funcionamente de alectrico-2020 puede ver que no hay otras cuentas fuera de la de patriominio y la de caja. Puede verse que la emprea no tiene deudas porque no fue declarado en la escritura. Entonces la cuenta de caja se considera activo porque aumenta con el aumento de efectivo.&lt;/p&gt;
+
+&lt;p&gt;La cuenta de capital-social no puede ser aumentada o disminuida sin restricción pues representa una responsabilidad pública. Para hacerlo se debe comunicar a todos los actores que ha habido un cambio de capital y esto requiere una ceremonía y algunos procedimientos especiales. Es por eso que la cuenta de capital en general no se modifica dentro del período contable, que es de un año en general. En el año no hay partidas que modifiquen nada en el capital. O más bien, se pospone todo para hacerlo solo a fin de año. En ese momento se puede reconocer que la empresa ha tenido un ingreso mayor que los egresos y se podría pensar en aumentar el capital para reflejar eso. Esa transacción se hace entonces al abrir el ejercicio de los años siguientes.&lt;/p&gt;
+
+&lt;h2 id=&quot;solución-mejorada&quot;&gt;Solución Mejorada&lt;/h2&gt;
+
+&lt;p&gt;Para mostrar mejor las partidas, podemos incorporar la fecha al pie y eso es muy fácil. Observe la regla pie que ahora contiene un lado sensible en partida con los campos de fecha que se usarán en el lado derecho de la regla (luego del signo &lt;strong&gt;=&amp;gt;&lt;/strong&gt;), en el printout.&lt;/p&gt;
+
+&lt;p&gt;Para mejorar la claridad de lo que hacemos, la antigua regla inicio ahora se llama asiento inicial pues está diseñada solo para ese evento en particular.&lt;/p&gt;
+
+&lt;p&gt;Cuando haya que hacer otras partidas podemos pensar en diseñar otras reglas. De momento, la regla de asiento inicial está bien como la hemos mostrado, pues se hace una sola vez. No vale la pena gastar mucho código en ella.&lt;/p&gt;
+
+&lt;p&gt;En la regla asiento-inicial ahora hemos agrupado las cuentas y las transacciones, más adelante podremos hacer algo en el sentido de crear un plan de cuentas y una librería de trasnsacciones. Sin embargo, las transacciones de abono y cargo son la base de todo lo que se hace en la contabilidad así que el resto de las transacciones solo pueden ser una elaboracioń de estas transacciones que podemos llamar primitivas.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule pie
+  (declare (salience 100))
+  (partida (numero ?numero) (glosa ?glosa) (dia ?dia) (mes ?mes) (ano ?ano))
+  =&amp;gt;
+  (printout t &quot;---------------------------------------------------------------&quot; crlf)
+  (printout t &quot;( &quot; ?dia tab ?mes tab ?ano tab &quot; )&quot; crlf)
+  (printout t &quot;Por &quot; ?glosa crlf)
+  (printout t crlf crlf)
+);
+
+
+(defrule asiento-inicial
+  (declare (salience 10000))
+  =&amp;gt;
+  ( assert (partida  (glosa &quot;Inicio de Operaciones.&quot;)  (numero 1) (dia 1) (mes enero) (ano 2020) ))
+
+  ( assert (cuenta (nombre caja)           (debe 0)))
+  ( assert (cuenta (nombre capital-social) (debe 0)))
+   
+  ( assert (abono (partida 1) (cuenta capital-social)  (monto 2000000)))
+  ( assert (cargo (partida 1) (cuenta caja)            (monto 2000000)))
+  
+);
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;Partida 1
+
+---------------------------------------------------------------
+
+2000000......................caja
+
+................. 2000000....capital-social
+
+---------------------------------------------------------------
+
+( 1 enero 2020 )
+
+Por Inicio de Operaciones. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/asiento-inicial-2.clp&quot;&gt;asiento-inicial-2.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">Asiento Inicial</summary></entry><entry><title type="html">CCM</title><link href="https://www.necios.cl//contabilidad/2021/10/09/ccm.html" rel="alternate" type="text/html" title="CCM" /><published>2021-10-09T00:00:00-05:00</published><updated>2021-10-09T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/09/ccm</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/09/ccm.html">&lt;h1 id=&quot;ccm&quot;&gt;CCM&lt;/h1&gt;
+
+&lt;p&gt;Hola!. En este post presentaremos la forma en el &lt;strong&gt;cmm&lt;/strong&gt; hace las partidas, de esta forma Ud. podrá hacerse una idea más robusta de la parte más interna de la contabilidad: &lt;em&gt;las partidas&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CCM&lt;/strong&gt; es un acrónimo del &lt;strong&gt;Sistema de Contabilidad Completa del Servicio de Impuestos Internos de Chile&lt;/strong&gt;. Este sistema se presenta al usuario en la forma esperada por los contadores: con el &lt;strong&gt;libro diario&lt;/strong&gt; y el &lt;strong&gt;libro mayor&lt;/strong&gt;. Está conectado a un repositorio donde se guardan las facturas que las empresas reciben y también las que emiten.&lt;/p&gt;
+
+&lt;p&gt;No haremos una introducción completa al sistema &lt;strong&gt;CCM&lt;/strong&gt;, pues nos interesa solo una parte en particular, se llama &lt;strong&gt;ajustes y otros movimientos&lt;/strong&gt; porque eso nos permitará hacer contabilidad en forma más directa, sin registrar nada en el &lt;strong&gt;libro diario&lt;/strong&gt;. Lo que hagamos en esa sección se perderá un poco en el sistema de contabilidad &lt;strong&gt;CCM&lt;/strong&gt; pues no aparecerá visualmente junto con las facturas y otros documentos. Solo aparecerá como un voucher contable para cuando revisemos esa sección en la web.&lt;/p&gt;
+
+&lt;p&gt;En el &lt;strong&gt;CCM&lt;/strong&gt; las cuentas ya existen desde el comienzo de su ingreso al sistema, y el &lt;strong&gt;SII (Servicio de Impuestos Internos de Chile)&lt;/strong&gt; pide que haya una correspondencia entre las cuentas contables de su &lt;strong&gt;CCM&lt;/strong&gt; y las que UD. use para su contabilidad en su empresa.&lt;/p&gt;
+
+&lt;p&gt;Es importante entender que un organismo como &lt;strong&gt;SII&lt;/strong&gt; no debiera estar mandando en la forma en que Ud. hace la contabilidad, pues su función única es recolectar impuestos. Entonces la contabilidad que Ud. incorpore en forma web, que es llamado CCM no debiese ser exactamente el que Ud. use para su empresa. Dicho esto, la conveniencia de usar &lt;strong&gt;CCM&lt;/strong&gt; es la de transparentar lo que Ud. haga en su empresa, suponiendo que Ud. no use la contabilidad (de mala fe) para evitar o disminuir lo que paga en términos de impuestos. A nosotros en &lt;em&gt;Necios&lt;/em&gt; nos sirve para ejemplifcar un sistema al que los chilenos podrían tener acceso.&lt;/p&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/CCM Movimientos by Necios®.pdf&quot;&gt;CCM Movimientos by Necios.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Cuando baje el archivo verá que hay una serie de ilustraciones, unas siete, que ilustran el proceso de generar una partida simple con solo dos cuentas. Eso es lo que queremos que Ud. vea, para que se tenga una visión complementaria a lo que hemos introducido en Necios.&lt;/p&gt;
+
+&lt;p&gt;Le sugiero que imprima el pdf para que lo pueda ver mientras lee nuestras explicaciones, también sirve si tiene dos dispositivos.&lt;/p&gt;
+
+&lt;p&gt;Empecemos!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lo primero en lo que ha de fijarse es que los movimientos existen en un período de un mes, y si cometer el error de registrar un movimiento con una fecha que no esté dentro del período, prácticamente desaparecerá de ese periodo, no podrá verlo más. Corregir ese error será muy complicado. La corrección consiste en reversar ese movimiento, qué es el equivalente a borrar algo en contabilidad. Así que elija correctamente el período en que quiere hacer el movimiento. Eso se hace hacia el centro, pero no pierda de vista donde dice &lt;strong&gt;Período&lt;/strong&gt;. El objetivo es que donde diga &lt;strong&gt;Período&lt;/strong&gt; esté el mes para el que hará el movimiento&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lo siguiente que debe observar es el significado de los diferentes recuadros. Veamos: &lt;strong&gt;Tipo de Movimiento&lt;/strong&gt; es una serie de opciones que usa este &lt;strong&gt;SII&lt;/strong&gt; para sus fines de fiscalización, eso no es muy útil para su contabilidad, así que puede escoger para este ejemplo la opción: &lt;em&gt;otros&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;El &lt;strong&gt;Tipo de comprobante&lt;/strong&gt; es un dato accesorio que tal vez le sirva a Ud. pero que en realidad no lo podrá usar mucho, pues no aparecerá en los informes que puede hacer más adelante o en otra parte del &lt;strong&gt;CCM&lt;/strong&gt;. Entonces escoja &lt;em&gt;Traspaso&lt;/em&gt;, pues haremos un traspaso entre cuentas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;El campo &lt;strong&gt;Glosa&lt;/strong&gt; es un campo &lt;strong&gt;crítico&lt;/strong&gt; en el &lt;strong&gt;CCM&lt;/strong&gt;, si se olvida y no pone nada ahí, eso generará un bloqueo en los libros diarios de ese período lo que significará que tendrá que olvidarse de tener los libros diarios de ese mes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Si se equivoca en el &lt;strong&gt;CCM&lt;/strong&gt; no hay un soporte informático muy rápido para sacarlo de problemas pues la función de este servicio no es la de capacitar ni soportar el uso de este programa.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Entonces evite errores llenando rápidamente el campo &lt;strong&gt;Glosa&lt;/strong&gt;. La glosa es la glosa de una partida, eso ya le hemos visto en otros postos de &lt;em&gt;Necios&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;En este paso ya hemos escrito la &lt;strong&gt;Glosa: “Partida 1”&lt;/strong&gt; que corresponde a la segunda ilustración.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;En la tercera ilustración mostramos las selecciones de &lt;strong&gt;Tipo de Movimiento&lt;/strong&gt;, &lt;strong&gt;Tipo de Comprobante&lt;/strong&gt; y &lt;strong&gt;Fecha Voucher&lt;/strong&gt; según lo que explicamos inicialmente. Recuerde la &lt;strong&gt;Fecha de Voucher&lt;/strong&gt; debe estar dentro del período que aparece a la derecha.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;En el paso 9 comenzamos a trabajar con las cuentas. Esas cuentas ya existen, como ya les había comentado, y forman parte de un plan de cuentas, ese plan de cuentas agrupa a las cuentas según un sistema de contabilidad en: 
+a) &lt;strong&gt;Cuentas de Activo&lt;/strong&gt;
+b) &lt;strong&gt;Pasivo&lt;/strong&gt;
+c) &lt;strong&gt;Patrimonio&lt;/strong&gt;
+d) &lt;strong&gt;Resultados&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Antes de hacer el traspaso Ud. debe podría tener una idea de donde debiese estar la cuenta que quiere traspasar. En nuestro ejemplo traspasaremos un monto entre dos cuentas del &lt;strong&gt;Activo&lt;/strong&gt;. Asi que seleccionamos &lt;em&gt;Activo&lt;/em&gt; en el &lt;strong&gt;Tipo de Cuenta&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;En la ilustración siguente vemos que al seleccionar &lt;em&gt;Activo&lt;/em&gt;, el botón para sleccionar la cuenta se muestra con una etiqueta &lt;em&gt;Seleccione&lt;/em&gt;. Entonces debe clicar en ese botón para seleccionar una de las cuentas existentes, que ya sabemos será del grupo de las cuentas activas.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Eso se ve en la ilustración siguiente, en la que podemos seleccionar &lt;em&gt;Caja&lt;/em&gt;. La cuenta de &lt;em&gt;Caja&lt;/em&gt;, habrá descubierto ahora es una cuenta de &lt;strong&gt;activo&lt;/strong&gt;. También notará que hay una numeración &lt;em&gt;1.10.1&lt;/em&gt;, esa numeración en Chile también sirve para agrupar a la cuentas. Donde el primer uno significa cuentas de activo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Al seleccionar &lt;em&gt;Caja&lt;/em&gt; en &lt;strong&gt;Cuenta&lt;/strong&gt;, finalmente podremos escribir lo que queremos traspasar, en este caso son 100 pesos. Esos pesos se sacarán de la caja así que son un cargo para la caja y deben anotarse en su lado izquierdo. El lado izqierdo de cada cuenta se denomina &lt;strong&gt;Debe&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Para ser breves, la ilustración ya muestra la selección de la otra cuenta de activo que se denomina &lt;strong&gt;Banco Estado&lt;/strong&gt; y luego anotamos en el &lt;strong&gt;Haber&lt;/strong&gt; de esa cuenta el monto que queremos traspasar.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finalmente presionamos &lt;em&gt;Gardar&lt;/em&gt; para tener la partida de traspaso de 100 pesos desde la cuenta &lt;strong&gt;Caja&lt;/strong&gt; a la cuenta &lt;strong&gt;BancoEstado&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Eso lo vemos en el mensaje que sigue, donde nos indica &lt;strong&gt;“Se ha generado satisfactoriamente el registro en el período enero 2021”&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Esta explicación suscinta seguramente no lo habrá dejado ver que cometimos un error en las ilustraciones, casi al final. Tal vez podría detectarlo.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En el próximo post le revelaremos el error de ilustración. Ese error no podría ser cometido en el &lt;strong&gt;CCM&lt;/strong&gt;, pues el &lt;strong&gt;CCM&lt;/strong&gt; verifica la IGUALDAD CONTABLE. Sin embargo en nuestro curso de &lt;em&gt;Necios&lt;/em&gt; queremos que Ud. pase el trabajo de revisar esto en forma manual.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Nos vemos!&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">CCM</summary></entry><entry><title type="html">La Partida 2</title><link href="https://www.necios.cl//contabilidad/2021/10/08/partida-2.html" rel="alternate" type="text/html" title="La Partida 2" /><published>2021-10-08T00:00:00-05:00</published><updated>2021-10-08T00:00:00-05:00</updated><id>https://www.necios.cl//contabilidad/2021/10/08/partida-2</id><content type="html" xml:base="https://www.necios.cl//contabilidad/2021/10/08/partida-2.html">&lt;h1 id=&quot;la-partida-segunda-parte&quot;&gt;La Partida Segunda Parte&lt;/h1&gt;
+
+&lt;p&gt;Hola! En este post seguiremos esforzándonos en generar un formato de partida tal como se les exige a los contadores.&lt;/p&gt;
+
+&lt;p&gt;La tarea que dejamos la repetimos aquí para mayor comodidad y el archivo que Ud. debe usar como punto de partida también.&lt;/p&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/partida-3.clp&quot;&gt;partida-3.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lo que se nos pide en la Tarea es bastante exigente pero, lo ayudaremos paso a paso si le parece bien.&lt;/p&gt;
+
+&lt;p&gt;Esto es lo que hay que agregarle a la partida.&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Cantidad que se abona al lado de la cuenta de abono&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Cantidad que se carga al lado de la cuenta de cargo&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Una línea verticial (no es necesario que sea una línea contínua, no exagere, basta usar el caracter | en cada renglón).&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;La línea vertical debe separar el lado izquierdo del lado derecho de una cuenta. Así en contabilidad ellos saben que lo que se pone del lado izquierdo es el cargo y lo que se pone del lado derecho es el abono.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Un renglón más abajo de todo lo anterior que tenga el cargo el símbolo | y el abono&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Otro renglón debajo de lo explicado que tenga un comentario breve: Traspaso desde cuenta x a cuenta y por un valor de tanto.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Recordemos que la técnica que hemos estado usando para mostrar las partidas es hacer una regla prioritaria que se dispara ante la entrada en memoria de cualquier &lt;strong&gt;&lt;em&gt;facts&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;partida&lt;/strong&gt;. Eso es para que en el encabezado podamos informar al lector que estaremos dando inicio a una partida y entonces colocamos el identificador de la partida.&lt;/p&gt;
+
+&lt;p&gt;Si pensamos en términos de prioridades podemos diseñar un pie de partida que muestre datos de resúmenes y otros que Ud. desee pero siempre al final de todo lo que se haya mostrado de la partida en cuestión.&lt;/p&gt;
+
+&lt;p&gt;La regla del pie de partida debe tener un prioridad menor a las regla de encabezado y a cualquier otra que se haya de disparar con relación a la partida.&lt;/p&gt;
+
+&lt;p&gt;Entonces tenemos una estructura así;&lt;/p&gt;
+
+&lt;p&gt;Partida&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Encabezado&lt;/li&gt;
+  &lt;li&gt;Cuerpo&lt;/li&gt;
+  &lt;li&gt;Pie&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;El cuerpo es variable pues corresponde al contenido de las partidas y no podemos pensar que todas las partidas sean iguales. Pero al menos podemos suponer que debe informarse de las cuentas que están involucradas en la partida.&lt;/p&gt;
+
+&lt;p&gt;Todo esto ya le hemos hecho en partida-3.clp pero lo volvemos a explicar porque es importante entender cómo se hace esto con reglas d de un expert system.&lt;/p&gt;
+
+&lt;p&gt;Una última vez más. Las reglas de un expert system tienen una parte sensible llamado Lado Izquiero (LHS) que hará accionar a la regla, eso se llama &lt;strong&gt;fire&lt;/strong&gt; y en castellano se acepta decir que las reglas se disparan. Entonces, usando ese lenguaje, la primera regla que se tiene que disparar es la del encabezado y la última es la del pie.&lt;/p&gt;
+
+&lt;p&gt;Si revisamos la tarea, debemos identificar a qué parte de la estructura convendría asignarla cada cosa, así es fácil ver que los datos de abonos y cargos debieran ir en el cuerpo, así como un pedazo de línea vertical y que el resto debiera ir en el pie de partida.&lt;/p&gt;
+
+&lt;p&gt;Los tramos de línea vertical se van componiendo hasta que al final quede una línea vertical a trazos discontínuos.&lt;/p&gt;
+
+&lt;p&gt;Esta es mi soluciónm, échele un vistazo y abajo me explico.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(defrule pie
+  (declare (salience 100))
+  (partida (numero ?numero))
+  =&amp;gt;
+  (printout t &quot;------------------&quot; crlf)
+);
+
+
+(defrule cuerpo-de-cargo
+  (declare (salience 1000))
+  (partida (numero ?numero))
+  (cargo (cuenta ?cuenta) (partida ?numero) (monto ?monto))
+  =&amp;gt;
+  (printout t tab ?monto &quot;......|...............&quot; ?cuenta crlf)
+);
+
+
+(defrule cuerpo-de-abono
+  (declare (salience 1000))
+  (partida (numero ?numero))
+  (abono (cuenta ?cuenta) (partida ?numero) (monto ?monto))
+  =&amp;gt;
+  (printout t &quot;........... |.... &quot; ?monto &quot;....&quot; ?cuenta crlf)
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/partida-4.clp&quot;&gt;partida-4.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Acá verá que he definido dos reglas reemplazando a las anteriores que tenían que ver con los cargos y los abonos. Compare los archivos partida-3.clp y partida-4-clp.&lt;/p&gt;
+
+&lt;p&gt;También definí una regla nueva que se llama pie, la cual solo escribre una línea.&lt;/p&gt;
+
+&lt;p&gt;Es importante notar los valors de salience en las dos reglas de cuerpo y la del pie. &lt;em&gt;note&lt;/em&gt; que la regla del pie tiene una saliencia menor: &lt;strong&gt;100&lt;/strong&gt;. Eso asegura que el pie nunca se imprima antes que los cuerpos.&lt;/p&gt;
+
+&lt;p&gt;El resultado es el siguiente:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; ==&amp;gt; f-1 (partida (numero 1) (dia 1) (mes enero) (ano 2021))
+
+==&amp;gt; f-2 (cuenta (nombre caja) (debe 0) (haber 0))
+
+==&amp;gt; f-3 (abono (partida 1) (cuenta caja) (monto 100) (realizado false))
+
+==&amp;gt; f-4 (cuenta (nombre banco) (debe 0) (haber 0))
+
+==&amp;gt; f-5 (cargo (partida 1) (cuenta banco) (monto 100) (realizado false))
+
+Partida 1
+
+------------------
+
+100......|...............banco
+
+........... |.... 100....caja
+
+------------------ &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;análisis&quot;&gt;Análisis&lt;/h2&gt;
+
+&lt;p&gt;En este post hemos resuelto la forma de mostrar una partida con solo lo imprescindible:&lt;/p&gt;
+
+&lt;p&gt;Las transacciones y las cuentas en las que se desarrollan.&lt;/p&gt;
+
+&lt;p&gt;Inicialmente Ud. asserta la partida, las cuentas de la partida y las transacciones. Debe tener cuidado de que los montos de las transacciones sean iguales lado a lado. Eso es aplicar la regla de igualdad de la Contabilidad y nos permite no comprometer nuestros recursos sin que hayamos conseguiro cómo financiarlos. En breve: siempre debe comprobar que la suma de cada lado por separado coincidad. TTambién puede programarlo en el expert system, pero eso no es bueno pues es Ud. quien debe estar consciente de lo que haga. Es una forma de autoeducarse en finanzas o responsabilidad financiera.&lt;/p&gt;
+
+&lt;p&gt;Volviendo, en esta tarea no hemos hecho nada con las reglas de las transacciones, ellas siguen iguales, solo hemos hecho un esfuerzo  por mostrar la partida que es un conjunto de movimientos entre cuentas que tienen un sentido finaciero. El de esta tarea es un traspaso entre cuentas. La cuenta de donde se saca se carga y la que recibe el monto se abona. Este monto debe ser exactamente el mismo.&lt;/p&gt;
+
+&lt;p&gt;Haremos una mejora para mostrar el nombre de la transacción. En general se coloca “Por ….”. Ahora lo verá.&lt;/p&gt;
+
+&lt;p&gt;Para ello, solo hemos de colocar un pintout en el pie.&lt;/p&gt;
+
+&lt;p&gt;Para agregar lo que hemos llamado glosa de la partida, debemos agregar un campo glosa al template partida para que se pueda usar desde el pie. Por lo que debemos modificar la regla pie para que haga un printout con ese valor.&lt;/p&gt;
+
+&lt;p&gt;No olvide agregar el contenido de la glosa cuando asserte la partida.&lt;/p&gt;
+
+&lt;p&gt;Estas son las reglas que hemos modificado&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt;(deftemplate partida
+   (slot glosa)
+   (slot numero)
+   (slot dia)
+   (slot mes)
+   (slot ano));
+
+
+(defrule pie
+  (declare (salience 100))
+  (partida (numero ?numero) (glosa ?glosa))
+  =&amp;gt;
+  (printout t &quot;------------------&quot; crlf)
+);
+
+
+(defrule inicio
+  (declare (salience 10000))
+  =&amp;gt;
+  ( watch facts)
+
+  ( assert (partida  (glosa &quot;Traspaso desde cuenta Caja a Banco por un valor de 100.&quot;)  (numero 1) (dia 1) (mes enero) (ano 2021) ))
+  ( assert (cuenta (nombre caja) (debe 0)))
+  ( assert (abono (partida 1) (cuenta caja) (monto 100)))
+
+  ( assert (cuenta (nombre banco) (debe 0)))
+  ( assert (cargo (partida 1) (cuenta banco) (monto 100)))
+
+);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Este es el resultado que hemos obtenido&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-clips&quot; data-lang=&quot;clips&quot;&gt; Partida 1
+
+------------------
+
+100......|...............banco
+
+........... |.... 100....caja
+
+------------------
+
+Por Traspaso desde cuenta Caja a Banco por un valor de 100. &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Clique aqui para bajar el archivo &lt;a href=&quot;/partida-5.clp&quot;&gt;partida-5.clp&lt;/a&gt;
+Use abductor para generar contabilidad online &lt;a href=&quot;http://abductor.necios.cl/&quot;&gt;Abductor&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="contabilidad" /><summary type="html">La Partida Segunda Parte</summary></entry></feed>

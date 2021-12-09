@@ -1,0 +1,72 @@
+---
+layout: post
+title: Abono
+date: 2021-09-12
+categories: contabilidad
+---
+# Abono
+
+
+En los posts anteriores hemos explicando como hacer una regla que genere un cargo en una cuenta. A nosotros, los que no somos contadores, nos gustaría tener una explicación razonable de por qué se llama de esa forma. Sin embargo, no hemos encontrado una buena explicación, pareciera que cargo es una palabra que está a asociada a la tenencia de responsabilidades, por ejemplo el jefe a cargo de un batallón tiene una responsabilidad del tamaño de un batallón. De momento, asuma que cargar una cuenta significa aumentar el monto de su lado izquiero para registrar un aumento de la responsabilidad de esa cuenta. Lo contrario se denomina abono, con lo que abonar una cuenta es descargarla de responsabilidad. 
+
+En este punto veremos en forma breve cómo sería abonar una cuenta. Pero ya podemos adelantar mucho trecho si le decimos que es exactamente lo mismo pero del lado derecho. Así que le dejamos de tarea que Ud. haga la regla para agregar un monto en el lado derecho de una cuenta.
+
+Nosotros le adelantamos algunas tareas para que no resulte un trabajo tan agobiante:
+
+
+{% highlight CLIPS %}
+(deftemplate cargo
+   (slot monto (default 0))
+   (slot realizado (default false))
+)
+
+(deftemplate cuenta
+   (slot debe (default 0))
+)
+
+;este es nuevo
+(deftemplate abono
+  (slot monto (default 0))
+  (slot realizado (default false))
+)
+
+(defrule cargar-cuenta-existente
+   ?cargo  <-  ( cargo (monto ?monto) )
+   ?cuenta <-  ( cuenta (debe ?debe)  )
+  =>
+   ( halt )
+   ( modify ?cuenta (debe ( round (+ ?debe ?monto)) ))
+   ( modify ?cargo  (realizado true))
+   ( printout t "c-->" tab ?monto tab "|" tab 0 tab crlf)
+)
+
+(defrule abonar-cuenta-existente
+   ?cargo  <-  ( cargo (monto ?monto) )
+   ?cuenta <-  ( cuenta (debe ?debe)  )
+  =>
+ ;Ud. debe escribir aquí lo que debe realizar esta regla
+)
+
+
+(defrule inicio
+  (declare (salience 10000))
+  =>
+  ( watch facts)
+  ( assert (cuenta (debe 0)))
+  ( assert (cargo (monto 100)))
+  ( assert (abono (monto 90)))
+)
+
+{% endhighlight %}
+
+Y la salida en pantalla correspondiente debise ser algo parecido a:
+
+{% highlight CLIPS %}
+c-->    100     |       90
+{% endhighlight %}
+
+[bienvenido](/contabilidad/2021/09/05/bienvenido.html)|[cuentas](/contabilidad/2021/09/06/cuentas.html)|[cargo](/contabilidad/2021/09/07/cargo.html)|
+
+
+
+
