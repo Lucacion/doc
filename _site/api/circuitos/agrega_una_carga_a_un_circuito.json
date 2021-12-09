@@ -1,0 +1,67 @@
+{
+  "resource": "Circuitos",
+  "resource_explanation": "Preguntas de diseño sobre circuitos",
+  "http_method": "POST",
+  "route": "/api/v1/electrico/circuitos/addToCircuito.json",
+  "description": "Agrega una carga a un circuito",
+  "explanation": "Busca el circuito y le agrega la carga seleccionada por el Usuario",
+  "parameters": [
+    {
+      "required": true,
+      "name": "auth_token",
+      "description": "Token de autorización"
+    },
+    {
+      "required": true,
+      "name": "__amp_source_origin",
+      "description": "Origen de Amp Publisher"
+    },
+    {
+      "required": true,
+      "name": "carga_id",
+      "description": "Identificación de la carga en Cargas Tree"
+    },
+    {
+      "required": true,
+      "name": "circuito",
+      "description": "Identificación del tipo de Circuito en Cargas Tree"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/electrico/circuitos/addToCircuito.json",
+      "request_body": "__amp_source_origin=http%3A%2F%2F192.168.137.190&carga_id=844&circuito=I",
+      "request_headers": {
+        "Origin": "http://192.168.137.190",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"cargas_count\": 1,\n  \"time_stamp\": \"2020-03-03T04:40:27.714-03:00\",\n  \"items\": [\n    {\n      \"img\": \"/img/led.png\",\n      \"cantidad\": 1,\n      \"delete_link\": \"http://example.org/api/v1/electrico/circuitos/%23%3CMock::Carga:0x0dbe2b40%3E/dropFromCircuito\",\n      \"id\": 1,\n      \"nombre\": \"/img/led.png\",\n      \"potencia\": null,\n      \"circuito\": null,\n      \"equipo\": 844\n    }\n  ]\n}",
+      "response_headers": {
+        "AMP-Access-Control-Allow-Source-Origin": "http://192.168.137.190",
+        "Access-Control-Allow-Origin": "http://192.168.137.190",
+        "Access-Control-Expose-Headers": "AMP-Access-Control-Allow-Source-Origin",
+        "Access-Control-Allow-Credentials": true,
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e9331d0ef992383c6b4a1c31cf34e13a\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "cd91011e-9900-4e6e-81c0-a981bb63935d",
+        "X-Runtime": "0.127668",
+        "Vary": "Origin",
+        "Content-Length": "296"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

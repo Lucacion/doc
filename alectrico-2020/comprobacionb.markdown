@@ -1,0 +1,44 @@
+--- 
+title: Saldos-B-alectrico-2020
+permalink: /alectrico-2020/comprobacion b 
+layout: page
+--- 
+
+
+Solo se consideran las transacciones hasta el día 31	diciembre.
+Cifras en pesos.
+Se han practicado liquidaciones, por lo que NO se muestran cuentas nominales
+<table rules='groups'>
+<style> tfoot {  border: 3px solid black;  } </style> 
+<thead><th colspan='7'> B A L A N C E  DE COMPROBACION DE SUMAS Y DE SALDOS </th> </thead>
+<thead> <th colspan='7'> alectrico-2020</th></thead>
+<thead> <th> </th> <th align='center' colspan= '2'>SUMAS</th> <th>|</th> <th align='center' colspan='2'>SALDOS</th> <th rowspan='2' > Errores </th> </thead>
+<thead> <th></th>  <th>DEBE</th> <th>HABER</th> <th>|</th> <th>DEBER</th> <th>ACREEDOR</th> <th>A Corregir </th> </thead>
+<tbody>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td><small>utilidad</small> </td> <td align='right'>0</td> <td align='right'>85294</td> <td> | </td> <td align='right'> 0</td> <td align='right'>85294</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td><small>idpc</small> </td> <td align='right'>0</td> <td align='right'>8761</td> <td> | </td> <td align='right'> 0</td> <td align='right'>8761</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td><small>inventario-final</small> </td> <td align='right'>44044</td> <td align='right'>0</td> <td> | </td> <td align='right'> 44044</td> <td align='right'>0</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>Caja<small>caja</small> </td> <td align='right'>2100457</td> <td align='right'>1050248</td> <td> | </td> <td align='right'> 1050209</td> <td align='right'>0</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>Banco Estado<small>banco-estado</small> </td> <td align='right'>1145301</td> <td align='right'>453474</td> <td> | </td> <td align='right'> 691827</td> <td align='right'>0</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>PPM (Pago Provisional Mensual)<small>ppm</small> </td> <td align='right'>721</td> <td align='right'>0</td> <td> | </td> <td align='right'> 721</td> <td align='right'>0</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>IVA Créditos<small>iva-credito</small> </td> <td align='right'>21460</td> <td align='right'>10551</td> <td> | </td> <td align='right'> 10909</td> <td align='right'>0</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>marca-alectrico<small>marca-alectrico</small> </td> <td align='right'>290000</td> <td align='right'>0</td> <td> | </td> <td align='right'> 290000</td> <td align='right'>0</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>Amortización Acumulada<small>amortizacion-acumulada-intangibles</small> </td> <td align='right'>0</td> <td align='right'>2416</td> <td> | </td> <td align='right'> 0</td> <td align='right'>2416</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td>Capital pagado<small>capital-social</small> </td> <td align='right'>0</td> <td align='right'>2000000</td> <td> | </td> <td align='right'> 0</td> <td align='right'>2000000</td> </tr>
+<tr style=' background: #fff; border: 1px solid red;'>
+<td><small>ganancia-por-correccion-monetaria</small> </td> <td align='right'>0</td> <td align='right'>48</td> <td> | </td> <td align='right'> 0</td> <td align='right'>48</td> </tr>
+</tbody>
+<tfoot>
+<tr> <td></td> <td align='right'>3601983</td> <td align='right'>3610792</td><td> | </td> <td align='right'>2087710</td> <td align='right'>2096519</td> </tr>
+</tfoot>
+</table>
