@@ -5,6 +5,7 @@ layout: page
 --- 
 
 Contabilidad para Necios® usa el siguiente código de colores para este documento.
+<li><span style='background-color: red'>[    ]</span> mensaje de alerta. </li>
 <li><span style='background-color: lavender'>[    ]</span> partida revisada y resultado bueno. </li>
 <li><span style='background-color: lightyellow'>[    ]</span> cuenta mayor del activo </li>
 <li><span style='background-color: azure'>[    ]</span> cuenta mayor del pasivo </li>
@@ -14,7 +15,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <li><span style='background-color: blanchedalmond'>[    ]</span> subtotales de la transacción </li>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: n-a
 - [x] voucher en ccm: 132
@@ -46,7 +47,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 2111
 - [x] voucher en ccm: 183
@@ -70,7 +71,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] voucher en ccm: 184
 - [x] tipo de asiento: traspaso
@@ -93,7 +94,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 3
 - [x] voucher en ccm: 192
@@ -120,7 +121,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 4
 - [x] voucher en ccm: 192
@@ -147,7 +148,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] voucher en ccm: 192
 - [x] tipo de asiento: 61
@@ -176,7 +177,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 6
 - [x] voucher en ccm: 192
@@ -206,7 +207,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 7
 - [x] voucher en ccm: 192
@@ -237,7 +238,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 8
 - [x] tipo de asiento: 61
@@ -266,7 +267,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a khipu </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 9
 - [x] tipo de asiento: 33
@@ -295,7 +296,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 10
 - [x] tipo de asiento: 33
@@ -323,7 +324,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a easy </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 12
 - [x] tipo de asiento: 33
@@ -351,7 +352,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a sodimac </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 13
 - [x] tipo de asiento: 33
@@ -380,7 +381,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a sodimac </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 131
 - [x] voucher en ccm: 186
@@ -406,7 +407,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br>Cuenta compras debe ser materiales
+<p style='color: white; background-color: red'> Cuenta compras debe ser materiales</p>
 <br> 
 - [x] antiguo número de partida: 14
 - [x] tipo de asiento: 33
@@ -434,7 +435,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a easy </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] antiguo número de partida: 14333
 - [x] voucher en ccm: 188
@@ -463,7 +464,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -491,7 +492,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -515,7 +516,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-de-iva
 - [ ] rcv
@@ -542,7 +543,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -569,7 +570,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -595,7 +596,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a dartel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -621,7 +622,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -647,7 +648,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a embros </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -672,7 +673,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -697,7 +698,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -723,7 +724,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -750,7 +751,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -777,7 +778,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a sodimac </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -803,7 +804,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -828,7 +829,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -852,7 +853,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -879,7 +880,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -906,7 +907,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -931,7 +932,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -957,7 +958,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a easy </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -982,7 +983,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1009,7 +1010,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1033,7 +1034,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -1060,7 +1061,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1085,7 +1086,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1110,7 +1111,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a trust </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1137,7 +1138,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1162,7 +1163,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1187,7 +1188,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a test-animation-video-maker </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1212,7 +1213,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1239,7 +1240,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1263,7 +1264,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -1287,7 +1288,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1312,7 +1313,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a maria-jose </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1337,7 +1338,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1361,7 +1362,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a tgr </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1385,7 +1386,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a tgr </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1409,7 +1410,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a tgr </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1433,7 +1434,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a tgr </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1458,7 +1459,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a test-animation-video-maker </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1483,7 +1484,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1508,7 +1509,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1533,7 +1534,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a macprint </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1557,7 +1558,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -1581,7 +1582,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1606,7 +1607,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1631,7 +1632,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a macprint </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1656,7 +1657,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1681,7 +1682,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a alexander </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1706,7 +1707,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a ie </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1731,7 +1732,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1756,7 +1757,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1782,7 +1783,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a lider </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1807,7 +1808,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a scrap </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -1832,7 +1833,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a ilop </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1859,7 +1860,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1886,7 +1887,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1911,7 +1912,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1936,7 +1937,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a test-animation-video-maker </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1961,7 +1962,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -1985,7 +1986,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -2012,7 +2013,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2040,7 +2041,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2065,7 +2066,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a u-chile </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2090,7 +2091,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a eugenio </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2117,7 +2118,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -2144,7 +2145,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-remanente
 - [ ] rcv
@@ -2168,7 +2169,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2195,7 +2196,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2222,7 +2223,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2249,7 +2250,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2274,7 +2275,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a dartel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -2299,7 +2300,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2326,7 +2327,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2353,7 +2354,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2380,7 +2381,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2403,7 +2404,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2428,7 +2429,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2453,7 +2454,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -2476,7 +2477,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2501,7 +2502,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2528,7 +2529,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2553,7 +2554,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2577,7 +2578,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cuentas-por-cobrar </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2604,7 +2605,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -2631,7 +2632,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2658,7 +2659,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2684,7 +2685,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2711,7 +2712,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2735,7 +2736,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a electrico </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2759,7 +2760,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a electricidad </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2786,7 +2787,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a electrocom </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2813,7 +2814,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a electrocom </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -2840,7 +2841,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -2867,7 +2868,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-remanente
 - [ ] rcv
@@ -2890,7 +2891,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2916,7 +2917,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2942,7 +2943,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2966,7 +2967,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a u-chile </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -2992,7 +2993,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -3018,7 +3019,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: traspaso
 - [ ] rcv
@@ -3041,7 +3042,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cuentas-por-cobrar </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: control-activo
 - [ ] rcv
@@ -3064,7 +3065,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3089,7 +3090,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3114,7 +3115,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a u-chile </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3139,7 +3140,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a u-chile </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3165,7 +3166,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3190,7 +3191,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3217,7 +3218,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3243,7 +3244,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a homecenter </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3270,7 +3271,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3297,7 +3298,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -3324,7 +3325,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3347,7 +3348,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3373,7 +3374,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3398,7 +3399,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3423,7 +3424,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3447,7 +3448,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3471,7 +3472,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3497,7 +3498,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3522,7 +3523,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3549,7 +3550,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3572,7 +3573,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cuentas-por-cobrar </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
@@ -3597,7 +3598,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a sodimac </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajustes-mensuales
 - [ ] rcv
@@ -3621,7 +3622,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -3645,7 +3646,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: 34
 - [ ] rcv
@@ -3672,7 +3673,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajustes-mensuales
 - [ ] rcv
@@ -3696,7 +3697,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cuentas-por-cobrar </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: depreciacion
 - [ ] rcv
@@ -3720,7 +3721,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: ajuste-iva
 - [ ] rcv
@@ -3742,7 +3743,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: venta-exenta
 - [ ] rcv
@@ -3769,7 +3770,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: amortizacion-cuentas-por-cobrar
 - [ ] rcv
@@ -3793,7 +3794,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a cuentas-por-cobrar </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: venta-afecta
 - [ ] rcv
@@ -3821,7 +3822,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
 <p style='page-break-before: always;'>&nbsp;</p>
 <br> 
-<br> 
+<p style='color: white; background-color: red'>  </p>
 <br> 
 - [x] tipo de asiento: amortizacion-cuentas-por-cobrar
 - [ ] rcv
@@ -4155,6 +4156,25 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 31 de diciembre	2021	 ) </td> </tr>
 <tr><td colspan='8'> Partida 1151: v/Por Determinación de la Base Imponible: Aportes-Formulario F29 diciembre </td></tr>
+<tr><td colspan = '8'> nil</td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 1152</th></thead>
+<tbody>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 0 </td> <td style='background-color: blanchedalmond'> 0</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 31 de diciembre	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 1152: v/Para determinar la utilidad tributaria del ejercicio </td></tr>
 <tr><td colspan = '8'> nil</td> </tr>
 </tbody>
 </table>
