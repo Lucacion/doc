@@ -12,11 +12,9 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <li><span style='background-color: gold'>[    ]</span> ganancia </li>
 <li><span style='color: white; background-color: black'>[    ]</span> pérdida </li>
 <table><tbody>
-<tr><td>pérdida</td><td>208753</td><td></td><td>costos-de-ventas</td></tr>
-<tr><td>pérdida</td><td>235022</td><td></td><td>compras</td></tr>
-<tr><td>pérdida</td><td>320154</td><td></td><td>gastos-administrativos</td></tr>
-<tr><td>pérdida</td><td>200619</td><td></td><td>gastos-promocionales</td></tr>
-<tr><td>pérdida</td><td>74232</td><td></td><td>depreciacion</td></tr>
-<tr><td>pérdida</td><td>26587</td><td></td><td>amortizacion-intangibles</td></tr>
-<tr><td> ganancias </td><td> </td><td>1253261</td><td>ingresos-brutos</td></tr>
+<tr><td>pérdida</td><td>1728</td><td></td><td>costos-de-ventas</td></tr>
+<tr><td>pérdida</td><td>65454</td><td></td><td>compras</td></tr>
+<tr><td>pérdida</td><td>2417</td><td></td><td>amortizacion-intangibles</td></tr>
+<tr><td>pérdida</td><td>4202</td><td></td><td>depreciacion</td></tr>
+<tr><td> ganancias </td><td> </td><td>73975</td><td>ingresos-brutos</td></tr>
 <table><tbody>

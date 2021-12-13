@@ -1,0 +1,6 @@
+.jekyll-cache/
+_site/
+templates/
+*.clp.swn
+doc/
+*dribble.txt
