@@ -25,7 +25,7 @@ ESTADO DE RESULTADOS
 | (=)65454| Compras Netas
 | (+) 44044	| Inventario Inicial
 | (=) 109498| Mercadería Disponible para la Venta 
-| (-) 109498| Inventario Final 
+| (-) 65454| Inventario Final 
 | | | | (=)72214| UTILIDAD BRUTA (Ventas Netas - Costo de Ventas)
 | | | | | (-) 6619| Gastos de Operación A.31-LIR)
 |0| Gastos del Dpto Administración
@@ -44,5 +44,5 @@ ESTADO DE RESULTADOS
 | | | | | (-)0| Pérdida por Corrección Monetaria
  | | | | | (+)33| Ganancia por Corrección Monetaria
  | | | | (=)65628| RESULTADO FUERA DE EXPLOTACION
-| | | | | (X) 10967| Impuesto que no se aplica por que hubo pérdida tributaria
-| | | | (=) 109672| UTILIDAD DEL EJERCICIO (U.Antes.idpc - idpc)
+| | | | | (X) 6563| Impuesto que no se aplica por que hubo pérdida tributaria
+| | | | (=) 65628| UTILIDAD DEL EJERCICIO (U.Antes.idpc - idpc)

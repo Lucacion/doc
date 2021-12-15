@@ -15,7 +15,6 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <table><tbody> 
 <tr><td colspan='3'> Inicio de Cuenta de Inventario Final </td></tr>
 <tr style='background-color: cornflowerblue'><td> Partida </td> <td> DEBE </td> </tr>
-<tr style='color: white; background-color: black' ><td>1003</td><td>44044</td></tr>
 <tr style='color: white; background-color: black' ><td>1003</td><td>39487</td></tr>
 <tr style='color: white; background-color: black' ><td>1003</td><td>18849</td></tr>
 <tr style='color: white; background-color: black' ><td>1003</td><td>7118</td></tr>
@@ -23,8 +22,8 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 </tbody></table>
 <table>
 <tr style='background-color: blanchedalmond'><td> </td><td>perdidas-y-ganancias</td><td>saldo-acreedor</td></tr>
-<tr> <td> 1003</td> <td>0</td><td> 109498</td></tr>
-<tr style='background-color: blanchedalmond'><td>109498</td></tr>
+<tr> <td> 1003</td> <td>0</td><td> 65454</td></tr>
+<tr style='background-color: blanchedalmond'><td>65454</td></tr>
 </table>
 <table style='background-color: lightyellow' ><tbody>
 <tr style='color: white; background-color: black'><td colspan='9'> Partida 1001</td></tr>
@@ -54,8 +53,8 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='9'>v/Por liquidación de Cuentas de Resultado Deudoras</td></tr>
 <table><tbody> 
 <tr  style='background-color: blanchedalmond'><td></td><td> perdidas-y-ganancias</td><td>saldo-deudor</td></tr>
-<tr> <td> 1003</td> <td>152768</td> <td>109498</td></tr>
-<tr style='background-color: blanchedalmond'><td>43270</td></tr>
+<tr> <td> 1003</td> <td>152768</td> <td>65454</td></tr>
+<tr style='background-color: blanchedalmond'><td>87314</td></tr>
 <table style='background-color: lightyellow' ><tbody>
 <tr style='color: white; background-color: black'><td colspan='9'> Partida 1002</td></tr>
 <tr><th>DEBE</th><th> HABER </th> <th colspan='6'> Cuenta </th></tr>
@@ -71,8 +70,8 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <table><tbody> 
 <table>
 <tr style='background-color: blanchedalmond'><td> </td><td>perdidas-y-ganancias</td><td>saldo-acreedor</td></tr>
-<tr> <td> 1003</td> <td>152768</td><td> 262440</td></tr>
-<tr style='background-color: blanchedalmond'><td>109672</td></tr>
+<tr> <td> 1003</td> <td>152768</td><td> 218396</td></tr>
+<tr style='background-color: blanchedalmond'><td>65628</td></tr>
 </table>
 <table style='background-color: lightyellow' ><tbody>
 <tr style='color: white; background-color: black'><td colspan='9'> Partida 1003</td></tr>
@@ -143,27 +142,27 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr style='color: white; background-color: black'><td colspan='9'> Partida 1004</td></tr>
 <tr><th>DEBE</th><th> HABER </th> <th colspan='6'> Cuenta </th></tr>
 <tr> <td colspan='7'> x-- Liquidando cuenta de resultados idpc en perdidas-y-ganancias</td></tr>
-<tr> <td colspan='7'> La cuenta de liquidacion tiene un debe de 	152768 y un haber de 	262440</td></tr>
-<tr style='background-color: lightgreen'><td>10967</td> <td></td> <td colspan='2' >idpc</td></tr>
-<tr style='background-color: lightgreen'><td></td><td>10967</td> <td> </td><td colspan='2'> r(perdidas-y-ganancias) </td></tr> 
+<tr> <td colspan='7'> La cuenta de liquidacion tiene un debe de 	152768 y un haber de 	218396</td></tr>
+<tr style='background-color: lightgreen'><td>6563</td> <td></td> <td colspan='2' >idpc</td></tr>
+<tr style='background-color: lightgreen'><td></td><td>6563</td> <td> </td><td colspan='2'> r(perdidas-y-ganancias) </td></tr> 
 <tr> <td colspan='8'>x-- Liquidando cuenta de resultados (cuando hay ganancia) en: utilidad en perdidas-y-ganancias</td></tr>
-<tr style='font-weight:bold; color: white; background-color: crimson'> <td>109672</td><td></td><td>utilidad</td><tr>
-<tr><td></td><td>109672</td><td> </td><td colspan='2'> r(perdidas-y-ganancias) </td></tr>
-<tr style='color: white; background-color: black'> <td> 120639</td><td> 120639</td><td colspan='3'>( 31 de enero	2021	 ) </td></tr>
+<tr style='font-weight:bold; color: white; background-color: crimson'> <td>65628</td><td></td><td>utilidad</td><tr>
+<tr><td></td><td>65628</td><td> </td><td colspan='2'> r(perdidas-y-ganancias) </td></tr>
+<tr style='color: white; background-color: black'> <td> 72191</td><td> 72191</td><td colspan='3'>( 31 de enero	2021	 ) </td></tr>
 <tr><td colspan='9'>alectrico® SpA</td></tr>
 <tr><td colspan='9'>v/Para determinar el valor del resultado del período</td></tr>
 <table><tbody> 
 <table>
 <tr style='background-color: blanchedalmond'><td> </td><td>perdidas-y-ganancias</td><td>saldo-acreedor</td></tr>
-<tr> <td> 1003</td> <td>152768</td><td> 262440</td></tr>
-<tr style='background-color: blanchedalmond'><td>109672</td></tr>
+<tr> <td> 1003</td> <td>152768</td><td> 218396</td></tr>
+<tr style='background-color: blanchedalmond'><td>65628</td></tr>
 </table>
 <table style='background-color: lightyellow' ><tbody>
 <tr style='color: white; background-color: black'><td colspan='9'> Partida 1005</td></tr>
 <tr><th>DEBE</th><th> HABER </th> <th colspan='6'> Cuenta </th></tr>
-<tr> <td> 10967</td><td> </td><td>idpc#pasivo</td></tr>
-<tr><td> </td><td>10967</td><td> r(provision-impuesto-a-la-renta) </td></tr>
-<tr style='color: white; background-color: black'> <td> 10967</td><td> 10967</td><td colspan='3'>( 31 de enero	2021	 ) </td></tr>
+<tr> <td> 6563</td><td> </td><td>idpc#pasivo</td></tr>
+<tr><td> </td><td>6563</td><td> r(provision-impuesto-a-la-renta) </td></tr>
+<tr style='color: white; background-color: black'> <td> 6563</td><td> 6563</td><td colspan='3'>( 31 de enero	2021	 ) </td></tr>
 <tr><td colspan='9'>alectrico® SpA</td></tr>
 <tr><td colspan='9'>v/Provision de idpc de 2021</td></tr>
 <table><tbody> 

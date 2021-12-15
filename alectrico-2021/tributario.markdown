@@ -30,7 +30,7 @@ layout: page
 <tr><td>(=)</td><td>65454</td><td></td><td></td><td></td><td>Compras Netas</td></tr> 
 <tr><td> (+) </td><td>44044</td><td></td><td></td><td></td><td colspan='2'>Inventario Inicial</td></tr> 
 <tr><td> (=) </td><td> 109498</td><td></td><td> </td><td></td><td> Mercadería Disponible para la Venta </td></tr>
-<tr><td> (-) </td> <td>109498</td><td> </td><td></td><td></td><td colspan='2'>Inventario Final </td></tr>
+<tr><td> (-) </td> <td>65454</td><td> </td><td></td><td></td><td colspan='2'>Inventario Final </td></tr>
 <tr><td></td><td></td><td></td><td></td><td>72214</td><td colspan='4'>  UTILIDAD BRUTA (Ventas Netas - Costo de Ventas) </td></tr>
 <tr><td></td><td></td><td></td><td>(-)</td><td>151252</td><td colspan='4'> Gastos de Deducibles de Impuesto (Gastos Admon + Gastos Vtas + I+D + Promocion + Amortiza.Int A.31-LIR) </td></tr>
 <tr><td> (-) </td><td>0</td><td></td><td></td><td></td><td> Gastos del Dpto Administración </td></tr>
@@ -46,7 +46,7 @@ layout: page
 <tr><td></td><td> </td><td> </td><td></td><td>-79038</td><td> Utilidad Antes de Reserva </td></tr>
 <tr><td></td><td></td><td></td><td> (-) </td><td>0</td><td> Reserva Legal </td></tr>
 <tr><td> <td></td></td><td> </td><td></td><td>-79038</td><td> UTILIDAD ANTES DE IMPUESTO A LA RENTA </td></tr>
-<tr><td></td><td></td><td></td><td> (-) </td><td> 10967</td><td> Impuesto Determinado, factor es: 0.1 en 2021 </td></tr>
+<tr><td></td><td></td><td></td><td> (-) </td><td> 6563</td><td> Impuesto Determinado, factor es: 0.1 en 2021 </td></tr>
 <tr><td></td><td></td><td></td><td> (+) </td><td>33</td><td> Ganancia Por Corrección Monetaria </td></tr>
 <tr><td></td><td></td><td></td><td> (=) </td><td>-144459</td><td> UTILIDAD DEL EJERCICIO (módulo liquidaciones)</td></tr>
 </tbody></table>
