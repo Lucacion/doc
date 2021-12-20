@@ -5,7 +5,7 @@ layout: page
 --- 
 
 
-Solo se consideran las transacciones hasta el día 31	enero.
+Solo se consideran las transacciones hasta el día 31	febrero.
 Cifras en pesos.
 Se han practicado liquidaciones, por lo que NO se muestran cuentas nominales
 <table rules='groups'>
@@ -16,38 +16,38 @@ Se han practicado liquidaciones, por lo que NO se muestran cuentas nominales
 <thead> <th></th>  <th>DEBE</th> <th>HABER</th> <th>|</th> <th>DEBER</th> <th>ACREEDOR</th> <th>A Corregir </th> </thead>
 <tbody>
 <tr>
-<td><small> utilidad </small> </td> <td align='right'>85294</td> <td align='right'>150922</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>65628</td>
+<td><small> utilidad </small> </td> <td align='right'>85294</td> <td align='right'>122222</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>36928</td>
 </tr>
 <tr style=' background: #fff; border: 1px solid red;'>
-<td><small>provision-impuesto-a-la-renta</small> </td> <td align='right'>6563</td> <td align='right'>0</td> <td> | </td> <td align='right'> 6563</td> <td align='right'>0</td> </tr>
+<td><small>provision-impuesto-a-la-renta</small> </td> <td align='right'>3693</td> <td align='right'>0</td> <td> | </td> <td align='right'> 3693</td> <td align='right'>0</td> </tr>
 <tr style=' background: #fff; border: 1px solid red;'>
-<td><small>idpc</small> </td> <td align='right'>0</td> <td align='right'>6563</td> <td> | </td> <td align='right'> 0</td> <td align='right'>6563</td> </tr>
+<td><small>idpc</small> </td> <td align='right'>0</td> <td align='right'>3693</td> <td> | </td> <td align='right'> 0</td> <td align='right'>3693</td> </tr>
 <tr>
-<td><small> inventario-final </small> </td> <td align='right'>65454</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 65454</td> <td align='right'>0</td>
+<td><small> inventario-final </small> </td> <td align='right'>72061</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 72061</td> <td align='right'>0</td>
 </tr>
 <tr>
 <td>Caja<small> caja </small> </td> <td align='right'>1050209</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 1050209</td> <td align='right'>0</td>
 </tr>
 <tr>
-<td>Banco Estado<small> banco-estado </small> </td> <td align='right'>873788</td> <td align='right'>344588</td> <td align='right'> | </td> <td align='right'> 529200</td> <td align='right'>0</td>
+<td>Banco Estado<small> banco-estado </small> </td> <td align='right'>913393</td> <td align='right'>419547</td> <td align='right'> | </td> <td align='right'> 493846</td> <td align='right'>0</td>
 </tr>
 <tr>
-<td>PPM (Pago Provisional Mensual)<small> ppm </small> </td> <td align='right'>817</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 817</td> <td align='right'>0</td>
+<td>PPM (Pago Provisional Mensual)<small> ppm </small> </td> <td align='right'>823</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 823</td> <td align='right'>0</td>
 </tr>
 <tr>
-<td>IVA Créditos<small> iva-credito </small> </td> <td align='right'>58033</td> <td align='right'>29052</td> <td align='right'> | </td> <td align='right'> 28981</td> <td align='right'>0</td>
+<td>IVA Créditos<small> iva-credito </small> </td> <td align='right'>70297</td> <td align='right'>34656</td> <td align='right'> | </td> <td align='right'> 35641</td> <td align='right'>0</td>
 </tr>
 <tr>
 <td>Herramientas<small> herramientas </small> </td> <td align='right'>151252</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 151252</td> <td align='right'>0</td>
 </tr>
 <tr>
-<td>Depreciación Acumulada<small> depreciacion-acumulada-herramientas </small> </td> <td align='right'>0</td> <td align='right'>4202</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>4202</td>
+<td>Depreciación Acumulada<small> depreciacion-acumulada-herramientas </small> </td> <td align='right'>0</td> <td align='right'>8404</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>8404</td>
 </tr>
 <tr>
 <td>marca-alectrico<small> marca-alectrico </small> </td> <td align='right'>290000</td> <td align='right'>0</td> <td align='right'> | </td> <td align='right'> 290000</td> <td align='right'>0</td>
 </tr>
 <tr>
-<td>Amortización Acumulada<small> amortizacion-acumulada-intangibles </small> </td> <td align='right'>0</td> <td align='right'>4833</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>4833</td>
+<td>Amortización Acumulada<small> amortizacion-acumulada-intangibles </small> </td> <td align='right'>0</td> <td align='right'>7250</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>7250</td>
 </tr>
 <tr>
 <td>Capital pagado<small> capital-social </small> </td> <td align='right'>0</td> <td align='right'>2085294</td> <td align='right'> | </td> <td align='right'> 0</td> <td align='right'>2085294</td>
@@ -57,6 +57,6 @@ Se han practicado liquidaciones, por lo que NO se muestran cuentas nominales
 </tr>
 </tbody>
 <tfoot>
-<tr> <td></td> <td align='right'>2625454</td> <td align='right'>2625454</td><td> | </td> <td align='right'>2166520</td> <td align='right'>2166520</td> </tr>
+<tr> <td></td> <td align='right'>2681066</td> <td align='right'>2681066</td><td> | </td> <td align='right'>2141569</td> <td align='right'>2141569</td> </tr>
 </tfoot>
 </table>

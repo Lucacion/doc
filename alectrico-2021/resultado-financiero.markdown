@@ -4,45 +4,45 @@ permalink: /alectrico-2021-resultado-financiero/
 layout: page
 --- 
 <br> <br> <br> <br> <br> <br> 
-Solo se consideran las transacciones hasta el día 31 de enero.
+Solo se consideran las transacciones hasta el día 31 de febrero.
 Cifras en pesos.
 
 ESTADO DE RESULTADOS 
 
 ---|---|---|---|---|---|---|---|---|
-|73975| Ingresos Brutos Percibidos A.29-LIR
-| (+) 73942| Ventas
+|78862| Ingresos Brutos Percibidos A.29-LIR
+| (+) 78531| Ventas
 | (-) -  |  Rebajas sobre ventas
 | (-) 0| Devoluciones sobre ventas
 | (-) - | Descuentos sobre ventas
-|||| (+) 73942| Ventas Netas
-|||| (-) 1728| Costos de Ventas A.30-LIR
-| (+)65454| Compras
+|||| (+) 78531| Ventas Netas
+|||| (-) 4576| Costos de Ventas A.30-LIR
+| (+)72061| Compras
 | (+)0| Gastos sobre Compras
 | (-) 0 | Rebajas sobre Compras
 | (-) 0 | Devoluciones sobre Compras
 | (-) 0 | Descuentos sobre Compras
-| (=)65454| Compras Netas
+| (=)72061| Compras Netas
 | (+) 44044	| Inventario Inicial
-| (=) 109498| Mercadería Disponible para la Venta 
-| (-) 65454| Inventario Final 
-| | | | (=)72214| UTILIDAD BRUTA (Ventas Netas - Costo de Ventas)
-| | | | | (-) 6619| Gastos de Operación A.31-LIR)
-|0| Gastos del Dpto Administración
+| (=) 116105| Mercadería Disponible para la Venta 
+| (-) 72061| Inventario Final 
+| | | | (=)73955| UTILIDAD BRUTA (Ventas Netas - Costo de Ventas)
+| | | | | (-) 37358| Gastos de Operación A.31-LIR)
+|3128| Gastos del Dpto Administración
 |0| Gastos del Dpto Ventas
 |0 | Gastos en I+D
-|0|  Gastos en Promocion
-|2417| Amortizacion Intangibles
-|4202| Depreciacion
+|20992|  Gastos en Promocion
+|4834| Amortizacion Intangibles
+|8404| Depreciacion
 | | | | | (-) 0 | Pérdida Ejercicio Anterior PEA A.33-LIR)
-| | | | 65595| UTILIDAD DE OPERACION (U.Bruta - G.Op. - PEA)
+| | | | 36597| UTILIDAD DE OPERACION (U.Bruta - G.Op. - PEA)
 | | | | | (-) 0 | Otros Gastos
-| | | | (=)65595| UTILIDAD ANTES DE RESERVA (U.Op-Reserva Lega)
+| | | | (=)36597| UTILIDAD ANTES DE RESERVA (U.Op-Reserva Lega)
 | | | | | (-) 0| Reserva Legal
-| | | | (=) 65595| RESULTADO DE EXPLOTACION
-| | | |     65595| UTILIDAD ANTES DE IMPUESTO A LA RENTA (U.Antes.Reserva - idpc)
+| | | | (=) 36597| RESULTADO DE EXPLOTACION
+| | | |     36597| UTILIDAD ANTES DE IMPUESTO A LA RENTA (U.Antes.Reserva - idpc)
 | | | | | (-)0| Pérdida por Corrección Monetaria
- | | | | | (+)33| Ganancia por Corrección Monetaria
- | | | | (=)65628| RESULTADO FUERA DE EXPLOTACION
-| | | | | (X) 6563| Impuesto que no se aplica por que hubo pérdida tributaria
-| | | | (=) 65628| UTILIDAD DEL EJERCICIO (U.Antes.idpc - idpc)
+ | | | | | (+)331| Ganancia por Corrección Monetaria
+ | | | | (=)36928| RESULTADO FUERA DE EXPLOTACION
+| | | | | (X) 3693| Impuesto que no se aplica por que hubo pérdida tributaria
+| | | | (=) 36928| UTILIDAD DEL EJERCICIO (U.Antes.idpc - idpc)
