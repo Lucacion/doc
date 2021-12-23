@@ -93,17 +93,17 @@ NO se han practicado liquidaciones, por lo que SÍ se muestran cuentas nominales
 <td>Capital pagado<small>capital-social</small></td> <td align='right'>0</td> <td align='right'>2085294</td> <td> | </td> <td align='right'> 0</td> <td align='right'>2085294</td>
 </tr>
 <tr>
-<td>IVA Créditos<small>iva-credito</small></td> <td align='right'>70297</td> <td align='right'>34656</td> <td> | </td> <td align='right'> 35641</td> <td align='right'>0</td>
+<td>IVA Créditos<small>iva-credito</small></td> <td align='right'>59121</td> <td align='right'>23514</td> <td> | </td> <td align='right'> 35607</td> <td align='right'>0</td>
 </tr>
 <tr style=' background: #fff; border: 1px solid red;'>
 <td>Materiales Eléctrico<small>materiales</small></td> <td align='right'>44044</td> <td align='right'>44044</td> <td> | </td> <td align='right'> 0</td> <td align='right'>0</td> </tr>
 <tr>
-<td>Banco Estado<small>banco-estado</small></td> <td align='right'>913393</td> <td align='right'>419547</td> <td> | </td> <td align='right'> 493846</td> <td align='right'>0</td>
+<td>Banco Estado<small>banco-estado</small></td> <td align='right'>913605</td> <td align='right'>419547</td> <td> | </td> <td align='right'> 494058</td> <td align='right'>0</td>
 </tr>
 <tr style=' background: #fff; border: 1px solid red;'>
-<td><small>costos-de-ventas</small></td> <td align='right'>4576</td> <td align='right'>0</td> <td> | </td> <td align='right'> 4576</td> <td align='right'>0</td> </tr>
+<td><small>costos-de-ventas</small></td> <td align='right'>4576</td> <td align='right'>178</td> <td> | </td> <td align='right'> 4398</td> <td align='right'>0</td> </tr>
 </tbody>
 <tfoot>
-<tr> <td></td> <td align='right'> <div>3117556</div></td> <td align='right'> <div>3274949</div></td><td> | </td> <td align='right'> <div>2224860</div></td> <td align='right'> <div>2382253</div></td> </tr>
+<tr> <td></td> <td align='right'> <div>3106592</div></td> <td align='right'> <div>3263985</div></td><td> | </td> <td align='right'> <div>2224860</div></td> <td align='right'> <div>2382253</div></td> </tr>
 </tfoot>
 </table>
