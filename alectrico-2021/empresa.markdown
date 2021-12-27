@@ -19,6 +19,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: n-a
+- [x] voucher en ccm: 132
+- [x] tipo de asiento: asiento-inicial
+- [ ] rcv
+- [ ] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 1</th></thead>
 <tbody>
@@ -43,6 +51,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 2111
+- [x] voucher en ccm: 183
+- [x] tipo de asiento: traspaso-de-utilidad-en-enero
+- [ ] rcv
+- [ ] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 2111</th></thead>
 <tbody>
@@ -59,6 +75,13 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] voucher en ccm: 184
+- [x] tipo de asiento: traspaso
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 2112</th></thead>
 <tbody>
@@ -75,6 +98,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 3
+- [x] voucher en ccm: 192
+- [x] tipo de asiento: resumen-rendicion-de-e-boletas
+- [ ] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 3</th></thead>
 <tbody>
@@ -94,6 +125,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 4
+- [x] voucher en ccm: 192
+- [x] tipo de asiento: resumen-rendicion-de-comprobantes-electronicos-vouchers
+- [ ] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 4</th></thead>
 <tbody>
@@ -113,6 +152,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] voucher en ccm: 192
+- [x] tipo de asiento: 61
+- [x] folio: 12
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 5</th></thead>
 <tbody>
@@ -133,6 +180,15 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 6
+- [x] voucher en ccm: 192
+- [x] tipo de asiento: 61
+- [x] folio: 13
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 6</th></thead>
 <tbody>
@@ -153,6 +209,15 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 7
+- [x] voucher en ccm: 192
+- [x] tipo de asiento: 61
+- [x] folio: 14
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 7</th></thead>
 <tbody>
@@ -174,6 +239,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 8
+- [x] tipo de asiento: 61
+- [x] folio: 29457
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 8</th></thead>
 <tbody>
@@ -194,6 +267,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 9
+- [x] tipo de asiento: 33
+- [x] folio: 35258718
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 9</th></thead>
 <tbody>
@@ -214,6 +295,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 10
+- [x] tipo de asiento: 33
+- [x] folio: 23667281
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 10</th></thead>
 <tbody>
@@ -233,6 +322,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 12
+- [x] tipo de asiento: 33
+- [x] folio: 109127578
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 12</th></thead>
 <tbody>
@@ -252,6 +349,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 13
+- [x] tipo de asiento: 33
+- [x] folio: 109127577
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 13</th></thead>
 <tbody>
@@ -272,6 +377,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 131
+- [x] voucher en ccm: 186
+- [x] tipo de asiento: depreciacion
+- [ ] rcv
+- [ ] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 131</th></thead>
 <tbody>
@@ -290,6 +403,13 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 14
+- [x] tipo de asiento: 33
+- [x] rcv
+- [x] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 14</th></thead>
 <tbody>
@@ -309,6 +429,14 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] antiguo número de partida: 14333
+- [x] voucher en ccm: 188
+- [x] tipo de asiento: ajuste-iva-enero
+- [ ] rcv
+- [ ] libro-diario
+- [x] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 14333</th></thead>
 <tbody>
@@ -330,6 +458,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 141</th></thead>
 <tbody>
@@ -351,6 +485,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 142</th></thead>
 <tbody>
@@ -369,6 +509,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: ajuste-de-iva
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 14444</th></thead>
 <tbody>
@@ -390,6 +536,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 15</th></thead>
 <tbody>
@@ -410,6 +562,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 16</th></thead>
 <tbody>
@@ -429,6 +587,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 17</th></thead>
 <tbody>
@@ -448,6 +612,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 18</th></thead>
 <tbody>
@@ -467,6 +637,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 19</th></thead>
 <tbody>
@@ -485,6 +661,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 191</th></thead>
 <tbody>
@@ -504,6 +686,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 1911</th></thead>
 <tbody>
@@ -523,6 +711,12 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 192</th></thead>
 <tbody>
@@ -539,6 +733,16 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr style='background-color: aliceblue'> <td colspan = '8'> <img src='/nota-de-debito-propia-2.png'></td> </tr>
 </tbody>
 </table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: f29
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <p style='page-break-after: always;'>&nbsp;</p>
 <table style='background-color:cornsilk'>
 <thead><th colspan='6'>Partida 1140</th></thead>
@@ -549,6 +753,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
  <tr> <td> </td> <td> 511 </td> <td>  41503 </td> <td> CRED.IVA POR DCTOS. ELECTRONICOS  </td> </tr>
  <tr> <td> </td> <td> 077 </td> <td>  28981 </td> <td> REMANENTE DE CREDITO FISC.  </td> </tr>
  <tr> <td> </td> <td> 504 </td> <td>  10942 </td> <td> REMANENTE CREDITO FISCAL MES ANTERIOR.  </td> </tr>
+ <tr> <td> </td> <td> 510 </td> <td>  -5588 </td> <td> DEBITO NOTAS DE CREDITO EMITIDAS  </td> </tr>
  <tr> <td> </td> <td> 509 </td> <td>  1 </td> <td> CANT.DCTOS.NOTAS DE CREDITO EMITIDAS </td> </tr>
  <tr> <td> </td> <td> 524 </td> <td>  1 </td> <td> TOTAL FACTURA ACTIVO FIJO </td> </tr>
  <tr> <td> </td> <td> 525 </td> <td>  28738 </td> <td> CRÉD. RECUP. Y REINT. FACT. ACTIVO FIJO </td> </tr>
@@ -570,6 +775,17 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan = '8'> codigos-f29</td> </tr>
 </tbody>
 </table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'> 563 MONTO Imponible partida 191 en sii aparece como 84, debe ser cambiado a 4589 para incluir la nota de debito No1 que anula la nota de credito 12. Supongo que SII no considera la compensación entre documentos datados en diferentes meses: la nota de crédito que se anula es del mes anterior a la fecha en que se ha emitido la nota de débito</p>
+<br> 
+- [x] tipo de asiento: f29
+- [x] a corregir: 563 MONTO Imponible partida 191 en sii aparece como 84, debe ser cambiado a 4589 para incluir la nota de debito No1 que anula la nota de credito 12. Supongo que SII no considera la compensación entre documentos datados en diferentes meses: la nota de crédito que se anula es del mes anterior a la fecha en que se ha emitido la nota de débito
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
 <p style='page-break-after: always;'>&nbsp;</p>
 <table style='background-color:cornsilk'>
 <thead><th colspan='6'>Partida 1141</th></thead>
@@ -579,11 +795,13 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
  <tr> <td> </td> <td> 511 </td> <td>  6378 </td> <td> CRED.IVA POR DCTOS. ELECTRONICOS  </td> </tr>
  <tr> <td> </td> <td> 077 </td> <td>  35872 </td> <td> REMANENTE DE CREDITO FISC.  </td> </tr>
  <tr> <td> </td> <td> 504 </td> <td>  29246 </td> <td> REMANENTE CREDITO FISCAL MES ANTERIOR.  </td> </tr>
+ <tr> <td> </td> <td> 510 </td> <td>  -5588 </td> <td> DEBITO NOTAS DE CREDITO EMITIDAS  </td> </tr>
  <tr> <td> </td> <td> 509 </td> <td>  1 </td> <td> CANT.DCTOS.NOTAS DE CREDITO EMITIDAS </td> </tr>
- <tr> <td> </td> <td> 513 </td> <td>  0 </td> <td> DEBITO DE NOTAS DEBITO EMITIDAS DEL GIRO </td> </tr>
- <tr> <td> </td> <td> 512 </td> <td>  1 </td> <td> NOTAS DE DEBITO EMITIDAS DEL GIRO </td> </tr>
+ <tr> <td> </td> <td> 528 </td> <td>  34 </td> <td> CREDITO RECUP.Y REINT/NOTAS DE CRED. </td> </tr>
+ <tr> <td> </td> <td> 513 </td> <td>  5588 </td> <td> DEBITO DE NOTAS DEBITO EMITIDAS DEL GIRO </td> </tr>
  <tr> <td> </td> <td> 110 </td> <td>  2 </td> <td> CANT.DE DCTOS.BOLETAS </td> </tr>
  <tr> <td> </td> <td> 527 </td> <td>  1 </td> <td> CANT.NOTAS DE CREDITO RECIBIDAS </td> </tr>
+ <tr> <td> </td> <td> 512 </td> <td>  2 </td> <td> NOTAS DE DEBITO EMITIDAS DEL GIRO </td> </tr>
  <tr> <td> </td> <td> 520 </td> <td>  6378 </td> <td> CREDITOS REC. REINT/FACT. DEL GIRO  </td> </tr>
  <tr> <td> </td> <td> 519 </td> <td>  4 </td> <td> CANT.DE DCTOS.FACT.RECIB.DEL GIRO </td> </tr>
  <tr> <td> </td> <td> 062 </td> <td>  6 </td> <td> PPM NETO DETERMINADO </td> </tr>
