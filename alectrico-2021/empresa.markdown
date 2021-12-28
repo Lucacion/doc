@@ -737,6 +737,159 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 20</th></thead>
+<tbody>
+<tr> <td>185 </td> <td colspan='7'> transbank#costos-de-ventas </td></tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 35</td> <td> 0</td> <td colspan='2'> a[iva-credito] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 220</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr style='color: white; background-color: black'>  <td> </td> <td>185 </td> <td> 0</td> <td> </td> <td> r[costos-de-ventas] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 220 </td> <td style='background-color: blanchedalmond'> 220</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 1 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 20: Por Costo Directo de Ventas: Comisión Pasarela enero Transbank </td></tr>
+<tr> <td colspan='7'>efectuado a transbank </td> </tr>
+<tr><td colspan = '8'> costar-directo-ventas</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='/factura-afecta-transbank-35546672.png'></td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 21</th></thead>
+<tbody>
+<tr><td>25613</td> <td colspan='7'>sodimac#materiales</td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 4866</td> <td> 0</td> <td colspan='2'> a[iva-credito] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 25613</td> <td> 0</td> <td colspan='2'> a[materiales] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 30479</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 30479 </td> <td style='background-color: blanchedalmond'> 30479</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 12 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 21: Por compra de 1 máscara cubrerrostro y bolsa filtros P100 </td></tr>
+<tr> <td colspan='7'>efectuado a sodimac </td> </tr>
+<tr><td colspan = '8'> comprar-mercaderias-al-contado</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='/factura-afecta-sodimac-109613818.png'></td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 22</th></thead>
+<tbody>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 1316</td> <td> 0</td> <td colspan='2'> a[iva-credito] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 8242</td> <td colspan='2'> a[caja] </td> </tr>
+<tr style='color: white; background-color: black'>  <td> </td> <td>6926 </td> <td> 0</td> <td> </td> <td> r[gastos-administrativos] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 8242 </td> <td style='background-color: blanchedalmond'> 8242</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 17 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 22: Por Gasto Administrativo: Servicio de Datos y Telefonía: consumo enero. </td></tr>
+<tr> <td colspan='7'>efectuado a entel </td> </tr>
+<tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='/factura-afecta-entel-42652683.png'></td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 26</th></thead>
+<tbody>
+<tr> <td>29412 </td> <td colspan='7'> ventas#ingresos-brutos </td></tr>
+<tr> <td>29412 </td> <td colspan='7'> ventas-con-voucher-afecto#ventas </td></tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 35000</td> <td> 0</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr style='background-color: azure'>  <td> </td> <td> 0 </td> <td> 5588 </td> <td> </td><td> p[iva-debito] </td> </tr>
+<tr style='background-color: gold'>  <td> </td> <td>0 </td> <td> 29412</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 35000 </td> <td style='background-color: blanchedalmond'> 35000</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 31 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 26: Por rendición de vouchers de marzo de 2021 </td></tr>
+<tr><td colspan = '8'> rendir-vouchers-afectos-sii</td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 261</th></thead>
+<tbody>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 2417</td> <td colspan='2'> a[amortizacion-acumulada-intangibles] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 4202</td> <td colspan='2'> a[depreciacion-acumulada-herramientas] </td> </tr>
+<tr style='color: white; background-color: black'>  <td> </td> <td>2417 </td> <td> 0</td> <td> </td> <td> r[amortizacion-intangibles] </td> </tr>
+<tr style='color: white; background-color: black'>  <td> </td> <td>4202 </td> <td> 0</td> <td> </td> <td> r[depreciacion] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 6619 </td> <td style='background-color: blanchedalmond'> 6619</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 31 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 261: Por amortizacion en marzo de marca-alectrico-Por depreciacion en marzo de taladro </td></tr>
+<tr><td colspan = '8'> amortizacion</td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: ajuste-iva
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 262</th></thead>
+<tbody>
+<tr> <td>334 </td> <td colspan='7'> ganancia-por-correccion-monetaria#correccion-monetaria </td></tr>
+<tr> <td>334 </td> <td colspan='7'> correccion-monetaria#ingresos-brutos </td></tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 334</td> <td> 5588</td> <td colspan='2'> a[iva-credito] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 38</td> <td> 0</td> <td colspan='2'> a[ppm] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 38</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr style='background-color: azure'>  <td> </td> <td> 5588 </td> <td> 0 </td> <td> </td><td> p[iva-debito] </td> </tr>
+<tr style='background-color: gold'>  <td> </td> <td>0 </td> <td> 334</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 5960 </td> <td style='background-color: blanchedalmond'> 5960</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 31 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 262: Por ajuste del Debito Fiscal Contra el Credito Fiscal, mes de marzo-Por pago del ppm, con factor de  0.0013 mes marzo </td></tr>
+<tr><td colspan = '8'> ajustar-iva-contra-credito</td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
 - [x] tipo de asiento: f29
 - [ ] rcv
 - [ ] libro-diario
@@ -813,6 +966,41 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 31 de febrero	2021	 ) </td> </tr>
 <tr><td colspan='8'> Partida 1141: Formulario F29 febrero </td></tr>
+<tr><td colspan = '8'> codigos-f29</td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
+- [x] tipo de asiento: 33
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<p style='page-break-after: always;'>&nbsp;</p>
+<table style='background-color:cornsilk'>
+<thead><th colspan='6'>Partida 1142</th></thead>
+ <thead> <th> </th> <th> Código </th> <th>  Valor </th> <th> Descripción </th> </thead>
+<tbody>
+ <tr> <td> </td> <td> 538 </td> <td>  5588 </td> <td> TOTAL DEBITOS  </td> </tr>
+ <tr> <td> </td> <td> 511 </td> <td>  6217 </td> <td> CRED.IVA POR DCTOS. ELECTRONICOS  </td> </tr>
+ <tr> <td> </td> <td> 077 </td> <td>  36871 </td> <td> REMANENTE DE CREDITO FISC.  </td> </tr>
+ <tr> <td> </td> <td> 504 </td> <td>  35908 </td> <td> REMANENTE CREDITO FISCAL MES ANTERIOR.  </td> </tr>
+ <tr> <td> </td> <td> 758 </td> <td>  1 </td> <td> CANT. RECIBO DE PAGO MEDIOS ELECTRÓNICOS </td> </tr>
+ <tr> <td> </td> <td> 759 </td> <td>  5588 </td> <td> DÉB. RECIBO DE PAGO MEDIOS ELECTRÓNICOS </td> </tr>
+ <tr> <td> </td> <td> 062 </td> <td>  38 </td> <td> PPM NETO DETERMINADO </td> </tr>
+ <tr> <td> </td> <td> 115 </td> <td>  0.13 </td> <td> TASA PPM 1ra Categoria </td> </tr>
+ <tr> <td> </td> <td> 563 </td> <td>  29412 </td> <td> BASE IMPONIBLE </td> </tr>
+ <tr> <td> </td> <td> 520 </td> <td>  6217 </td> <td> CREDITOS REC. REINT/FACT. DEL GIRO  </td> </tr>
+ <tr> <td> </td> <td> 519 </td> <td>  3 </td> <td> CANT.DE DCTOS.FACT.RECIB.DEL GIRO </td> </tr>
+</tbody></table><table>
+<tbody>
+<tr> <td> </td> <td> 629 </td> <td> 0</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 31 de marzo	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 1142: Formulario F29 marzo </td></tr>
 <tr><td colspan = '8'> codigos-f29</td> </tr>
 </tbody>
 </table>
