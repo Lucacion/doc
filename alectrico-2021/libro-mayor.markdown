@@ -74,7 +74,7 @@ layout: page
 </tbody>
 </table>
 <table>
-<thead><th colspan='6'> ganancia-por-correccion-monetaria</th><th colspan='3'></th></thead>
+<thead><th colspan='6'> ganancia-por-correccion-monetaria</th><th colspan='3'>Ganancia por Corrección Monetaria de Remanente de IVA</th></thead>
 <thead><th colspan='9'> ganancia-por-correccion-monetaria</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
