@@ -4,6 +4,15 @@ permalink: /alectrico-2021/subcuentas
 layout: page
 --- 
 <table>
+<thead><th colspan='6'> notas-de-credito</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> materiales-sin-valor-comercial</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>558823</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>558823</td></tr>
+</tbody>
+</table>
+<table>
 <thead><th colspan='6'> easy</th><th colspan='3'></th></thead>
 <thead><th colspan='9'> gastos-a-este-departamento</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
@@ -35,44 +44,53 @@ layout: page
 <thead><th colspan='9'> correccion-monetaria</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td> </td><td></td> <td align='right'>0</td> <td>|</td> <td align='right'>1425</td> </tr>
-<tr> <td> </td><td> </td> <td></td> <td>|</td> <td align='right'>1425</td> <td>$</td> </tr>
+<tr> <td> </td><td></td> <td align='right'>0</td> <td>|</td> <td align='right'>1592</td> </tr>
+<tr> <td> </td><td> </td> <td></td> <td>|</td> <td align='right'>1592</td> <td>$</td> </tr>
 </tbody>
 </table>
 <table>
-<thead><th colspan='6'> macprint</th><th colspan='3'></th></thead>
-<thead><th colspan='9'> macprint</th></thead>
-<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
-<tbody>
-<tr> <td></td> <td></td> <td align='right'>20000</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>20000</td></tr>
-</tbody>
-</table>
-<table>
-<thead><th colspan='6'> cloudflare</th><th colspan='3'></th></thead>
+<thead><th colspan='6'> eugenio</th><th colspan='3'></th></thead>
 <thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td></td> <td></td> <td align='right'>3302</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>3302</td></tr>
+<tr> <td></td> <td></td> <td align='right'>1764</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>1764</td></tr>
 </tbody>
 </table>
 <table>
-<thead><th colspan='6'> test-animation-video-maker</th><th colspan='3'></th></thead>
+<thead><th colspan='6'> u-chile</th><th colspan='3'></th></thead>
 <thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td></td> <td></td> <td align='right'>2941</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>2941</td></tr>
+<tr> <td></td> <td></td> <td align='right'>8361</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>8361</td></tr>
 </tbody>
 </table>
 <table>
-<thead><th colspan='6'> google-one</th><th colspan='3'></th></thead>
+<thead><th colspan='6'> ilop</th><th colspan='3'></th></thead>
 <thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td></td> <td></td> <td align='right'>1177</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>1177</td></tr>
+<tr> <td></td> <td></td> <td align='right'>3185</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>3185</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> scrap</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>1008</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>1008</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> ie</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>1672</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>1672</td></tr>
 </tbody>
 </table>
 <table>
@@ -103,6 +121,42 @@ layout: page
 </tbody>
 </table>
 <table>
+<thead><th colspan='6'> google</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>90588</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>90588</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> macprint</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> macprint</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>46857</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>46857</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> cloudflare</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>7077</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>7077</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> test-animation-video-maker</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>24241</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>24241</td></tr>
+</tbody>
+</table>
+<table>
 <thead><th colspan='6'> tgr</th><th colspan='3'></th></thead>
 <thead><th colspan='9'> pagos-a-este-proveedor</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
@@ -116,8 +170,17 @@ layout: page
 <thead><th colspan='9'> retencion-por-cambio-de-sujeto-a-proveedor-extranjero</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td> </td><td></td> <td align='right'>0</td> <td>|</td> <td align='right'>1409</td> </tr>
-<tr> <td> </td><td> </td> <td></td> <td>|</td> <td align='right'>1409</td> <td>$</td> </tr>
+<tr> <td> </td><td></td> <td align='right'>0</td> <td>|</td> <td align='right'>23608</td> </tr>
+<tr> <td> </td><td> </td> <td></td> <td>|</td> <td align='right'>23608</td> <td>$</td> </tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> google-one</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>2354</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>2354</td></tr>
 </tbody>
 </table>
 <table>
@@ -125,8 +188,8 @@ layout: page
 <thead><th colspan='9'> compras-Dpto-Administracion</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td></td> <td></td> <td align='right'>30832</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>30832</td></tr>
+<tr> <td></td> <td></td> <td align='right'>70859</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>70859</td></tr>
 </tbody>
 </table>
 <table>
@@ -134,7 +197,16 @@ layout: page
 <thead><th colspan='9'> gastos-a-este-departamento</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td></td> <td></td> <td align='right'>6611</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>6611</td></tr>
+<tr> <td></td> <td></td> <td align='right'>10842</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>10842</td></tr>
+</tbody>
+</table>
+<table>
+<thead><th colspan='6'> gonzalo</th><th colspan='3'></th></thead>
+<thead><th colspan='9'> creditos-entregados-a-gonzalo</th></thead>
+<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
+<tbody>
+<tr> <td></td> <td></td> <td align='right'>554166</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>554166</td></tr>
 </tbody>
 </table>

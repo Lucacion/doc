@@ -76,3 +76,15 @@ layout: page
 <tr> <td >-->ari Ajustar a Ingresos Remanente de IVA </td><td> junio</td> <td style='font-weight: bold; font-size: large; background-color: azure'> (+) 266</td> </tr>
 <tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>39376</td> <td> (+) 266 </td><td style='font-weight: bold; font-size: large; background-color: gold'  > (=) 39642</td> <td> f29 504 </td><td> Remanente de crédito fiscal del mes anterior</td> </tr>
 <tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>47608</td> <td> (+) 266 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 47874</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
+<table> <tbody>
+<tr> <td colspan='6' style = 'font-style: small; background-color: azure'>julio</td></tr>
+<tr> <td colspan='2' style='background-color: lightyellow'> IVA CREDITO </td> <td colspan='2' style='background-color: beige'> IVA DEBITO </td> </tr> 
+<tr> <td> DEBE </td> <td> HABER </td> <td> DEBE </td><td> HABER </td> </tr> 
+<tr> <td>99297</td> <td> 22199</td> <td> 106176</td><td> 152745</td> </tr>
+<tr> <td>77098</td> <td></td><td></td><td>46569</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: azure'>30529</td> <td></td> <td> </td><td> </td> </tr>
+</tbody> </table>
+<table> <tbody> 
+<tr> <td >-->ari Ajustar a Ingresos Remanente de IVA </td><td> julio</td> <td style='font-weight: bold; font-size: large; background-color: azure'> (+) 167</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>47608</td> <td> (+) 167 </td><td style='font-weight: bold; font-size: large; background-color: gold'  > (=) 47775</td> <td> f29 504 </td><td> Remanente de crédito fiscal del mes anterior</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>30529</td> <td> (+) 167 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 30696</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
