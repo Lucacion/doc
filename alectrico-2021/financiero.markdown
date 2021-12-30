@@ -18,5 +18,5 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td>pérdida</td><td>197678</td><td></td><td>gastos-promocionales</td></tr>
 <tr><td>pérdida</td><td>35016</td><td></td><td>depreciacion</td></tr>
 <tr><td>pérdida</td><td>16919</td><td></td><td>amortizacion-intangibles</td></tr>
-<tr><td> ganancias </td><td> </td><td>450169</td><td>ingresos-brutos</td></tr>
+<tr><td> ganancias </td><td> </td><td>1008992</td><td>ingresos-brutos</td></tr>
 <table><tbody>

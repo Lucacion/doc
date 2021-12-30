@@ -4,15 +4,6 @@ permalink: /alectrico-2021/subcuentas
 layout: page
 --- 
 <table>
-<thead><th colspan='6'> notas-de-credito</th><th colspan='3'></th></thead>
-<thead><th colspan='9'> materiales-sin-valor-comercial</th></thead>
-<thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
-<tbody>
-<tr> <td></td> <td></td> <td align='right'>558823</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>558823</td></tr>
-</tbody>
-</table>
-<table>
 <thead><th colspan='6'> easy</th><th colspan='3'></th></thead>
 <thead><th colspan='9'> gastos-a-este-departamento</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
@@ -206,7 +197,7 @@ layout: page
 <thead><th colspan='9'> creditos-entregados-a-gonzalo</th></thead>
 <thead><th> voucher </th><th> partida </th><th> debe </th> <th> | </th> <th> haber </th><th> mes </th> <th>recibida</th> <th>activo-fijo</th> <th> tipo documento</th></thead>
 <tbody>
-<tr> <td></td> <td></td> <td align='right'>554166</td> <td>|</td> <td align='right'>0</td></tr>
-<tr> <td></td> <td>$</td> <td align='right'>554166</td></tr>
+<tr> <td></td> <td></td> <td align='right'>1108332</td> <td>|</td> <td align='right'>0</td></tr>
+<tr> <td></td> <td>$</td> <td align='right'>1108332</td></tr>
 </tbody>
 </table>
