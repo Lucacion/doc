@@ -15,6 +15,8 @@ layout: page
 <tr> <td>materiales</td> <td>1</td> <td>enero</td> <td>1</td> <td>44044</td> <td>44044</td> <td colspan='3'></td> <td>asiento-inicial</td> </tr>
 </tbody></table>
 <table><tbody>
+<tr><td> c-->	57171	|	0	provision-impuesto-a-la-renta	31 de enero	final	activo</td></tr>
+<tr><td>a<--	0	|	57171	impuesto-a-la-renta-por-pagar	31 de enero	final	activo</td></tr>
 <tr><td> c-->	6607	|	0	inventario-final	4 de febrero	final	activo</td></tr>
 <tr><td> c-->	7118	|	0	inventario-final	4 de enero	final	activo</td></tr>
 <tr><td> c-->	18849	|	0	inventario-final	14 de enero	final	activo</td></tr>
