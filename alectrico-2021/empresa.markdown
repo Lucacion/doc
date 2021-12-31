@@ -655,6 +655,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 19: Devolución a subcuenta costos-de-ventas por Ajuste Mensual de Comisión mes febrero </td></tr>
 <tr> <td colspan='7'>efectuado a subcuenta </td> </tr>
 <tr><td colspan = '8'> dar-nota-de-credito-recibida-subcuenta-existente</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../nota-de-credito-transbank-2322028.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -909,7 +910,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 27: Por Costo Directo de Ventas: Comisión Pasarela marzo Transbank. </td></tr>
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <tr><td colspan = '8'> costar-directo-ventas</td> </tr>
-<tr style='background-color: aliceblue'> <td colspan = '8'> <img src=''></td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-transbank-36573193.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -934,6 +935,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 28: Por Gasto Administrativo: Servicio de Datos y Telefonía: consumo marzo. </td></tr>
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-entel-42492571.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -959,6 +961,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 281: Por Costo Directo de Ventas: Materiales Eléctricos. </td></tr>
 <tr> <td colspan='7'>efectuado a easy </td> </tr>
 <tr><td colspan = '8'> costar-directo-ventas</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-easy-24158779.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1085,6 +1088,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 31: Por Gasto Administrativo: Servicio de Datos y Telefonía: consumo marzo. </td></tr>
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-entel-43051648.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1109,6 +1113,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 32: Por Gasto Administrativo: Certificado Digital por 3 años. </td></tr>
 <tr> <td colspan='7'>efectuado a trust </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-trust-provider-4564.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1134,7 +1139,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 33: Por Costo Directo de Ventas: Comisión Pasarela abril Transbank. </td></tr>
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <tr><td colspan = '8'> costar-directo-ventas</td> </tr>
-<tr style='background-color: aliceblue'> <td colspan = '8'> <img src=''></td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-transbank-36597345.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1155,8 +1160,9 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td> </td> <td style='background-color: blanchedalmond'> 0 </td> <td style='background-color: blanchedalmond'> 0</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 13 de mayo	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 34: Partida rechazada </td></tr>
+<tr><td colspan='8'> Partida 34: Gasto Administrativo Rechazado </td></tr>
 <tr><td colspan = '8'> rechazo</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../invoice-cloudflare-3198930.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1177,8 +1183,9 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td> </td> <td style='background-color: blanchedalmond'> 0 </td> <td style='background-color: blanchedalmond'> 0</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 13 de mayo	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 35: Partida rechazada </td></tr>
+<tr><td colspan='8'> Partida 35: Gasto Promocional Rechazado </td></tr>
 <tr><td colspan = '8'> rechazo</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../video-maker-mensualidad-mayo.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1199,8 +1206,9 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td> </td> <td style='background-color: blanchedalmond'> 0 </td> <td style='background-color: blanchedalmond'> 0</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 13 de mayo	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 36: Partida rechazada </td></tr>
+<tr><td colspan='8'> Partida 36: Gasto Administrativo Rechazado </td></tr>
 <tr><td colspan = '8'> rechazo</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../google-one-mensualidad-mayo.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1299,6 +1307,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 39: Por Gasto Promocional: Compra de Flyers para Visitas a Terreno. </td></tr>
 <tr> <td colspan='7'>efectuado a maria-jose </td> </tr>
 <tr><td colspan = '8'> gastar-en-promocion</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-maria-jose-paz-31.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1323,6 +1332,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 41: Por Gasto Administrativo: Pago Mensual de Arriendo de Correo y Almacenamiento en la nube. </td></tr>
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <tr><td colspan = '8'> gastar-administrativo-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-google-one-563479.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1366,9 +1376,10 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr> <td> </td> <td style='background-color: blanchedalmond'> 31203 </td> <td style='background-color: blanchedalmond'> 31203</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 2 de junio	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 43: Por Gasto Administrativo: RF21 Giro por Declaración de Renta Fuera de Plazo. </td></tr>
+<tr><td colspan='8'> Partida 43: Por Gasto Administrativo: RF21 Giro 6379917 por Declaración de Renta AT 2021 Fuera de Plazo. </td></tr>
 <tr> <td colspan='7'>efectuado a tgr </td> </tr>
 <tr><td colspan = '8'> gastar-proveedor-no-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../giros-de-renta-2.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1392,6 +1403,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 45: Por Gasto Administrativo: RF21 Giro por Pago de IVA (3.307) retrasado de Rectificatoria 05/2020. </td></tr>
 <tr> <td colspan='7'>efectuado a tgr </td> </tr>
 <tr><td colspan = '8'> gastar-proveedor-no-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../multa-f21-junio-por-aumento-f29-mayo-at-2021.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1439,6 +1451,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 47: Por Gasto Promocional: Pago Mensual de 1TM Video Maker. </td></tr>
 <tr> <td colspan='7'>efectuado a test-animation-video-maker </td> </tr>
 <tr><td colspan = '8'> gastar-promocional-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../pago-video-maker-junio.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1463,6 +1476,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 48: Por Gasto Administrativo: Pago Mensual de Workers Serverless. </td></tr>
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <tr><td colspan = '8'> gastar-administrativo-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../invoice-cloudflare-8460226.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1487,6 +1501,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 49: Por Gasto Administrativo: Servicio de Datos y Telefonía: pago junio. </td></tr>
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <tr><td colspan = '8'> gastar-proveedor-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-entel-43170116.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1511,6 +1526,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 50: Por Gasto Promocional: Pendón Promocional Norma 4. </td></tr>
 <tr> <td colspan='7'>efectuado a macprint </td> </tr>
 <tr><td colspan = '8'> gastar-en-promocion</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-macprint-25592.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1583,6 +1599,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 63: Por Gasto Administrativo: Pago Mensual de Arriendo de Correo y Almacenamiento en la nube. </td></tr>
 <tr> <td colspan='7'>efectuado a google-one </td> </tr>
 <tr><td colspan = '8'> gastar-administrativo-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../google-one-pago-julio.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1607,6 +1624,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 64: Por Gasto Promocional: 400 tarjetas de Visita. </td></tr>
 <tr> <td colspan='7'>efectuado a macprint </td> </tr>
 <tr><td colspan = '8'> gastar-en-promocion</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-macprint-25625.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1631,6 +1649,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 65: Por Gasto Administrativo: Servicio de Datos y Telefonía: pago julio. </td></tr>
 <tr> <td colspan='7'>efectuado a entel </td> </tr>
 <tr><td colspan = '8'> gastar-proveedor-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-entel-43342312.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1679,6 +1698,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 67: Gasto Adm: Certificado Digital </td></tr>
 <tr> <td colspan='7'>efectuado a ie </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-ie-112259.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1703,6 +1723,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 68: Por Gasto Promocional: Pago Anual Boosted. </td></tr>
 <tr> <td colspan='7'>efectuado a google </td> </tr>
 <tr><td colspan = '8'> gastar-promocional-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../boosted-suscripcion-2021.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1727,6 +1748,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 69: Por Gasto Promocional: Pago Mensual Julio Google Ads. </td></tr>
 <tr> <td colspan='7'>efectuado a google </td> </tr>
 <tr><td colspan = '8'> gastar-promocional-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../google-ads-pago-julio.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1752,6 +1774,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 71: Por compra de celular samsung </td></tr>
 <tr> <td colspan='7'>efectuado a lider </td> </tr>
 <tr><td colspan = '8'> comprar-activos-fijos-al-contado</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-lider-cl-1609303.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1776,6 +1799,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 73: Por Gasto Administrativo: Etiquetas </td></tr>
 <tr> <td colspan='7'>efectuado a scrap </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-papers-scrap-67.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1800,6 +1824,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 74: Por Gasto Administrativo: Etiquetas </td></tr>
 <tr> <td colspan='7'>efectuado a ilop </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-ilop-2132286.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1841,18 +1866,17 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 76</th></thead>
 <tbody>
-<tr><td>554166</td> <td colspan='7'>gonzalo#cuentas-por-cobrar</td> </tr>
 <tr> <td>558823 </td> <td colspan='7'> ventas#ingresos-brutos </td></tr>
 <tr> <td>558823 </td> <td colspan='7'> ventas-con-factura-afecta#ventas </td></tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 554166</td> <td> 0</td> <td colspan='2'> a[cuentas-por-cobrar] </td> </tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 110833</td> <td> 0</td> <td colspan='2'> a[caja] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 664999</td> <td> 0</td> <td colspan='2'> a[banco-estado] </td> </tr>
 <tr style='background-color: azure'>  <td> </td> <td> 0 </td> <td> 106176 </td> <td> </td><td> p[iva-debito] </td> </tr>
 <tr style='background-color: gold'>  <td> </td> <td>0 </td> <td> 558823</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
 <tr> <td> </td> <td style='background-color: blanchedalmond'> 664999 </td> <td style='background-color: blanchedalmond'> 664999</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 21 de julio	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 76: Por Compra al contado y crédito de Recableado Presupuesto 1724 </td></tr>
-<tr><td colspan = '8'> vender-al-credito-y-efectivo-afecto</td> </tr>
+<tr><td colspan='8'> Partida 76: Por venta en registro de compra-ventas del SII folio: 11 de recableado a gonzalo </td></tr>
+<tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
+<tr><td colspan = '8'> vender-en-registro-de-compra-venta-sii</td> </tr>
 <tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-propia-afecta-11.png'></td> </tr>
 </tbody>
 </table>
@@ -1903,6 +1927,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 78: Por Gasto Promocional: Pago Anual de 1TM Video Maker. </td></tr>
 <tr> <td colspan='7'>efectuado a test-animation-video-maker </td> </tr>
 <tr><td colspan = '8'> gastar-promocional-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../renovacion-video-maker-anual-2021.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1927,6 +1952,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 79: Por Gasto Administrativo: Pago Mensual de Workers Serverless. </td></tr>
 <tr> <td colspan='7'>efectuado a cloudflare </td> </tr>
 <tr><td colspan = '8'> gastar-administrativo-afecto-iva-retenido</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../invoice-cloudflare-2958132.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -1957,6 +1983,33 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <br> 
 <p style='color: white; background-color: red'>  </p>
 <br> 
+- [x] tipo de asiento: 34
+- [ ] rcv
+- [ ] libro-diario
+- [ ] ccm
+- [x] revisado
+![](../revisado.png)
+<table>
+<thead> <th style='background-color: lavender' colspan='6'>Partida 82</th></thead>
+<tbody>
+<tr> <td>558823 </td> <td colspan='7'> notas-de-credito#devolucion-sobre-ventas </td></tr>
+<tr> <td>558823 </td> <td colspan='7'> devolucion-sobre-ventas#ingresos-brutos </td></tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 664999</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr style='background-color: azure'>  <td> </td> <td> 106176 </td> <td> 0 </td> <td> </td><td> p[iva-debito] </td> </tr>
+<tr style='color: white; background-color: black'>  <td> </td> <td>558823 </td> <td> 0</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 664999 </td> <td style='background-color: blanchedalmond'> 664999</td> </tr>
+<tr><td colspan='4'> alectrico® SpA</td> </tr> 
+<tr><td colspan='4'> ( 27 de julio	2021	 ) </td> </tr>
+<tr><td colspan='8'> Partida 82: Nota de Crédito SII: 15 que anula Factura SII 11 de recableado a gonzalo </td></tr>
+<tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
+<tr><td colspan = '8'> dar-nota-de-credito-sii</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../nota-de-credito-propia-15.png'></td> </tr>
+</tbody>
+</table>
+<p style='page-break-before: always;'>&nbsp;</p>
+<br> 
+<p style='color: white; background-color: red'>  </p>
+<br> 
 - [x] tipo de asiento: 33
 - [ ] rcv
 - [ ] libro-diario
@@ -1966,18 +2019,18 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <table>
 <thead> <th style='background-color: lavender' colspan='6'>Partida 83</th></thead>
 <tbody>
-<tr><td>554166</td> <td colspan='7'>gonzalo#cuentas-por-cobrar</td> </tr>
-<tr> <td>93137 </td> <td colspan='7'> ventas#ingresos-brutos </td></tr>
-<tr> <td>93137 </td> <td colspan='7'> ventas-con-factura-afecta#ventas </td></tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 554166</td> <td> 0</td> <td colspan='2'> a[cuentas-por-cobrar] </td> </tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 110833</td> <td> 0</td> <td colspan='2'> a[caja] </td> </tr>
-<tr style='background-color: azure'>  <td> </td> <td> 0 </td> <td> 17696 </td> <td> </td><td> p[iva-debito] </td> </tr>
-<tr style='background-color: gold'>  <td> </td> <td>0 </td> <td> 93137</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
-<tr> <td> </td> <td style='background-color: blanchedalmond'> 664999 </td> <td style='background-color: blanchedalmond'> 110833</td> </tr>
+<tr> <td>93179 </td> <td colspan='7'> ventas#ingresos-brutos </td></tr>
+<tr> <td>93179 </td> <td colspan='7'> ventas-con-factura-afecta#ventas </td></tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 110883</td> <td> 0</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr style='background-color: azure'>  <td> </td> <td> 0 </td> <td> 17704 </td> <td> </td><td> p[iva-debito] </td> </tr>
+<tr style='background-color: gold'>  <td> </td> <td>0 </td> <td> 93179</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 110883 </td> <td style='background-color: blanchedalmond'> 110883</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 28 de julio	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 83: nil </td></tr>
-<tr><td colspan = '8'> vender-al-credito-y-efectivo-afecto</td> </tr>
+<tr><td colspan='8'> Partida 83: Por venta en registro de compra-ventas del SII folio: 12 de recableado a gonzalo </td></tr>
+<tr> <td colspan='7'>efectuado a gonzalo </td> </tr>
+<tr><td colspan = '8'> vender-en-registro-de-compra-venta-sii</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-propia-afecta-12.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -2002,6 +2055,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 84: Adquisión de Dominio Internet: aelectrico.cl. </td></tr>
 <tr> <td colspan='7'>efectuado a u-chile </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-u-chile-2737126.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -2026,6 +2080,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 85: Por Gasto Administrativo: Masking-Tape </td></tr>
 <tr> <td colspan='7'>efectuado a eugenio </td> </tr>
 <tr><td colspan = '8'> gastar-en-depto-administracion-afecto</td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-eugenio-69612.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -2051,7 +2106,7 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tr><td colspan='8'> Partida 86: Por Costo Directo de Ventas: Comisión Pasarela julio Transbank </td></tr>
 <tr> <td colspan='7'>efectuado a transbank </td> </tr>
 <tr><td colspan = '8'> costar-directo-ventas</td> </tr>
-<tr style='background-color: aliceblue'> <td colspan = '8'> <img src=''></td> </tr>
+<tr style='background-color: aliceblue'> <td colspan = '8'> <img src='../factura-afecta-transbank-37825276.png'></td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -2069,16 +2124,16 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <tbody>
 <tr> <td>167 </td> <td colspan='7'> ganancia-por-correccion-monetaria#correccion-monetaria </td></tr>
 <tr> <td>167 </td> <td colspan='7'> correccion-monetaria#ingresos-brutos </td></tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 75814</td> <td> 0</td> <td colspan='2'> a[iva-credito] </td> </tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 1092</td> <td> 0</td> <td colspan='2'> a[ppm] </td> </tr>
-<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 1092</td> <td colspan='2'> a[banco-estado] </td> </tr>
-<tr style='background-color: azure'>  <td> </td> <td> 0 </td> <td> 75647 </td> <td> </td><td> p[iva-debito] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 167</td> <td> 46577</td> <td colspan='2'> a[iva-credito] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 394</td> <td> 0</td> <td colspan='2'> a[ppm] </td> </tr>
+<tr style='background-color: lightyellow'>  <td> </td> <td> 0</td> <td> 394</td> <td colspan='2'> a[banco-estado] </td> </tr>
+<tr style='background-color: azure'>  <td> </td> <td> 46577 </td> <td> 0 </td> <td> </td><td> p[iva-debito] </td> </tr>
 <tr style='background-color: gold'>  <td> </td> <td>0 </td> <td> 167</td> <td> </td> <td> r[ingresos-brutos] </td> </tr>
-<tr> <td> </td> <td style='background-color: blanchedalmond'> 76906 </td> <td style='background-color: blanchedalmond'> 76906</td> </tr>
+<tr> <td> </td> <td style='background-color: blanchedalmond'> 47138 </td> <td style='background-color: blanchedalmond'> 47138</td> </tr>
 <tr><td colspan='4'> alectrico® SpA</td> </tr> 
 <tr><td colspan='4'> ( 31 de julio	2021	 ) </td> </tr>
-<tr><td colspan='8'> Partida 867: Por ajuste del Credito Fiscal Contra el Debito Fiscal, mes de julio-Por pago del ppm, con factor de  0.00125 mes julio </td></tr>
-<tr><td colspan = '8'> ajustar-iva-contra-debito</td> </tr>
+<tr><td colspan='8'> Partida 867: Por ajuste del Debito Fiscal Contra el Credito Fiscal, mes de julio-Por pago del ppm, con factor de  0.00125 mes julio </td></tr>
+<tr><td colspan = '8'> ajustar-iva-contra-credito</td> </tr>
 </tbody>
 </table>
 <p style='page-break-before: always;'>&nbsp;</p>
@@ -2345,18 +2400,21 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
  <tr> <td> </td> <td> 111 </td> <td>  6650 </td> <td> DEBITOS BOLETAS EMITIDAS  </td> </tr>
  <tr> <td> </td> <td> 538 </td> <td>  28873 </td> <td> TOTAL DEBITOS  </td> </tr>
  <tr> <td> </td> <td> 511 </td> <td>  29323 </td> <td> CRED.IVA POR DCTOS. ELECTRONICOS  </td> </tr>
- <tr> <td> </td> <td> 077 </td> <td>  167 </td> <td> REMANENTE DE CREDITO FISC.  </td> </tr>
+ <tr> <td> </td> <td> 077 </td> <td>  30688 </td> <td> REMANENTE DE CREDITO FISC.  </td> </tr>
  <tr> <td> </td> <td> 504 </td> <td>  47775 </td> <td> REMANENTE CREDITO FISCAL MES ANTERIOR.  </td> </tr>
  <tr> <td> </td> <td> 524 </td> <td>  1 </td> <td> TOTAL FACTURA ACTIVO FIJO </td> </tr>
  <tr> <td> </td> <td> 525 </td> <td>  12772 </td> <td> CRÉD. RECUP. Y REINT. FACT. ACTIVO FIJO </td> </tr>
+ <tr> <td> </td> <td> 510 </td> <td>  -106176 </td> <td> DEBITO NOTAS DE CREDITO EMITIDAS  </td> </tr>
+ <tr> <td> </td> <td> 509 </td> <td>  1 </td> <td> CANT.DCTOS.NOTAS DE CREDITO EMITIDAS </td> </tr>
  <tr> <td> </td> <td> 758 </td> <td>  2 </td> <td> CANT. RECIBO DE PAGO MEDIOS ELECTRÓNICOS </td> </tr>
  <tr> <td> </td> <td> 759 </td> <td>  28872 </td> <td> DÉB. RECIBO DE PAGO MEDIOS ELECTRÓNICOS </td> </tr>
  <tr> <td> </td> <td> 110 </td> <td>  1 </td> <td> CANT.DE DCTOS.BOLETAS </td> </tr>
+ <tr> <td> </td> <td> 527 </td> <td>  1 </td> <td> CANT.NOTAS DE CREDITO RECIBIDAS </td> </tr>
  <tr> <td> </td> <td> 503 </td> <td>  2 </td> <td> CANTIDAD FACTURAS EMITIDAS </td> </tr>
- <tr> <td> </td> <td> 502 </td> <td>  123872 </td> <td> DEBITOS FACTURAS EMITIDAS  </td> </tr>
- <tr> <td> </td> <td> 062 </td> <td>  1092 </td> <td> PPM NETO DETERMINADO </td> </tr>
+ <tr> <td> </td> <td> 502 </td> <td>  123880 </td> <td> DEBITOS FACTURAS EMITIDAS  </td> </tr>
+ <tr> <td> </td> <td> 062 </td> <td>  394 </td> <td> PPM NETO DETERMINADO </td> </tr>
  <tr> <td> </td> <td> 115 </td> <td>  0.125 </td> <td> TASA PPM 1ra Categoria </td> </tr>
- <tr> <td> </td> <td> 563 </td> <td>  873920 </td> <td> BASE IMPONIBLE </td> </tr>
+ <tr> <td> </td> <td> 563 </td> <td>  315139 </td> <td> BASE IMPONIBLE </td> </tr>
  <tr> <td> </td> <td> 520 </td> <td>  16551 </td> <td> CREDITOS REC. REINT/FACT. DEL GIRO  </td> </tr>
  <tr> <td> </td> <td> 519 </td> <td>  10 </td> <td> CANT.DE DCTOS.FACT.RECIB.DEL GIRO </td> </tr>
 </tbody></table><table>
