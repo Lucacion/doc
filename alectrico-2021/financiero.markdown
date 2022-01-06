@@ -12,11 +12,9 @@ Contabilidad para Necios® usa el siguiente código de colores para este documen
 <li><span style='background-color: gold'>[    ]</span> ganancia </li>
 <li><span style='color: white; background-color: black'>[    ]</span> pérdida </li>
 <table><tbody>
-<tr><td>pérdida</td><td>12848</td><td></td><td>costos-de-ventas</td></tr>
-<tr><td>pérdida</td><td>72061</td><td></td><td>compras</td></tr>
-<tr><td>pérdida</td><td>174860</td><td></td><td>gastos-administrativos</td></tr>
+<tr><td>pérdida</td><td>64039</td><td></td><td>costos-de-ventas</td></tr>
+<tr><td>pérdida</td><td>230072</td><td></td><td>compras</td></tr>
+<tr><td>pérdida</td><td>590118</td><td></td><td>gastos-administrativos</td></tr>
 <tr><td>pérdida</td><td>197678</td><td></td><td>gastos-promocionales</td></tr>
-<tr><td>pérdida</td><td>35016</td><td></td><td>depreciacion</td></tr>
-<tr><td>pérdida</td><td>16919</td><td></td><td>amortizacion-intangibles</td></tr>
-<tr><td> ganancias </td><td> </td><td>298249</td><td>ingresos-brutos</td></tr>
+<tr><td> ganancias </td><td> </td><td>562973</td><td>ingresos-brutos</td></tr>
 <table><tbody>

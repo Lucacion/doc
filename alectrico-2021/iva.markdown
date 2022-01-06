@@ -68,23 +68,35 @@ layout: page
 <tr> <td colspan='6' style = 'font-style: small; background-color: azure'>junio</td></tr>
 <tr> <td colspan='2' style='background-color: lightyellow'> IVA CREDITO </td> <td colspan='2' style='background-color: beige'> IVA DEBITO </td> </tr> 
 <tr> <td> DEBE </td> <td> HABER </td> <td> DEBE </td><td> HABER </td> </tr> 
-<tr> <td>49017</td> <td> 1409</td> <td> 0</td><td> 0</td> </tr>
-<tr> <td>47608</td> <td></td><td></td><td>0</td> </tr>
-<tr> <td style='font-weight: bold; font-size: large; background-color: azure'>47608</td> <td></td> <td> </td><td> </td> </tr>
+<tr> <td>49017</td> <td> 0</td> <td> 0</td><td> 0</td> </tr>
+<tr> <td>49017</td> <td></td><td></td><td>0</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: azure'>49017</td> <td></td> <td> </td><td> </td> </tr>
 </tbody> </table>
 <table> <tbody> 
 <tr> <td >-->ari Ajustar a Ingresos Remanente de IVA </td><td> junio</td> <td style='font-weight: bold; font-size: large; background-color: azure'> (+) 266</td> </tr>
 <tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>39376</td> <td> (+) 266 </td><td style='font-weight: bold; font-size: large; background-color: gold'  > (=) 39642</td> <td> f29 504 </td><td> Remanente de crédito fiscal del mes anterior</td> </tr>
-<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>47608</td> <td> (+) 266 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 47874</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>49017</td> <td> (+) 266 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 49283</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
 <table> <tbody>
 <tr> <td colspan='6' style = 'font-style: small; background-color: azure'>julio</td></tr>
 <tr> <td colspan='2' style='background-color: lightyellow'> IVA CREDITO </td> <td colspan='2' style='background-color: beige'> IVA DEBITO </td> </tr> 
 <tr> <td> DEBE </td> <td> HABER </td> <td> DEBE </td><td> HABER </td> </tr> 
-<tr> <td>91692</td> <td> 22199</td> <td> 135049</td><td> 152753</td> </tr>
-<tr> <td>69493</td> <td></td><td></td><td>17704</td> </tr>
-<tr> <td style='font-weight: bold; font-size: large; background-color: azure'>51789</td> <td></td> <td> </td><td> </td> </tr>
+<tr> <td>93154</td> <td> 0</td> <td> 135049</td><td> 152753</td> </tr>
+<tr> <td>93154</td> <td></td><td></td><td>17704</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: azure'>75450</td> <td></td> <td> </td><td> </td> </tr>
 </tbody> </table>
 <table> <tbody> 
-<tr> <td >-->ari Ajustar a Ingresos Remanente de IVA </td><td> julio</td> <td style='font-weight: bold; font-size: large; background-color: azure'> (+) 167</td> </tr>
-<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>47608</td> <td> (+) 167 </td><td style='font-weight: bold; font-size: large; background-color: gold'  > (=) 47775</td> <td> f29 504 </td><td> Remanente de crédito fiscal del mes anterior</td> </tr>
-<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>51789</td> <td> (+) 167 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 51956</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
+<tr> <td >-->ari Ajustar a Ingresos Remanente de IVA </td><td> julio</td> <td style='font-weight: bold; font-size: large; background-color: azure'> (+) 220</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>49017</td> <td> (+) 220 </td><td style='font-weight: bold; font-size: large; background-color: gold'  > (=) 49237</td> <td> f29 504 </td><td> Remanente de crédito fiscal del mes anterior</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>75450</td> <td> (+) 220 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 75670</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
+<table> <tbody>
+<tr> <td colspan='6' style = 'font-style: small; background-color: azure'>agosto</td></tr>
+<tr> <td colspan='2' style='background-color: lightyellow'> IVA CREDITO </td> <td colspan='2' style='background-color: beige'> IVA DEBITO </td> </tr> 
+<tr> <td> DEBE </td> <td> HABER </td> <td> DEBE </td><td> HABER </td> </tr> 
+<tr> <td>142243</td> <td> 7649</td> <td> 23589</td><td> 73582</td> </tr>
+<tr> <td>134594</td> <td></td><td></td><td>49993</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: azure'>84601</td> <td></td> <td> </td><td> </td> </tr>
+</tbody> </table>
+<table> <tbody> 
+<tr> <td >-->ari Ajustar a Ingresos Remanente de IVA </td><td> agosto</td> <td style='font-weight: bold; font-size: large; background-color: azure'> (+) 654</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>75450</td> <td> (+) 654 </td><td style='font-weight: bold; font-size: large; background-color: gold'  > (=) 76104</td> <td> f29 504 </td><td> Remanente de crédito fiscal del mes anterior</td> </tr>
+<tr> <td style='font-weight: bold; font-size: large; background-color: ivory'>84601</td> <td> (+) 654 </td><td style='font-weight: bold; font-size: large; background-color: greenyellow' > (=) 85255</td> <td> f29 077 </td><td>Remanente del crédito fiscal para el mes siguiente</td></tr>
